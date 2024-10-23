@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devblock Studios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link href="../../static/companysite/dist/styles.css" rel="stylesheet"> Link to your CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" type="image/png" href="../../static/companysite/images/Devblock-removebg-preview.png">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
+
+
+
+
+  <style>
+    @keyframes rainbow {
+      0% {
+        color: red;
+      }
+
+      14% {
+        color: orange;
+      }
+
+      28% {
+        color: yellow;
+      }
+
+      42% {
+        color: green;
+      }
+
+      57% {
+        color: blue;
+      }
+
+      71% {
+        color: indigo;
+      }
+
+      85% {
+        color: violet;
+      }
+
+      100% {
+        color: red;
+      }
+    }
+
+    #contactSection h2 {
+      animation: rainbow 8s linear infinite;
+    }
+
+    * {
+      font-family: 'Red Hat Display', sans-serif;
+    }
+  </style>
+
+</head>
+
+
+
+
+<body>
+
+
+
+
+  <!--************************ NAVBAR START **************************-->
+  <section id="navbar">
+    <nav class="nav-main fixed w-full z-20 top-0 start-0">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="home.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src='images/Devblock-removebg-preview.png'
+            class="h-8 transition-transform duration-300 hover:scale-105" alt="Flowbite Logo" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white font-redhat transition-colors duration-300 hover:text-blue-700 dark:hover:text-blue-500">DevBlock
+            Studios</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button id="mobile-menu-toggle" data-collapse-toggle="navbar-sticky" type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition-all duration-300"
+            aria-controls="navbar-sticky" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg bg-gray-50 md:bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white/30 backdrop-blur-lg">
+            <li>
+              <button id="homeBtn"
+                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 font-redhat transition-all duration-300 hover:scale-105 hover:bg-blue-800">Home</button>
+            </li>
+            <li>
+              <button id="servicesBtn"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Services</button>
+            </li>
+            <li>
+              <button id="projectsBtn"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Projects</button>
+            </li>
+            <li>
+              <button id="aboutBtn"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">About</button>
+            </li>
+            <li>
+              <button id="contactBtn"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Contact</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <!--**************************     END OF NAVBAR **********************************      -->
+
+
+
+
+  <!--**************************     BANNER     **********************************      -->
+
+  <div class="relative bg-cover bg-center h-screen"
+    style="background-image: url('images/4884273.jpg');" id="banner">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative h-full flex items-center justify-center">
+      <div class="text-center px-4">
+        <h1 class="font-redhat font-bold text-white text-6xl md:text-9xl">
+          Devblock Studios
+        </h1>
+        <h2 class="mt-4 font-redhat font-bold text-white text-lg md:text-xl">
+          Solving the problems with technology innovation and providing business solutions
+        </h2>
+        <div class="mt-8">
+          <button id="bookAppointmentBtn"
+            class="p-2 md:p-4 text-lg md:text-xl bg-blue-900 text-white rounded-full w-full md:w-96 font-semibold font-redhat hover:bg-white hover:text-blue-900 transition duration-300">
+            Book An Appointment!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- End Of Banner Component -->
+
+
+
+
+
+
+
+
+  <!--**************************     SERVICES     **********************************      -->
+
+
+  <section id="servicesSection" class="p-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-6xl font-bold mb-6 ml-4 font-redhat text-center" style="margin-top: 50px; margin-bottom: 50px;">
+        Solutions built for you</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Web Development Card -->
+        <button
+          class="block bg-white p-6 rounded-lg shadow-lg hover:bg-gray-300 hover:shadow-xl transition-all duration-300 ease-in-out blue-border transform hover:scale-105"
+          style="border: 1px solid #3B82F6;">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-code text-3xl text-blue-600 mr-4" style="margin-right: 10px;"></i>
+            <!-- Web Development Icon -->
+            <h3 class="text-xl font-semibold font-redhat">Web Development</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Providing expert web development services to create visually stunning,
+            user-friendly websites. We specialize in responsive design, seamless functionality, and optimizing for
+            performance and SEO.</p>
+          <!-- Learn More with Arrow -->
+          <div class="flex justify-end items-center mt-4">
+            <span class="text-blue-600 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-blue-600"></i> <!-- Arrow Icon -->
+          </div>
+        </button>
+
+        <!-- Game Development Card -->
+        <button href="#"
+          class="block bg-white p-6 rounded-lg shadow-lg hover:bg-gray-300 hover:shadow-xl transition-all duration-300 ease-in-out blue-border transform hover:scale-105"
+          style="border: 1px solid #3B82F6;">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-gamepad text-3xl text-blue-600 mr-4" style="margin-right: 10px;"></i>
+            <!-- Game Development Icon -->
+            <h3 class="text-xl font-semibold font-redhat">Game Development</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Delivering immersive game development services, from concept to launch, with a
+            focus on engaging gameplay and stunning visuals. Our expertise covers multi-platform game design, 2D/3D
+            graphics, and interactive user experiences.</p>
+          <!-- Learn More with Arrow -->
+          <div class="flex justify-end items-center mt-4">
+            <span class="text-blue-600 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-blue-600"></i> <!-- Arrow Icon -->
+          </div>
+        </button>
+
+        <!-- Cloud Solutions Card -->
+        <button
+          class="block bg-white p-6 rounded-lg shadow-lg hover:bg-gray-300 hover:shadow-xl transition-all duration-300 ease-in-out blue-border transform hover:scale-105"
+          style="border: 1px solid #3B82F6;">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-cloud text-3xl text-blue-600 mr-4" style="margin-right: 10px;"></i>
+            <!-- Cloud Solutions Icon -->
+            <h3 class="text-xl font-semibold font-redhat">Cloud Solutions</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Offering scalable cloud solutions, ensuring seamless integration, security, and
+            performance for your business applications and services.</p>
+          <!-- Learn More with Arrow -->
+          <div class="flex justify-end items-center mt-4">
+            <span class="text-blue-600 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-blue-600"></i> <!-- Arrow Icon -->
+          </div>
+        </button>
+
+        <!-- AI/Machine Learning Solutions Card -->
+        <button
+          class="block bg-white p-6 rounded-lg shadow-lg hover:bg-gray-300 hover:shadow-xl transition-all duration-300 ease-in-out blue-border transform hover:scale-105"
+          style="border: 1px solid #3B82F6;">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-robot text-3xl text-blue-600 mr-4" style="margin-right: 10px;"></i>
+            <!-- AI/Machine Learning Icon -->
+            <h3 class="text-xl font-semibold font-redhat">AI/Machine Learning Solutions</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Providing cutting-edge AI and machine learning solutions to automate, optimize,
+            and enhance your business processes with intelligent insights and predictions.</p>
+          <!-- Learn More with Arrow -->
+          <div class="flex justify-end items-center mt-4">
+            <span class="text-blue-600 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-blue-600"></i> <!-- Arrow Icon -->
+          </div>
+        </button>
+
+        <!-- App Development Card -->
+        <button href="#"
+          class="block bg-white p-6 rounded-lg shadow-lg hover:bg-gray-300 hover:shadow-xl transition-all duration-300 ease-in-out blue-border transform hover:scale-105"
+          style="border: 1px solid #3B82F6;">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-mobile-alt text-3xl text-blue-600 mr-4" style="margin-right: 10px;"></i>
+            <!-- App Development Icon -->
+            <h3 class="text-xl font-semibold font-redhat">App Development</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Creating intuitive, high-performance mobile applications tailored to meet your
+            business goals and deliver seamless user experiences across platforms.</p>
+          <!-- Learn More with Arrow -->
+          <div class="flex justify-end items-center mt-4">
+            <span class="text-blue-600 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-blue-600"></i> <!-- Arrow Icon -->
+          </div>
+        </button>
+
+        <!-- Digital Marketing Card -->
+        <button
+          class="block bg-white p-6 rounded-lg shadow-lg hover:bg-gray-300 hover:shadow-xl transition-all duration-300 ease-in-out blue-border transform hover:scale-105"
+          style="border: 1px solid #3B82F6;">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-bullhorn text-3xl text-blue-600 mr-4" style="margin-right: 10px;"></i>
+            <!-- Digital Marketing Icon -->
+            <h3 class="text-xl font-semibold font-redhat">Digital Marketing</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Helping you reach a larger audience with targeted digital marketing strategies,
+            SEO optimization, and content creation for business growth.</p>
+          <!-- Learn More with Arrow -->
+          <div class="flex justify-end items-center mt-4">
+            <span class="text-blue-600 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-blue-600"></i> <!-- Arrow Icon -->
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- End of Services Card Component -->
+
+
+
+
+
+
+
+  <!-- END OF FEATURED SERVICES -->
+  <section id="featuredServicesSection" class="mb-8">
+    <div class="container mx-auto py-12 px-4 ">
+      <h1 class="text-center pb-16 pt-4 text-6xl font-semibold font-redhat">
+        Featured Services
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- First Featured Service Card -->
+        <div
+          class="relative bg-cover bg-center rounded-lg overflow-hidden shadow-lg h-[800px] transition-transform transform hover:scale-105 duration-300 "
+          style="background-image: url('images/5040007.jpg');">
+          <!-- Dark overlay -->
+          <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+          <!-- Service content -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h2 class="text-2xl font-bold font-redhat">Elevate Your Brand with Our Expertise!</h2>
+              <p class="mt-2 text-m">Transform your ideas with our custom software development.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Featured Service Card -->
+        <div
+          class="relative bg-cover bg-center rounded-lg overflow-hidden shadow-lg h-[800px] transition-transform transform hover:scale-105 duration-300"
+          style="background-image: url('images/projectConBanner.jpg');">
+          <!-- Dark overlay -->
+          <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+          <!-- Service content -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h2 class="text-2xl font-bold font-redhat">Custom Solutions for Your Business Needs!</h2>
+              <p class="mt-2 text-m">Streamline your operations with tailored software solutions.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ************************* End Of Featured Services Card  ************************ -->
+
+
+
+
+  <!--**************************     PROJECTS     **********************************      -->
+
+  <section id="projectsSection" class="py-32 bg-white mt-8 mb-16">
+    <div class="container mx-auto">
+      <!-- Heading -->
+      <div class="text-center mb-12">
+        <h2 class="text-6xl font-bold text-gray-800 font-redhat">Explore some of our latest projects</h2>
+        <!-- <p class="text-lg text-gray-500 mt-4">
+                  We empower our clients globally to embrace modern technology and elevate customer experiences.
+              </p> -->
+
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <!-- Added gap-8 for more space -->
+        <!-- Project 1 -->
+        <a href="projects.html"
+          class="block bg-gray-100 shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="images/ProjectPageImg1.jpg" alt="Project 1"
+            class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Empowering XQUIC for Automated Financial Accuracy</h3>
+            <p class="text-gray-600 mb-4">
+              XQUIC revolutionized the hospitality industry with AI-driven reconciliation and seamless integration,
+              saving hotels time and money while automating 95% of revenue management processes.
+            </p>
+            <span class="text-indigo-600 font-semibold hover:underline">Read the case study &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="projects.html"
+          class="block bg-gray-100 shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+          <img src="images/ProjectDummy2.jpg" alt="Project 2" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Automating People Operations with 30+ integrations
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Devsinc helped Sapling rapidly expand their team, improve integrations, and support some of the world's
+              fastest-growing companies with powerful automation solutions.
+            </p>
+            <span class="text-indigo-600 font-semibold hover:underline">Read the case study &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!--**************************** End Of Project Portfolio********************************** -->
+
+
+
+
+
+
+
+
+
+
+  <!--**************************     ABOUT US     **********************************      -->
+
+  <section id="AboutUsPageSection" class=" pb-32"> <!-- Increased top and bottom padding -->
+    <div class="container mx-auto p-8">
+      <!-- Main Heading -->
+      <h1 class="text-6xl font-bold font-redhat text-center mb-24" style="margin-bottom: 60px;">About Us</h1>
+
+      <!-- Mission and Vision Cards -->
+
+      <section id="missionAndVisionSection">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32"> <!-- Increased bottom margin -->
+          <!-- Mission Card -->
+          <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+            <h2 class="text-3xl font-bold font-redhat mb-4 text-center">Our Mission</h2>
+            <p class="text-gray-700 text-center">Empowering businesses with innovative digital solutions to transform
+              challenges into opportunities. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, asperiores,
+              culpa in perferendis facere corrupti excepturi id officia ratione nostrum voluptatum aspernatur placeat
+              architecto. Est voluptatem accusamus modi autem incidunt! Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Obcaecati nihil eius, deserunt perspiciatis dicta, at, porro officia recusandae quos
+              magni non incidunt. Sit est soluta voluptatem exercitationem omnis sequi natus.</p>
+          </div>
+
+          <!-- Vision Card -->
+          <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+            <h2 class="text-3xl font-bold font-redhat mb-4 text-center">Our Vision</h2>
+            <p class="text-gray-700 text-center">To be a global leader in delivering cutting-edge software solutions
+              that revolutionize industries. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias
+              perspiciatis sed at, fuga minus ad consequatur magni nam aperiam consequuntur impedit eos numquam possimus
+              aut architecto consectetur? Voluptas, cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores fugiat voluptatem repellendus numquam possimus? Illum temporibus sunt et soluta, eligendi quam
+              dolor ut dolorem placeat odit vitae harum, doloribus assumenda.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- What Do We Do Heading -->
+      <h2 class="text-6xl font-redhat font-bold text-center mb-16  " style="margin-bottom: 60px; ">What Do We Do?</h2>
+
+      <!-- What We Do Card -->
+      <div
+        class="bg-gray-100 p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 mb-32">
+        <!-- Increased bottom margin -->
+        <ul class="list-disc list-inside text-centers">
+          <p>At DevBlock Software House, we specialize in providing cutting-edge solutions that drive business growth
+            and technological innovation. Our team of expert developers, designers, and strategists work collaboratively
+            to deliver custom software solutions that address the unique challenges of each client. Whether it's web
+            development, mobile app development, cloud solutions, or UI/UX design, we create seamless digital
+            experiences that enhance productivity and customer engagement. We also provide software consulting services
+            to help businesses streamline their operations, and digital marketing strategies to ensure their online
+            presence thrives. At DevBlock, we don't just build software; we empower businesses to innovate, scale, and
+            stay ahead in an ever-evolving digital landscape. Let us transform your ideas into impactful solutions that
+            fuel success.</p>
+        </ul>
+      </div>
+
+
+
+
+
+
+
+      <!-- Why Choose Devblock Studio Section -->
+      <div class="pb-32"> <!-- Increased top and bottom padding -->
+        <h2 class="text-6xl font-bold text-center text-gray-800 mb-16 font-redhat " style="margin-top: 80px;">Why Choose
+          Devblock Studio?</h2>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Card 1: Tailored Solutions -->
+          <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Tailored Solutions</h3>
+            <p class="text-lg text-gray-600">We craft solutions specifically designed to meet your business goals.</p>
+          </div>
+
+          <!-- Card 2: Expert Team -->
+          <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Expert Team</h3>
+            <p class="text-lg text-gray-600">Our developers and designers are industry experts with a deep understanding
+              of technology and design trends.</p>
+          </div>
+
+          <!-- Card 3: Agile Development -->
+          <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Agile Development</h3>
+            <p class="text-lg text-gray-600">We use agile methodologies to ensure rapid development, flexibility, and
+              constant feedback.</p>
+          </div>
+
+          <!-- Card 4: Client-Focused -->
+          <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Client-Focused</h3>
+            <p class="text-lg text-gray-600">We collaborate closely with you throughout the development process to
+              ensure your vision is realized.</p>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Quality Assurance</h3>
+            <p class="text-lg text-gray-600">We collaborate closely with you throughout the development process to
+              ensure your vision is realized.</p>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Quality Assurance</h3>
+            <p class="text-lg text-gray-600">We collaborate closely with you throughout the development process to
+              ensure your vision is realized.</p>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Quality Assurance</h3>
+            <p class="text-lg text-gray-600">We collaborate closely with you throughout the development process to
+              ensure your vision is realized.</p>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Quality Assurance</h3>
+            <p class="text-lg text-gray-600">We collaborate closely with you throughout the development process to
+              ensure your vision is realized.</p>
+          </div>
+
+
+        </div>
+      </div>
+
+      <section id="valuesSection">
+        <!-- Our Values Section -->
+        <div class=" pb-32"> <!-- Increased top and bottom padding -->
+          <h2 class="text-6xl font-bold text-center text-gray-800 mb-16">Our Values</h2>
+
+          <!-- Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1: Innovation -->
+            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+              <h3 class="text-4xl font-bold text-gray-800 mb-4">Innovation</h3>
+              <p class="text-lg text-gray-600">We embrace creativity to develop unique solutions.</p>
+            </div>
+
+            <!-- Card 2: Quality -->
+            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+              <h3 class="text-4xl font-bold text-gray-800 mb-4">Quality</h3>
+              <p class="text-lg text-gray-600">Delivering nothing less than the highest standards of work.</p>
+            </div>
+
+            <!-- Card 3: Integrity -->
+            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+              <h3 class="text-4xl font-bold text-gray-800 mb-4">Integrity</h3>
+              <p class="text-lg text-gray-600">We maintain transparency and honesty in all our interactions.</p>
+            </div>
+
+            <!-- Card 4: Collaboration -->
+            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+              <h3 class="text-4xl font-bold text-gray-800 mb-4">Collaboration</h3>
+              <p class="text-lg text-gray-600">We work closely with our clients to ensure their vision becomes reality.
+              </p>
+            </div>
+
+            <!-- Card 5: Customer-Centricity -->
+            <div class="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105">
+              <h3 class="text-4xl font-bold text-gray-800 mb-4">Customer-Centricity</h3>
+              <p class="text-lg text-gray-600">Your success is our priority.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Members Section -->
+     <div id="teamMembersSection" class="pt-32 pb-32"> <!-- Increased top and bottom padding -->
+        <h1 class="text-center pb-16 text-6xl font-semibold font-redhat" style="margin-top: 80px;">Team Members</h1>
+
+        <!-- Swiper -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- First Employee -->
+            <div class="swiper-slide">
+              <li
+                class="flex justify-between gap-x-6 py-5 transition-transform transform hover:scale-105 hover:bg-gray-200 rounded-lg">
+                <div class="flex min-w-0 gap-x-4">
+                  <img alt=""
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    class="h-12 w-12 flex-none rounded-full bg-gray-50" />
+                  <div class="min-w-0 flex-auto">
+                    <p class="text-sm font-semibold leading-6 text-gray-900">Leslie Alexander</p>
+                    <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                  </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                  <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
+                  <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h
+                      ago</time></p>
+                </div>
+              </li>
+            </div>
+
+            <!-- Second Employee -->
+            <div class="swiper-slide">
+              <li
+                class="flex justify-between gap-x-6 py-5 transition-transform transform hover:scale-105 hover:bg-gray-200 rounded-lg">
+                <div class="flex min-w-0 gap-x-4">
+                  <img alt=""
+                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    class="h-12 w-12 flex-none rounded-full bg-gray-50" />
+                  <div class="min-w-0 flex-auto">
+                    <p class="text-sm font-semibold leading-6 text-gray-900">Michael Foster</p>
+                    <p class="mt-1 truncate text-xs leading-5 text-gray-500">michael.foster@example.com</p>
+                  </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                  <p class="text-sm leading-6 text-gray-900">Co-Founder / CTO</p>
+                  <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h
+                      ago</time></p>
+                </div>
+              </li>
+            </div>
+
+            <!-- Third Employee -->
+            <div class="swiper-slide">
+              <li
+                class="flex justify-between gap-x-6 py-5 transition-transform transform hover:scale-105 hover:bg-gray-200 rounded-lg">
+                <div class="flex min-w-0 gap-x-4">
+                  <img alt=""
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    class="h-12 w-12 flex-none rounded-full bg-gray-50" />
+                  <div class="min-w-0 flex-auto">
+                    <p class="text-sm font-semibold leading-6 text-gray-900">Dries Vincent</p>
+                    <p class="mt-1 truncate text-xs leading-5 text-gray-500">dries.vincent@example.com</p>
+                  </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                  <p class="text-sm leading-6 text-gray-900">Business Relations</p>
+                  <div class="mt-1 flex items-center gap-x-1.5">
+                    <div class="flex-none rounded-full bg-emerald-500/20 p-1">
+                      <div class="h-1.5 w-1.5 rounded-full bg-emerald-500"></div>
+                    </div>
+                    <p class="text-xs leading-5 text-gray-500">Online</p>
+                  </div>
+                </div>
+              </li>
+            </div>
+
+            <!-- Fourth Employee -->
+            <div class="swiper-slide">
+              <li
+                class="flex justify-between gap-x-6 py-5 transition-transform transform hover:scale-105 hover:bg-gray-200 rounded-lg">
+                <div class="flex min-w-0 gap-x-4">
+                  <img alt=""
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    class="h-12 w-12 flex-none rounded-full bg-gray-50" />
+                  <div class="min-w-0 flex-auto">
+                    <p class="text-sm font-semibold leading-6 text-gray-900">Lindsay Walton</p>
+                    <p class="mt-1 truncate text-xs leading-5 text-gray-500">lindsay.walton@example.com</p>
+                  </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                  <p class="text-sm leading-6 text-gray-900">Front-end Developer</p>
+                  <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h
+                      ago</time></p>
+                </div>
+              </li>
+            </div>
+
+            <!-- Fifth Employee -->
+            <div class="swiper-slide">
+              <li
+                class="flex justify-between gap-x-6 py-5 transition-transform transform hover:scale-105 hover:bg-gray-200 rounded-lg">
+                <div class="flex min-w-0 gap-x-4">
+                  <img alt=""
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    class="h-12 w-12 flex-none rounded-full bg-gray-50" />
+                  <div class="min-w-0 flex-auto">
+                    <p class="text-sm font-semibold leading-6 text-gray-900">Courtney Henry</p>
+                    <p class="mt-1 truncate text-xs leading-5 text-gray-500">courtney.henry@example.com</p>
+                  </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                  <p class="text-sm leading-6 text-gray-900">Designer</p>
+                  <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h
+                      ago</time></p>
+                </div>
+              </li>
+            </div>
+
+            <!-- Sixth Employee -->
+            <div class="swiper-slide">
+              <li
+                class="flex justify-between gap-x-6 py-5 transition-transform transform hover:scale-105 hover:bg-gray-200 rounded-lg">
+                <div class="flex min-w-0 gap-x-4">
+                  <img alt=""
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    class="h-12 w-12 flex-none rounded-full bg-gray-50" />
+                  <div class="min-w-0 flex-auto">
+                    <p class="text-sm font-semibold leading-6 text-gray-900">Bessie Cooper</p>
+                    <p class="mt-1 truncate text-xs leading-5 text-gray-500">bessie.cooper@example.com</p>
+                  </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                  <p class="text-sm leading-6 text-gray-900">Marketer</p>
+                  <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h
+                      ago</time></p>
+                </div>
+              </li>
+            </div>
+
+            <!-- Add more employees here -->
+          </div>
+
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+  <!-- About Us Page Section End  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- SERVICE SECTION WHEN BUTTON PRESSED HIDDEN INITIALLY -->
+
+
+  <section id="servicePageSection" class="hidden" style="margin-bottom: 100px; margin-top: 100px;">
+    <div class="container mx-auto px-4 ">
+      <!-- Service Cards -->
+      <div class="space-y-16 md:space-y-24">
+        <!-- Web Development -->
+        <div>
+          <div class="text-center mb-8 md:mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">Web Development</h2>
+            <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art web development services
+              tailored to your needs.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div
+              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
+              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">Innovative Web Design & Development
+                Services</h2>
+              <p class="text-sm md:text-base font-redhat">To tackle web app problem-solving, we utilize a diverse range
+                of technologies and tools that streamline development and enhance performance. Our tech stack typically
+                includes JavaScript frameworks like React for building dynamic user interfaces and Node.js for efficient
+                server-side programming. For data management, we rely on SQL databases such as PostgreSQL and NoSQL
+                databases like MongoDB to ensure flexible data storage and retrieval. We employ RESTful APIs for
+                seamless communication between frontend and backend components, enabling smooth data flow and
+                interaction. For debugging and performance monitoring, tools like Chrome DevTools and Postman help
+                identify issues and optimize application efficiency. Additionally, we incorporate version control
+                systems like Git to manage code changes collaboratively. By leveraging these technologies, we
+                efficiently address challenges and deliver robust web applications that meet user needs.</p>
+            </div>
+
+            <div
+              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
+              <img src="images/6041419.jpg" alt="Technologies Image" class="rounded-lg w-full">
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- TECH FORTE IN WEB DEV -->
+        <div class="py-12 text-center">
+          <h2 class="text-6xl font-bold font-redhat text-gray-800" style="margin-bottom: 10px;">Technology Used</h2>
+           <p class="text-gray-700 text-sm md:text-base" style="margin-bottom: 100px;">Some of the technologies we use to build our web apps</p>
+        
+          <!-- Technology Grid -->
+        
+        
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
+            <!-- React JS -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img
+                src="images/WebDevTechForte/1174949_js_react js_logo_react_react native_icon.png"
+                alt="React JS" class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">React JS</p>
+            </div>
+
+            <!-- Next JS -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img src="images/WebDevTechForte/NextJs.png" alt="Next JS" class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">Next JS</p>
+            </div>
+
+            <!-- Node JS -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img src="images/WebDevTechForte/4375017_js_logo_node_icon.png" alt="Node JS"
+                class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">Node JS</p>
+            </div>
+
+            <!-- Angular -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img src="images/WebDevTechForte/4373284_angular_logo_logos_icon.png"
+                alt="Angular" class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">Angular</p>
+            </div>
+
+            <!-- Add more technologies here if needed -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img
+                src="images/WebDevTechForte/652581_code_command_develop_javascript_language_icon.png"
+                alt="Angular" class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">JavaScript</p>
+            </div>
+
+            <!-- Wordpress -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img
+                src="images/WebDevTechForte/291686_wordpress_blog_logo_social_social media_icon.png"
+                alt="Wordpress" class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">Wordpress</p>
+            </div>
+
+
+
+          </div>
+        </div>
+
+        <!-- END OF TECH FORTE IN WEB DEV -->
+
+
+
+
+
+
+
+
+
+
+        <!-- App Development -->
+        <div>
+          <div class="text-center mb-8 md:mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">App Development</h2>
+            <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art app development services
+              tailored to your needs.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div
+              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left">
+              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">Engineering Used</h2>
+              <p class="text-sm md:text-base font-redhat">In our app development process, we utilized a robust tech
+                stack to ensure efficiency and scalability. The backend was built using Python Flask, providing a
+                lightweight yet powerful framework for handling server-side logic and API integrations. For the
+                frontend, we used React.js, allowing for dynamic, responsive user interfaces. SQLAlchemy was integrated
+                for database management, offering seamless interaction with our PostgreSQL database. We also employed
+                Tailwind CSS for styling, ensuring a modern, mobile-friendly design, while CKEditor was incorporated for
+                content editing, enhancing user experience with rich-text capabilities.</p>
+            </div>
+
+            <div
+              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img src="images/1720.jpg" alt="Technologies Image" class="rounded-lg w-full">
+            </div>
+          </div>
+        </div>
+
+
+        <!-- TECH FORTE IN App DEV -->
+        <div class="py-12 text-center">
+          <h2 class="text-6xl font-bold font-redhat text-gray-800" style="margin-bottom: 100px;">Technology Used</h2>
+          <!-- Technology Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
+            <!-- React Nate -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img src="images/AppDevTechForte/4691292_react native_react_icon.png"
+                alt="React JS" class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">React Native</p>
+            </div>
+
+            <!-- Flutter -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img src="images/AppDevTechForte/4691465_flutter_icon.png" alt="Next JS"
+                class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">Flutter</p>
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+        <!-- END OF TECH FORTE IN App DEV -->
+
+
+
+
+
+
+
+
+        <!-- Game Development -->
+        <div>
+          <div class="text-center mb-8 md:mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">Game Development</h2>
+            <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art game development services
+              tailored to your needs.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div
+              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
+              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">The Art We Use</h2>
+              <p class="text-sm md:text-base font-redhat">In our game development process, we emphasize innovative
+                designs and creativity to create immersive experiences for players. Our design philosophy combines
+                stunning visuals with intuitive gameplay mechanics, ensuring that each game element serves a purpose
+                while contributing to the overall aesthetic. We use **concept art** to visualize characters,
+                environments, and assets, guiding our 3D modeling and animation processes. **User interface (UI)
+                design** is meticulously crafted to enhance user engagement, employing clean layouts and visually
+                appealing graphics. Additionally, we prioritize **sound design** and **music composition**, integrating
+                audio elements that complement the gameplay and evoke emotional responses. By fostering a collaborative
+                environment, our team continuously explores new ideas and artistic styles, pushing the boundaries of
+                creativity to deliver unique gaming experiences.</p>
+            </div>
+
+            <div
+              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
+              <img src="images/gameDev.jpg" alt="Technologies Image" class="rounded-lg w-full">
+            </div>
+          </div>
+        </div>
+
+
+
+        
+        <!-- TECH FORTE IN App DEV -->
+        <div class="py-12 text-center">
+          <h2 class="text-6xl font-bold font-redhat text-gray-800" style="margin-bottom: 100px;">Technology Used</h2>
+          <!-- Technology Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
+            <!-- Unity -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img src="images/GameDevTechForte/4691514_unity_unity 3d_logo_icon.png"
+                alt="React JS" class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">Unity</p>
+            </div>
+
+            <!-- Unreal Engine -->
+            <div
+              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <img src="images/GameDevTechForte/617626_engine_unreal_icon.png" alt="Next JS"
+                class="w-24 h-24">
+              <p class="mt-4 text-lg font-semibold text-gray-700">Unreal Engine</p>
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+        <!-- END OF TECH FORTE IN App DEV -->
+
+
+
+
+
+        <!-- AI/ML Solutions -->
+        <div>
+          <div class="text-center mb-8 md:mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">AI/Machine Learning Solutions</h2>
+            <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art AI/ML solutions tailored to
+              your needs.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div
+              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
+              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">Models And Training Methods</h2>
+              <p class="text-sm md:text-base font-redhat">In our machine learning projects, we employ a range of models
+                and training methods tailored to specific tasks. For supervised learning, we often use **decision
+                trees**, **support vector machines**, and **neural networks** for accurate predictions on labeled
+                datasets. In unsupervised learning, techniques like **k-means clustering** and **principal component
+                analysis (PCA)** help uncover hidden patterns. We utilize **cross-validation** to ensure model
+                robustness and avoid overfitting, while **transfer learning** with pre-trained models enhances
+                efficiency and accuracy. Our training process includes fine-tuning hyperparameters and **data
+                augmentation** to create high-performing solutions that address complex challenges across various
+                domains.</p>
+            </div>
+
+            <div
+              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
+              <img src="images/AiMlpic.jpg" alt="Technologies Image" class="rounded-lg w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud Solutions -->
+        <div>
+          <div class="text-center mb-8 md:mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">Cloud Solutuions</h2>
+            <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art cloud solutions tailored to
+              your needs.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div
+              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
+              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">How we Provide Solutions</h2>
+              <p class="text-sm md:text-base font-redhat">We provide comprehensive cloud solutions designed to enhance
+                scalability, security, and efficiency for businesses of all sizes. Our approach involves leveraging
+                cloud computing platforms such as AWS, Azure, and Google Cloud to deliver tailored services, including
+                infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS). By
+                utilizing these platforms, we enable clients to access resources on-demand, ensuring optimal performance
+                while reducing operational costs. Our team focuses on implementing robust security measures to protect
+                data and applications</p>
+            </div>
+
+            <div
+              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
+              <img src="images/What-is-Cloud-Computing.jpeg" alt="Technologies Image"
+                class="rounded-lg w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Marketing -->
+        <div>
+          <div class="text-center mb-8 md:mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">Digital Marketing</h2>
+            <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art digital marketing services
+              tailored to your needs.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div
+              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
+              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">Strategies Used</h2>
+              <p class="text-sm md:text-base font-redhat">We implement a variety of digital marketing strategies to
+                effectively reach and engage our target audience. Our approach includes search engine optimization (SEO)
+                to enhance online visibility and improve organic traffic to websites. We leverage content marketing,
+                creating valuable and relevant content that resonates with our audience and establishes authority in our
+                niche. Social media marketing plays a crucial role, utilizing platforms like Facebook, Instagram, and
+                LinkedIn to build brand awareness and foster community engagement. We also employ pay-per-click (PPC)
+                advertising for targeted campaigns that drive immediate traffic and conversions. Additionally, our
+                strategies incorporate email marketing, nurturing leads through personalized communication and offers.
+                By analyzing data and metrics, we continuously refine our strategies to optimize performance and achieve
+                measurable results for our clients.</p>
+            </div>
+
+            <div
+              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
+              <img src="images/digitalMarketing.jpeg" alt="Technologies Image"
+                class="rounded-lg w-full">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Services Section hidden atm -->
+  <style>
+    @keyframes rainbow {
+      57% {
+        color: blue;
+      }
+
+      71% {
+        color: indigo;
+      }
+
+      85% {
+        color: white;
+      }
+
+    }
+
+    #contactSection h2 {
+      animation: rainbow 10s linear infinite;
+    }
+  </style>
+
+  <section id="contactSection"
+    class="mx-auto p-6 bg-black rounded-lg w-full max-w-[877px] h-auto mb-10 mt-36 transition-all duration-300 ease-in-out shadow-lg shadow-purple-500/50">
+    <h2 class="text-6xl font-bold text-center mb-16 font-redhat">Let's Build Something Great Together!</h2>
+    <form class="space-y-6">
+      <!-- Name Input -->
+      <div>
+        <label for="name" class="block text-sm font-medium text-white pb-2 ml-1">Name</label>
+        <input type="text" id="name" name="name" required
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-12"
+          placeholder="Enter your company or personal name" />
+      </div>
+
+      <!-- Email Input -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-white pb-2 ml-1">Email Address</label>
+        <input type="email" id="email" name="email" required
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-12"
+          placeholder="Enter your email" />
+      </div>
+
+      <!-- Service/Knowledge Select Dropdown -->
+      <div>
+        <label for="service" class="block text-sm font-medium text-white pb-2 ml-1">Which service/solution are you
+          interested in?</label>
+        <select id="service" name="service" required
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-12">
+          <option value="" disabled selected>Select a service</option>
+          <option value="web-development">Web Development</option>
+          <option value="mobile-app-development">Mobile App Development</option>
+          <option value="digital-marketing">Digital Marketing</option>
+          <option value="ui-ux-design">UI/UX Design</option>
+          <option value="cloud-solutions">Cloud Solutions</option>
+          <option value="software-consulting">Software Consulting</option>
+        </select>
+      </div>
+
+      <!-- Message Input -->
+      <div>
+        <label for="message" class="block text-sm font-medium text-white ml-1 pb-2">Message</label>
+        <textarea id="message" name="message" required rows="4"
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-12"
+          placeholder="Enter your message"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="submit"
+          class="w-full py-2 px-4 bg-blue-900 text-white font-medium font-redhat rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </section><!-- END OF FORM  -->
+
+  <!-- ABOUT US CARD  -->
+
+
+
+
+
+
+
+
+
+  <footer class="bg-black">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <div class="md:flex md:justify-between">
+        <div class="mb-6 md:mb-0">
+          <a href="home.html" class="flex items-center">
+            <img src='images/Devblock-removebg-preview.png' class="h-8 me-3"
+              alt="FlowBite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DevBlocks Studio</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li class="mb-4">
+                <button class="hover:underline" id="projectsBtnFooter">Projects</button>
+              </li>
+              <li>
+                <button class="hover:underline" id="servicesBtnFooter">Services</button>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li class="mb-4">
+                <a href="https://www.linkedin.com/company/devblockstudios/" class="hover:underline ">LinkedIn</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Instagram</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button id="contactBtnFooter"
+              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Us</button>
+            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li class="mb-4">
+                <button id="valuesBtnFooter" class="hover:underline">Values</button>
+              </li>
+              <li>
+                <button id="missionBtnFooter" class="hover:underline">Mission</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="home.html"
+            class="hover:underline">DevBlocks Studio™</a>. All Rights Reserved.
+        </span>
+        <div class="flex mt-4 sm:justify-center sm:mt-0">
+          <a href="https://www.facebook.com/profile.php?id=61566619814832"
+            class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 8 19">
+              <path fill-rule="evenodd"
+                d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Facebook page</span>
+          </a>
+
+          <a href="https://x.com/devblockstudio" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 20 17">
+              <path fill-rule="evenodd"
+                d="M20 1.892a8.178 8.178 0 0 0-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 0-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">Twitter page</span>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="sr-only">GitHub account</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+  </script>
+  </script>
+  <script>
+
+
+
+
+
+
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 3, // Adjust based on your layout preference
+      spaceBetween: 30,
+      autoplay: {
+        delay: 2500, // Delay between transitions (in milliseconds)
+        disableOnInteraction: false, // Continue autoplay after user interactions
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+
+
+
+    // Get all sections
+    // Select all relevant DOM elements
+    // Select all relevant DOM elements
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navbarSticky = document.getElementById('navbar-sticky');
+
+    menuToggle.addEventListener('click', () => {
+      // Toggle the visibility of the mobile menu
+      navbarSticky.classList.toggle('hidden');
+    });
+    const allSections = document.querySelectorAll('section');
+    const servicePageSection = document.getElementById('servicePageSection');
+    const navbar = document.querySelector("#navbar");
+    const banner = document.querySelector("#banner");
+    const footer = document.querySelector("footer");
+    // Get the navbar using DOM API
+
+    // Add a scroll event listener to the window
+
+    // Get all service card buttons 
+    const serviceButtons = document.querySelectorAll('#servicesSection button');
+
+    // Function to hide all sections except servicePageSection, navbar, banner, and footer
+    function showServicePage() {
+      allSections.forEach(section => {
+        if (section.id !== 'servicePageSection' && section.id !== 'banner' && section.id !== 'navbar' && section.id !== 'footer') {
+          section.classList.add('hidden');
+        }
+      });
+      servicePageSection.classList.remove('hidden');
+
+      // Ensure navbar is visible
+      navbar.style.display = 'block';
+
+      // Ensure banner and footer are visible
+      banner.classList.remove('hidden');
+      footer.classList.remove('hidden');
+    }
+
+    // Add click event listeners to all service card buttons
+    serviceButtons.forEach(button => {
+      button.addEventListener('click', showServicePage);
+    });
+
+    // Existing code for navbar scroll behavior...
+
+
+
+
+
+
+
+
+    // Get the navbar using DOM API
+    const navbarr = document.querySelector(".nav-main");
+    // Add a scroll event listener to the window
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) { // when scrolled downwards and covers more than 100px going down add the following styling 
+        navbarr.classList.add("bg-black", "transition-colors", "duration-300");
+        console.log("sroll y", window.scrollY)
+      } else {
+        navbarr.classList.remove("bg-black");
+        console.log("sroll y", window.scrollY)
+      }
+    });
+
+
+    // Get the navbar buttons
+    const homeBtn = document.getElementById('homeBtn');
+    const servicesBtn = document.getElementById('servicesBtn');
+    const projectsBtn = document.getElementById('projectsBtn');
+    const contactBtn = document.getElementById('contactBtn');
+    const aboutBtn = document.getElementById('aboutBtn');
+    const bookAppointmentBtn = document.getElementById('bookAppointmentBtn');
+
+    // FOOTER BUTTONS
+
+    const servicesBtnFooter = document.getElementById('servicesBtnFooter');
+    const projectsBtnFooter = document.getElementById('projectsBtnFooter');
+    const contactBtnFooter = document.getElementById('contactBtnFooter');
+    const missionBtnFooter = document.getElementById('missionBtnFooter');
+    const valuesBtnFooter = document.getElementById('valuesBtnFooter');
+
+
+    // Get the sections
+    const servicesSection = document.getElementById('servicesSection');
+    const projectsSection = document.getElementById('projectsSection');
+    const contactSection = document.getElementById('contactSection');
+    const aboutUsPageSection = document.getElementById('AboutUsPageSection');
+    const missionAndVisionSection = document.getElementById('missionAndVisionSection');
+    const valuesSection = document.getElementById('valuesSection');
+
+
+    // Function to scroll to a section with offset
+    function scrollToSection(section) {
+      const navbarHeight = document.querySelector('nav').offsetHeight;
+      const sectionPosition = section.getBoundingClientRect().top;
+      const offsetPosition = sectionPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+
+    // Function to show all sections and hide servicePageSection
+    function showAllSections() {
+      allSections.forEach(section => section.classList.remove('hidden'));
+      servicePageSection.classList.add('hidden');
+
+      // Ensure navbar is visible when all sections are shown
+      navbar.style.display = 'block';
+    }
+
+    // Event listeners for buttons
+    homeBtn.addEventListener('click', () => {
+      showAllSections();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    bookAppointmentBtn.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(contactSection);
+    });
+
+    missionBtnFooter.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(missionAndVisionSection);
+    });
+
+    servicesBtn.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(servicesSection);
+    });
+
+    projectsBtn.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(projectsSection);
+    });
+
+    servicesBtnFooter.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(servicesSection);
+    });
+
+    projectsBtnFooter.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(projectsSection);
+    });
+
+    valuesBtnFooter.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(valuesSection);
+    });
+    contactBtnFooter.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(contactSection);
+    });
+
+
+
+
+
+
+
+
+
+
+
+    contactBtn.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(contactSection);
+    });
+
+    aboutBtn.addEventListener('click', () => {
+      showAllSections();
+      scrollToSection(aboutUsPageSection);
+    });
+
+  </script>
+
+  <script>
+    window.onload = function () {
+      // Function to get URL parameters
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+
+      // Function to scroll to a section with offset
+      function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+          var navbarHeight = document.querySelector('nav').offsetHeight;
+          var sectionPosition = section.getBoundingClientRect().top;
+          var offsetPosition = sectionPosition + window.pageYOffset - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+
+      // Get the section parameter from the URL
+      var section = getUrlParameter('section');
+
+      if (section) {
+        // If a section is specified, scroll to it after a short delay
+        setTimeout(function () {
+          scrollToSection(section);
+        }, 500); // 500ms delay
+      }
+    };
+  </script>
+
+</body>
+
+</html>

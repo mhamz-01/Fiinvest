@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devblock || Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link href="../../static/companysite/dist/styles.css" rel="stylesheet"> Link to your CSS -->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="icon" type="image/png" href="images/Devblock-removebg-preview.png">
+<link rel="stylesheet" href="src/projects.css">
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+<!-- NAV BAR -->
+  <section id="navbar">
+    <nav class="nav-main fixed w-full z-20 top-0 start-0">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="home.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src='images/Devblock-removebg-preview.png'
+            class="h-8 transition-transform duration-300 hover:scale-105" alt="Flowbite Logo" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white font-redhat transition-colors duration-300 hover:text-blue-700 dark:hover:text-blue-500">DevBlocks</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          
+          <button id="mobile-menu-toggle" data-collapse-toggle="navbar-sticky" type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition-all duration-300"
+            aria-controls="navbar-sticky" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg bg-gray-50 md:bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white/30 backdrop-blur-lg">
+            <li>
+              <button id="homeBtn"
+                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 font-redhat transition-all duration-300 hover:scale-105 hover:bg-blue-800">Home</button>
+            </li>
+            <li>
+              <button id="servicesBtn"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Services</button>
+            </li>
+            <li>
+              <button id="projectsBtn"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Projects</button>
+            </li>
+            <li>
+              <button id="aboutBtn"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">About</button>
+            </li>
+            <li>
+              <button id="contactBtn"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Contact</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+
+  <!-- END OF NAVBAR -->
+
+
+
+  <!-- BANNER -->
+
+
+  <div class="relative bg-cover bg-center h-screen animate-fadeIn overflow-hidden"
+    style="background-image: url('images/5040007.jpg');" id="banner">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative h-full flex items-center justify-center">
+      <div class="text-center px-4 max-w-4xl mx-auto">
+        <div class="typewriter-container">
+          <h1 class="font-redhat font-bold text-white project-title animate-typewriter">
+            Project 1- XQUIC Solutions
+          </h1>
+        </div>
+        <h2 class="mt-4 font-redhat font-bold text-white project-subtitle animate-slideIn" style="animation-delay: 2s;">
+          Solving the problems with technology innovation and providing business solutions
+        </h2>
+        <div class="mt-8 animate-slideIn" style="animation-delay: 3s;">
+          <button
+          id="bookAppointmentBtn"
+            class="p-2 md:p-4 text-base md:text-lg bg-blue-900 text-white rounded-full w-full sm:w-auto sm:px-8 font-semibold font-redhat hover:bg-white hover:text-blue-900 transition duration-300"
+          >
+            Book An Appointment!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END OF BANNER -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- PROJECT OVERVIEW -->
+    <section class="py-16 bg-white" id="projectOverview">
+      <h1 class="text-6xl font-bold text-center pb-12"> Project Details</h1>
+      <div class="container mx-auto flex flex-col md:flex-row items-start justify-between space-y-8 md:space-y-0 md:space-x-8">
+        
+        <!-- Left Side - Project Overview (with equal height) -->
+        <div class="md:w-1/2 space-y-4 transform transition duration-300 hover:scale-105 flex-grow">
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl h-full flex flex-col justify-between">
+            <div>
+              <h1 class="text-4xl font-bold text-blue-700">Project Overview</h1>
+              <p class="text-xl text-gray-600 mt-4">
+                XQUIC revolutionized the hospitality industry by introducing AI-driven reconciliation solutions for managing finances across hotels and resorts. Their system automated 95% of the revenue management process, drastically reducing manual errors and optimizing accuracy. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas veniam laborum expedita aspernatur provident porro aperiam harum exercitationem incidunt ut. Laboriosam pariatur consequuntur nam dignissimos doloremque sunt. Fuga, sapiente maxime.
+              </p>
+            </div>
+          
+          </div>
+        </div>
+    
+        <!-- Right Side - Tools & Technologies (with 2 cards) -->
+        <div class="md:w-1/2 space-y-4 flex flex-col justify-between">
+          <!-- Tools & Technologies Card -->
+          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl">
+            <h2 class="text-lg font-bold text-gray-800">Tools & Technologies Used</h2>
+            <ul class="mt-4 text-gray-600 space-y-2">
+              <li><strong>Python</strong> for AI and data processing</li>
+              <li><strong>Flask</strong> for backend development</li>
+              <li><strong>SQL</strong> for data storage</li>
+              <li><strong>APIs</strong> for seamless integration</li>
+              <li><strong>Tailwind CSS</strong> for responsive design</li>
+            </ul>
+          </div>
+    
+          <!-- Additional Features Card -->
+          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl">
+            <h2 class="text-lg font-bold text-gray-800">Additional Features</h2>
+            <ul class="mt-4 text-gray-600 space-y-2">
+              <li>AI-based data reconciliation with 95% accuracy</li>
+              <li>Real-time reporting for better oversight</li>
+              <li>Custom APIs for hotel management systems</li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>
+    </section>
+<!-- END OF PROJECT OVERVIEW -->
+
+
+
+
+<!-- PROJECT CHALLENGES -->
+    <section class="py-16 bg-white" id="projectChallenges">
+      <div class="container mx-auto flex flex-col md:flex-row items-start justify-between space-y-8 md:space-y-0 md:space-x-8">
+        
+        <!-- Left Side - Project Overview (with equal height) -->
+        <div class="md:w-1/2 space-y-4 transform transition duration-300 hover:scale-105 flex-grow">
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl h-full flex flex-col justify-between">
+            <div>
+              <h1 class="text-4xl font-bold text-blue-700">Project Challengs</h1>
+              <p class="text-xl text-gray-600 mt-4">
+                XQUIC revolutionized the hospitality industry by introducing AI-driven reconciliation solutions for managing finances across hotels and resorts. Their system automated 95% of the revenue management process, drastically reducing manual errors and optimizing accuracy. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas veniam laborum expedita aspernatur provident porro aperiam harum exercitationem incidunt ut. Laboriosam pariatur consequuntur nam dignissimos doloremque sunt. Fuga, sapiente maxime. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, sed. Nulla quidem alias odit necessitatibus dolorum. Modi dolorum aspernatur unde facilis incidunt consequatur eius pariatur .
+              </p>
+            </div>
+            
+          </div>
+        </div>
+    
+        <!-- Right Side - Image Card -->
+        <div class="md:w-1/2 space-y-4 flex flex-col justify-between">
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl flex flex-col justify-between h-full">
+            <img src="images/ProjectDummy2.jpg" alt="Project Image" class="mt-4 rounded-lg shadow-md">
+            <p class="mt-4 text-gray-600">
+              Description of the project image goes here. You can highlight key features or the importance of the image in relation to the project.
+            </p>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+<!-- END OF PROJECT CHALLENGES -->
+
+
+
+
+    
+    
+    
+  <!-- Solutions Provided by Us Section -->
+<section class="mt-16 pb-16" id="solutionsProvided">
+  <h2 class="text-6xl font-bold text-center text-gray-800 mb-8">Solutions Provided by Us</h2>
+  <div class="flex flex-wrap justify-center gap-8">
+    <!-- Solution Card 1 -->
+    <div class="w-full md:w-5/12 xl:w-5/12 bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105 flex flex-col justify-between">
+      <h3 class="text-2xl font-semibold text-gray-800">Solution 1</h3>
+      <p class="text-lg text-gray-600 mt-4">We provide AI-driven tools to optimize financial management and automate key processes, reducing errors and increasing efficiency. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aut omnis nemo suscipit molestiae eaque repellat tempore atque! Libero doloremque labore natus odit consequatur deserunt exercitationem facere officiis! Rerum, ducimus.</p>
+    </div>
+
+    <!-- Solution Card 2 -->
+    <div class="w-full md:w-5/12 xl:w-5/12 bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105 flex flex-col justify-between">
+      <h3 class="text-2xl font-semibold text-gray-800">Solution 2</h3>
+      <p class="text-lg text-gray-600 mt-4">Our customized insights help businesses scale by providing actionable data for decision-making and future planning. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae facere, fugit recusandae eaque quisquam et provident consequatur nulla, aliquid eum blanditiis excepturi error est voluptatem harum assumenda officia placeat.</p>
+    </div>
+  </div>
+
+  <!-- Picture Card -->
+  <div class="flex justify-center mt-8"> <!-- Centering the picture card -->
+    <div class="w-full md:w-8/12 xl:w-8/12 bg-white shadow-lg rounded-lg transition-transform duration-300 transform hover:scale-105"> <!-- Increased width here -->
+      <img src="images/DummyProject1Banner.png" alt="Description of image" class="w-full h-96 object-cover rounded-lg">
+    </div>
+  </div>
+</section>
+
+ <!-- END OF SOLUTIONS PROVIDED -->
+
+
+
+
+
+
+<!-- CUSTOMER REVIEW -->
+
+
+<section id="customerReview" class="pb-12">
+  <h1 class="text-center font-bold text-6xl pt-12 pb-24">Customer Review</h1>
+  <figure class="max-w-screen-lg mx-auto text-center bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105"> <!-- Increased width class here -->
+    <svg class="w-10 h-10 mx-auto mb-3 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+      <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+    </svg>
+    <blockquote>
+      <p class="text-2xl italic font-medium text-gray-900">"Flowbite is just awesome. It contains tons of pre-designed components and pages starting from the login screen to complex dashboards. Perfect choice for your next SaaS application."</p>
+    </blockquote>
+    <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+      <img class="w-12 h-12 rounded-full border-2 border-blue-500" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
+      <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500">
+        <cite class="pe-3 font-medium text-gray-900">Michael Gough</cite>
+        <cite class="ps-3 text-sm text-gray-500">CEO at Google</cite>
+      </div>
+    </figcaption>
+  </figure>
+</section>
+
+
+<!-- END OF CUSTOMER REVIEW -->
+
+
+
+<!-- BANNER -->
+
+<div class="relative bg-cover bg-center h-[650px] "
+    style="background-image: url('images/projectConBanner.jpg');" id="banner">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative h-full flex items-center justify-center">
+      <div class="text-center px-4">
+        <h1 class="font-redhat font-bold text-white text-6xl md:text-9xl">
+          Let's Turn Your Vision into Reality!
+        </h1>
+        <h2 class="mt-4 font-redhat font-bold text-white text-lg md:text-xl">
+          Solving the problems with technology innovation and providing business solutions
+        </h2>
+        <div class="mt-8">
+          <button
+          id="contactBtnBanner"
+            class="p-2 md:p-4 text-lg md:text-xl bg-blue-900 text-white rounded-full w-full md:w-96 font-semibold font-redhat hover:bg-white hover:text-blue-900 transition duration-300"
+          >
+            Contact Us!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- END OF BANNER -->
+
+
+
+
+
+
+
+
+
+
+       
+    <!-- Footer -->
+
+
+    <footer class="bg-black">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+          <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="home.html" class="flex items-center">
+                    <img src='images/Devblock-removebg-preview.png' class="h-8 me-3" alt="FlowBite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DevBlocks Studio</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <button  class="hover:underline" id="projectsBtnFooter">Projects</button>
+                        </li>
+                        <li>
+                            <button  class="hover:underline" id="servicesBtnFooter">Services</button>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="https://www.linkedin.com/company/devblockstudios/" class="hover:underline ">LinkedIn</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button id="contactBtnFooter" class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Us</button>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <button id="valuesBtnFooter" class="hover:underline">Values</button>
+                        </li>
+                        <li>
+                            <button id="missionBtnFooter" class="hover:underline">Mission</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="home.html" class="hover:underline">DevBlocks Studio™</a>. All Rights Reserved.
+            </span>
+            <div class="flex mt-4 sm:justify-center sm:mt-0">
+                <a href="https://www.facebook.com/profile.php?id=61566619814832" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                          <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                      </svg>
+                    <span class="sr-only">Facebook page</span>
+                </a>
+            
+                <a href="https://x.com/devblockstudio" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
+                      <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 0-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 0-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd"/>
+                  </svg>
+                    <span class="sr-only">Twitter page</span>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="sr-only">GitHub account</span>
+                </a>
+                
+            </div>
+        </div>
+      </div>
+    </footer>
+     
+        
+      
+    
+    <script>
+
+const navbarr = document.querySelector(".nav-main");
+  // Add a scroll event listener to the window
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) { // when scrolled downwards and covers more than 100px going down add the following styling 
+      navbarr.classList.add("bg-black", "transition-colors", "duration-300");
+      console.log("sroll y", window.scrollY)
+    } else {
+      navbarr.classList.remove("bg-black");
+      console.log("sroll y", window.scrollY)
+    }
+  });
+
+
+
+
+
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const homeBtn = document.getElementById('homeBtn');
+        const servicesBtn = document.getElementById('servicesBtn');
+        const projectsBtn = document.getElementById('projectsBtn');
+        const aboutBtn = document.getElementById('aboutBtn');
+        const contactBtn = document.getElementById('contactBtn');
+        const servicesBtnFooter = document.getElementById('servicesBtnFooter');
+        const projectsBtnFooter = document.getElementById('projectsBtnFooter');
+        const contactBtnFooter = document.getElementById('contactBtnFooter');
+        const missionBtnFooter = document.getElementById('missionBtnFooter');
+        const valuesBtnFooter = document.getElementById('valuesBtnFooter');  
+        const bookAppointmentBtn = document.getElementById('bookAppointmentBtn');
+        const contactBtnBanner = document.getElementById('contactBtnBanner');
+        
+
+        function redirectToHomeWithSection(sectionId) {
+          window.location.href = `home.html?section=${sectionId}`;
+        }
+
+        homeBtn.addEventListener('click', function() {
+          window.location.href = 'home.html';
+        });
+
+        servicesBtn.addEventListener('click', function() {
+          redirectToHomeWithSection('servicesSection');
+        });
+
+        projectsBtn.addEventListener('click', function() {
+          redirectToHomeWithSection('projectsSection');
+        });
+
+        aboutBtn.addEventListener('click', function() {
+          redirectToHomeWithSection('AboutUsPageSection');
+        });
+
+        contactBtn.addEventListener('click', function() {
+          redirectToHomeWithSection('contactSection');
+        });
+
+        servicesBtnFooter.addEventListener('click', function() {
+          redirectToHomeWithSection('servicesSection');
+        });
+
+        projectsBtnFooter.addEventListener('click', function() {
+          redirectToHomeWithSection('projectsSection');
+        });
+
+        contactBtnFooter.addEventListener('click', function() {
+          redirectToHomeWithSection('contactSection');
+        });
+
+        missionBtnFooter.addEventListener('click', function() {
+          redirectToHomeWithSection('missionAndVisionSection');
+        });
+
+        valuesBtnFooter.addEventListener('click', function() {
+          redirectToHomeWithSection('valuesSection');
+        }); 
+        bookAppointmentBtn.addEventListener('click', function() {
+          redirectToHomeWithSection('contactSection');
+        });
+        contactBtnBanner.addEventListener('click', function() {
+          redirectToHomeWithSection('contactSection');
+        });
+      });
+    </script>
+</body>
+
+</html>

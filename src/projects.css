@@ -1,0 +1,98 @@
+
+  @keyframes rainbow {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: red; }
+  }
+
+  #contactSection h2 {
+    animation: rainbow 8s linear infinite;
+  }
+
+  *{
+    font-family: 'Red Hat Display', sans-serif;
+  }
+ 
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInFromBottom {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 2s ease-out;
+  }
+
+  .animate-slideIn {
+    animation: slideInFromBottom 1s ease-out;
+  }
+
+  .typewriter-container {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .animate-typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .05em;
+    animation: 
+      typewriter 4s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  /* Mobile-first approach */
+  .project-title {
+    font-size: 1.5rem; /* 24px */
+    animation: typewriter 2s steps(20, end);
+  }
+
+  .project-subtitle {
+    font-size: 1rem; /* 16px */
+  }
+
+  /* Tablet */
+  @media (min-width: 640px) {
+    .project-title {
+      font-size: 2rem; /* 32px */
+      animation: typewriter 3s steps(30, end);
+    }
+    .project-subtitle {
+      font-size: 1.125rem; /* 18px */
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .project-title {
+      font-size: 3rem; /* 48px */
+      animation: typewriter 4s steps(40, end);
+    }
+    .project-subtitle {
+      font-size: 1.25rem; /* 20px */
+    }
+  }
