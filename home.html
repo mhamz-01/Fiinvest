@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +16,17 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="icon" type="image/png" href="../../static/companysite/images/Devblock-removebg-preview.png">
+  <link rel="icon" type="image/png" href="/Devblock-removebg-preview.png">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 
 
 
-
+  <style>
+    *{
+      font-family: 'Red Hat Display', sans-serif;
+    }
+  </style>
 
   
 
@@ -33,14 +41,14 @@
 
 
   <!--************************ NAVBAR START **************************-->
-  <section id="navbar">
-    <nav class="nav-main fixed w-full z-20 top-0 start-0">
+  <section id="navbar" class="bg-[rgba(9,24,70,1)] fixed w-full z-50 top-0 left-0">
+    <nav class="nav-main">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <!-- Updated Logo and Brand Name Section -->
+        <!-- Logo and Brand Name Section -->
         <a href="home.html" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src='images/white1.png'
             class="h-16 w-auto transition-transform duration-300 hover:scale-105" alt="DevBlock Logo" />
-          <span class="self-center text-[14px] font-semibold whitespace-nowrap text-white font-redhat transition-colors duration-300 hover:text-blue-700 ">
+          <span class="self-center text-base font-semibold whitespace-nowrap text-white font-redhat transition-colors duration-300 hover:text-blue-700">
             DevBlock Studios
           </span>
         </a>
@@ -48,7 +56,7 @@
         <!-- Toggle button for mobile menu -->
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button id="mobile-menu-toggle" data-collapse-toggle="navbar-sticky" type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition-all duration-300"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300"
             aria-controls="navbar-sticky" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -60,34 +68,45 @@
         
         <!-- Navbar menu shifted to the right -->
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 md:ml-auto lg:ml-[600px]" id="navbar-sticky">
-          <ul
-            class="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg bg-gray-50 md:bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white/30 backdrop-blur-lg">
+          <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0">
             <li>
-              <button id="homeBtn"
-                class="block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">Home</button>
+              <button id="homeBtn" class="nav-btn block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">Home</button>
             </li>
             <li>
-              <button id="servicesBtn"
-                class="block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">Services</button>
+              <button id="servicesBtn" class="nav-btn block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">Services</button>
             </li>
             <li>
-              <button id="projectsBtn"
-                class="block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">Projects</button>
+              <button id="projectsBtn" class="nav-btn block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">Projects</button>
             </li>
             <li>
-              <button id="aboutBtn"
-                class="block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">About</button>
+              <button id="aboutBtn" class="nav-btn block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">About</button>
             </li>
             <li>
-              <button id="contactBtn"
-                class="block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">Contact</button>
+              <button id="contactBtn" class="nav-btn block py-2 px-3 text-white rounded md:p-0 font-redhat transition-all duration-300 hover:scale-105 hover:text-orange-500">Contact</button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </section>
-    
+  
+  <!-- Add a margin to the banner or main content -->
+  <div class="mt-20"></div> <!-- Adjust this as needed to create space below the navbar -->
+  
+
+  
+  <script>
+    // Optional JavaScript for slide-down effect on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) { // Adjust the scroll value as needed
+        navbar.classList.add('shadow-lg'); // Adds shadow for effect when scrolled
+      } else {
+        navbar.classList.remove('shadow-lg');
+      }
+    });
+  </script>
+  
   <!--**************************     END OF NAVBAR **********************************      -->
 
 
@@ -95,9 +114,7 @@
 
 
   <!--**************************     BANNER     **********************************      -->
-
-  <div class="relative bg-cover bg-center h-screen"
-    style="background-image: url('images/4884273.jpg');" id="banner">
+  <div class="relative bg-cover bg-center h-screen pt-20" style="background-image: url('images/4884273.jpg');" id="banner">
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
     <div class="relative h-full flex items-center justify-center">
       <div class="text-center px-4">
@@ -109,14 +126,13 @@
         </h2>
         <div class="mt-8">
           <button id="bookAppointmentBtn"
-            class="p-2 md:p-4 text-lg md:text-xl bg-blue-900 text-white rounded-full w-full md:w-96 font-semibold font-redhat hover:bg-white hover:text-blue-900 transition duration-300">
+            class="p-2 md:p-4 text-lg md:text-xl bg-[rgba(9,24,70,1)] text-white rounded-full w-full md:w-80 font-semibold font-redhat hover:bg-orange-500 hover:text-white transition duration-300">
             Book An Appointment!
           </button>
         </div>
       </div>
     </div>
   </div>
-
 
   <!-- End Of Banner Component -->
 
@@ -132,13 +148,13 @@
 
   <section id="servicesSection" class="p-8 ">
     <div class="max-w-6xl mx-auto"> <!-- Changed from max-w-7xl to max-w-5xl -->
-      <h2 class="text-5xl font-bold mb-6 font-redhat text-center" style="margin-top: 50px; margin-bottom: 50px;">
+      <h2 class="text-5xl font-bold mb-6 font-redhat text-center" style="margin-top: 10px; margin-bottom: 30px;">
         Solutions built for you</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Web Development Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-blue-900 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-code text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
@@ -155,7 +171,7 @@
 
         <!-- Game Development Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-blue-900 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-gamepad text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
@@ -172,7 +188,7 @@
 
         <!-- Cloud Solutions Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-blue-900 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-cloud text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
@@ -188,7 +204,7 @@
 
         <!-- AI/Machine Learning Solutions Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-blue-900 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-robot text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
@@ -204,7 +220,7 @@
 
         <!-- App Development Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-blue-900 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-mobile-alt text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
@@ -220,7 +236,7 @@
 
         <!-- Digital Marketing Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-blue-900 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-bullhorn text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
@@ -251,48 +267,62 @@
 
   <!-- END OF FEATURED SERVICES -->
   <section id="featuredServicesSection" class="mb-8">
-    <div class="container mx-auto py-12 px-4 max-w-6xl"> <!-- Added max-w-5xl to reduce overall width -->
-      <h1 class="text-center pb-12 pt-4 text-5xl font-semibold font-redhat"> <!-- Reduced padding and font size -->
+    <div class="container mx-auto py-12 px-4 max-w-6xl">
+      <h1 class="text-center pb-12 pt-4 text-5xl font-bold font-redhat">
         Featured Services
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
+  
         <!-- First Featured Service Card -->
-       <!-- Reduced height from 800px to 600px -->
         <div
-          class="relative bg-cover bg-center rounded-lg overflow-hidden shadow-lg h-[700px] transition-transform transform duration-300 " 
+          class="relative bg-cover bg-center rounded-lg overflow-hidden shadow-lg h-[500px] transition-transform transform duration-300 group"
           style="background-image: url('images/5040007.jpg');">
           <!-- Dark overlay -->
           <div class="absolute inset-0 bg-black bg-opacity-50"></div>
           <!-- Service content -->
-          <div class="absolute inset-0 flex items-center justify-center p-6"> <!-- Added padding -->
+          <div class="absolute inset-0 flex items-center justify-center p-6 transition-opacity duration-300 group-hover:opacity-0">
             <div class="text-center text-white">
-              <h2 class="text-xl font-bold font-redhat mb-2">Elevate Your Brand with Our Expertise!</h2> <!-- Reduced font size and added margin-bottom -->
-              <p class="text-sm">Transform your ideas with our custom software development.</p> <!-- Reduced font size -->
+              <h2 class="text-xl font-bold font-redhat mb-2">Elevate Your Brand with Our Expertise!</h2>
+              <p class="text-sm">Transform your ideas with our custom software development.</p>
             </div>
           </div>
+          <!-- Hover curtain effect -->
+          <div
+            class="absolute inset-0 bg-[rgba(9,24,70,1)] bg-opacity-90 flex items-center justify-center flex-col text-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+            <h2 class="text-lg font-bold font-redhat mb-4">Want to avail of these services?</h2>
+            <button class="px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300">
+              Click Here
+            </button>
+          </div>
         </div>
-
+  
         <!-- Second Featured Service Card -->
-         <!-- Reduced height from 800px to 600px -->
         <div
-          class="relative bg-cover bg-center rounded-lg overflow-hidden shadow-lg h-[700px] transition-transform transform  duration-300" 
+          class="relative bg-cover bg-center rounded-lg overflow-hidden shadow-lg h-[500px] transition-transform transform duration-300 group"
           style="background-image: url('images/projectConBanner.jpg');">
           <!-- Dark overlay -->
           <div class="absolute inset-0 bg-black bg-opacity-50"></div>
           <!-- Service content -->
-          <div class="absolute inset-0 flex items-center justify-center p-6"> <!-- Added padding -->
+          <div class="absolute inset-0 flex items-center justify-center p-6 transition-opacity duration-300 group-hover:opacity-0">
             <div class="text-center text-white">
-              <h2 class="text-xl font-bold font-redhat mb-2">Custom Solutions for Your Business Needs!</h2> <!-- Reduced font size and added margin-bottom -->
-              <p class="text-sm">Streamline your operations with tailored software solutions.</p> <!-- Reduced font size -->
+              <h2 class="text-xl font-bold font-redhat mb-2">Custom Solutions for Your Business Needs!</h2>
+              <p class="text-sm">Streamline your operations with tailored software solutions.</p>
             </div>
           </div>
+          <!-- Hover curtain effect -->
+          <div
+            class="absolute inset-0 bg-[rgba(9,24,70,1)] bg-opacity-90 flex items-center justify-center flex-col text-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+            <h2 class="text-lg font-bold font-redhat mb-4">Want to avail of these services?</h2>
+            <button class="px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300">
+              Click Here
+            </button>
+          </div>
         </div>
-
+  
       </div>
     </div>
   </section>
-
+  
 
   <!-- ************************* End Of Featured Services Card  ************************ -->
 
@@ -301,8 +331,8 @@
 
   <!--**************************     PROJECTS     **********************************      -->
 
-  <section id="projectsSection" class="py-36 bg-white mt-8 mb-16">
-    <div class="container mx-auto max-w-6xl px-4">
+  <section id="projectsSection" class="py-12 bg-white  mb-16">
+    <div class="container mx-auto max-w-5xl px-4">
       <!-- Heading -->
       <div class="text-center mb-10">
         <h2 class="text-5xl font-bold text-gray-800 font-redhat">Explore some of our latest projects</h2>
@@ -312,9 +342,9 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Project 1 -->
         <a href="projects.html"
-          class="group block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 ease-in-out hover:bg-blue-900 flex flex-col h-full">
+          class="group block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 ease-in-out hover:bg-[rgba(9,24,70,1)]  flex flex-col h-full">
           <img src="images/ProjectPageImg1.jpg" alt="Project 1"
-            class="w-full h-54 object-cover">
+            class="w-full h-48 object-cover">
           <div class="p-5 flex flex-col flex-grow">
             <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-white transition-colors duration-300">Empowering XQUIC for Automated Financial Accuracy</h3>
             <p class="text-sm text-gray-600 mb-3 group-hover:text-white transition-colors duration-300">
@@ -327,9 +357,9 @@
   
         <!-- Project 2 -->
         <a href="projects.html"
-          class="group block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 ease-in-out hover:bg-blue-900 flex flex-col h-full">
+          class="group block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 ease-in-out hover:bg-[rgba(9,24,70,1)]  flex flex-col h-full">
           <img src="images/ProjectDummy2.jpg" alt="Project 2"
-            class="w-full h-54 object-cover">
+            class="w-full h-48 object-cover">
           <div class="p-5 flex flex-col flex-grow">
             <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-white transition-colors duration-300">Automating People Operations with 30+ integrations</h3>
             <p class="text-sm text-gray-600 mb-3 group-hover:text-white transition-colors duration-300">
@@ -365,37 +395,85 @@
       <h1 class="text-5xl font-bold font-redhat text-center mb-20">About Us</h1>
 
       <!-- Mission and Vision Cards -->
-      <section id="missionAndVisionSection">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          <!-- Mission Card -->
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-900 group">
-            <h2 class="text-2xl font-bold font-redhat mb-4 text-center group-hover:text-white">Our Mission</h2>
-            <p class="text-gray-700 text-center text-sm group-hover:text-white">Empowering businesses with innovative digital solutions to transform
-              challenges into opportunities. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, asperiores,
-              culpa in perferendis facere corrupti excepturi id officia ratione nostrum voluptatum aspernatur placeat
-              architecto. Est voluptatem accusamus modi autem incidunt! Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Obcaecati nihil eius, deserunt perspiciatis dicta, at, porro officia recusandae quos
-              magni non incidunt. Sit est soluta voluptatem exercitationem omnis sequi natus.</p>
+      <section id="missionAndVisionSection" class="relative overflow-hidden mb-24">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <!-- Slider Wrapper with horizontal layout -->
+          <div id="sliderWrapper" class="flex transition-transform duration-500">
+            <!-- Mission Card -->
+            <div class="flex-none w-full bg-white p-6 rounded-lg shadow-lg transition-all duration-300 ">
+              <h2 class="text-2xl font-bold font-redhat mb-4 text-center ">Our Mission</h2>
+              <p class="text-gray-700 text-center text-sm ">Empowering businesses with innovative digital solutions to transform
+                challenges into opportunities. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, asperiores,
+                culpa in perferendis facere corrupti excepturi id officia ratione nostrum voluptatum aspernatur placeat
+                architecto. Est voluptatem accusamus modi autem incidunt! Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Obcaecati nihil eius, deserunt perspiciatis dicta, at, porro officia recusandae quos
+                magni non incidunt. Sit est soluta voluptatem exercitationem omnis sequi natus.</p>
+            </div>
+            <!-- Vision Card -->
+            <div class="flex-none w-full bg-white p-6 rounded-lg shadow-lg transition-all duration-300 ">
+              <h2 class="text-2xl font-bold font-redhat mb-4 text-center group-hover:text-white">Our Vision</h2>
+              <p class="text-gray-700 text-center text-sm group-hover:text-white">To be a global leader in delivering cutting-edge software solutions
+                that revolutionize industries. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias
+                perspiciatis sed at, fuga minus ad consequatur magni nam aperiam consequuntur impedit eos numquam possimus
+                aut architecto consectetur? Voluptas, cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores fugiat voluptatem repellendus numquam possimus? Illum temporibus sunt et soluta, eligendi quam
+                dolor ut dolorem placeat odit vitae harum, doloribus assumenda.</p>
+            </div>
           </div>
-
-          <!-- Vision Card -->
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-900 group">
-            <h2 class="text-2xl font-bold font-redhat mb-4 text-center group-hover:text-white">Our Vision</h2>
-            <p class="text-gray-700 text-center text-sm group-hover:text-white">To be a global leader in delivering cutting-edge software solutions
-              that revolutionize industries. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias
-              perspiciatis sed at, fuga minus ad consequatur magni nam aperiam consequuntur impedit eos numquam possimus
-              aut architecto consectetur? Voluptas, cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores fugiat voluptatem repellendus numquam possimus? Illum temporibus sunt et soluta, eligendi quam
-              dolor ut dolorem placeat odit vitae harum, doloribus assumenda.</p>
+      
+          <!-- Pagination Buttons -->
+          <div class="flex justify-center mt-4 space-x-4">
+            <button id="missionButton" class="w-3 h-3 bg-gray-500 rounded-full focus:outline-none"></button>
+            <button id="visionButton" class="w-3 h-3 bg-gray-300 rounded-full focus:outline-none"></button>
           </div>
         </div>
       </section>
+      
+      <script>
+        let currentIndex = 0;
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        const missionButton = document.getElementById('missionButton');
+        const visionButton = document.getElementById('visionButton');
+        const intervalTime = 3000;
+      
+        function updateSlider() {
+          sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+          missionButton.classList.toggle('bg-gray-500', currentIndex === 0);
+          missionButton.classList.toggle('bg-gray-300', currentIndex !== 0);
+          visionButton.classList.toggle('bg-gray-500', currentIndex === 1);
+          visionButton.classList.toggle('bg-gray-300', currentIndex !== 1);
+        }
+      
+        function autoSlide() {
+          currentIndex = (currentIndex + 1) % 2; // Toggle between 0 and 1
+          updateSlider();
+        }
+      
+        let slideInterval = setInterval(autoSlide, intervalTime);
+      
+        // Pagination button click handlers
+        missionButton.addEventListener('click', () => {
+          currentIndex = 0;
+          updateSlider();
+          clearInterval(slideInterval); // Stop auto-slide
+          slideInterval = setInterval(autoSlide, intervalTime); // Restart auto-slide
+        });
+      
+        visionButton.addEventListener('click', () => {
+          currentIndex = 1;
+          updateSlider();
+          clearInterval(slideInterval); // Stop auto-slide
+          slideInterval = setInterval(autoSlide, intervalTime); // Restart auto-slide
+        });
+      </script>
+      
+      
 
       <!-- What Do We Do Heading -->
       <h2 class="text-5xl font-redhat font-bold text-center mb-12">What Do We Do?</h2>
 
       <!-- What We Do Card -->
-      <div class="p-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-900 group mb-24">
+      <div class="p-6 rounded-lg shadow-lg transition-all duration-300  mb-24">
         <p class="text-sm group-hover:text-white">At DevBlock Software House, we specialize in providing cutting-edge solutions that drive business growth
           and technological innovation. Our team of expert developers, designers, and strategists work collaboratively
           to deliver custom software solutions that address the unique challenges of each client. Whether it's web
@@ -403,110 +481,184 @@
           experiences that enhance productivity and customer engagement. We also provide software consulting services
           to help businesses streamline their operations, and digital marketing strategies to ensure their online
           presence thrives. At DevBlock, we don't just build software; we empower businesses to innovate, scale, and
-          stay ahead in an ever-evolving digital landscape. Let us transform your ideas into impactful solutions that
-          fuel success.</p>
+          stay ahead in an ever-evolving digital landscape. Let us transform your ideas into impactful solutions.</p>
       </div>
 
-      <!-- Why Choose Devblock Studio Section -->
-      <div class="pb-24">
-        <h2 class="text-5xl font-bold text-center text-gray-800 mb-12 font-redhat">Why Choose Devblock Studio?</h2>
+     <!-- Why Choose Devblock Studio Section -->
+<!-- Why Choose Devblock Studio Section -->
+<div class="pb-24 overflow-hidden">
+  <h2 class="text-5xl font-bold text-center text-gray-800 mb-12 font-redhat">Why Choose Devblock Studio?</h2>
 
-        <!-- Cards Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card 1: Tailored Solutions -->
-          <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-            <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Tailored Solutions</h3>
-            <p class="text-base text-gray-600 group-hover:text-white">We craft solutions specifically designed to meet your business goals.</p>
-          </div>
+  <!-- Floating Cards Wrapper with Two Rows -->
+  <div class="floating-wrapper space-y-6">
+    <!-- Row 1 -->
+    <div class="floating-cards flex gap-6">
+      <div class="card bg-white shadow-lg rounded-lg p-5">
 
-          <!-- Card 2: Expert Team -->
-          <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-            <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Expert Team</h3>
-            <p class="text-base text-gray-600 group-hover:text-white">Our developers and designers are industry experts with a deep understanding
-              of technology and design trends.</p>
-          </div>
 
-          <!-- Card 3: Agile Development -->
-          <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-            <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Agile Development</h3>
-            <p class="text-base text-gray-600 group-hover:text-white">We use agile methodologies to ensure rapid development, flexibility, and
-              constant feedback.</p>
-          </div>
+        <h3 class="text-3xl font-bold text-gray-800 mb-3">Tailored Solutions</h3>
+        <p class="text-base text-gray-600">We craft solutions specifically designed to meet your business goals.</p>  
+      
+      
+      </div>
+      
+      <div class="card bg-white shadow-lg rounded-lg p-5">  
+        
+        <h3 class="text-3xl font-bold text-gray-800 mb-3">Tailored Solutions</h3>
+        <p class="text-base text-gray-600">We craft solutions specifically designed to meet your business goals.</p>
+   </div>
+      <div class="card bg-white shadow-lg rounded-lg p-5"> 
+        
+        <h3 class="text-3xl font-bold text-gray-800 mb-3">Expert Team</h3>
+      <p class="text-base text-gray-600">Our developers and designers are industry experts with a deep understanding of technology and design trends.</p>
 
-          <!-- Card 4: Client-Focused -->
-          <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-            <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Client-Focused</h3>
-            <p class="text-base text-gray-600 group-hover:text-white">We collaborate closely with you throughout the development process to
-              ensure your vision is realized.</p>
-          </div>
+  </div>
+      <div class="card bg-white shadow-lg rounded-lg p-5">  
+        
+        <h3 class="text-3xl font-bold text-gray-800 mb-3">Agile Development</h3>
+        <p class="text-base text-gray-600">We use agile methodologies to ensure rapid development, flexibility, and constant feedback.</p>
+  
+   </div>
+    </div>
 
-          <!-- Card 5: Quality Assurance -->
-          <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-            <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Quality Assurance</h3>
-            <p class="text-base text-gray-600 group-hover:text-white">We ensure that our solutions meet the highest standards of quality and
-              performance.</p>
-          </div>
 
-          <!-- Card 6: Innovation -->
-          <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-            <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Innovation</h3>
-            <p class="text-base text-gray-600 group-hover:text-white">We embrace creativity and stay at the forefront of technology trends to
-              deliver cutting-edge solutions.</p>
-          </div>
+    <!-- Row 2 -->
+    <div class="floating-cards flex gap-6">
+      <div class="card bg-white shadow-lg rounded-lg p-5"> 
+          <h3 class="text-3xl font-bold text-gray-800 mb-3">Client-Focused</h3>
+      <p class="text-base text-gray-600">We collaborate closely with you throughout the development process to ensure your vision is realized.</p>
 
-          <!-- Card 7: Collaboration -->
-          <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-            <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Collaboration</h3>
-            <p class="text-base text-gray-600 group-hover:text-white">We work closely with our clients to ensure their vision becomes reality.</p>
-          </div>
+   </div>
+      <div class="card bg-white shadow-lg rounded-lg p-5">  
+        <h3 class="text-3xl font-bold text-gray-800 mb-3">Quality Assurance</h3>
+        <p class="text-base text-gray-600">We ensure that our solutions meet the highest standards of quality and performance.</p>
+  
+   </div>
+      <div class="card bg-white shadow-lg rounded-lg p-5"> 
+        <h3 class="text-3xl font-bold text-gray-800 mb-3">Innovation</h3>
+        <p class="text-base text-gray-600">We embrace creativity and stay at the forefront of technology trends to deliver cutting-edge solutions.</p>
+  
+   </div>
+      <div class="card bg-white shadow-lg rounded-lg p-5"> 
+        <h3 class="text-3xl font-bold text-gray-800 mb-3">Collaboration</h3>
+        <p class="text-base text-gray-600">We work closely with our clients to ensure their vision becomes reality.</p>
+  
+ </div>
+    </div>
+  </div>
+</div>
 
-          <!-- Card 8: Customer-Centricity -->
-          <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-            <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Customer-Centricity</h3>
-            <p class="text-base text-gray-600 group-hover:text-white">Your success is our priority.</p>
-          </div>
-        </div>
+
+
+<style>
+  /* Floating effect */
+.floating-wrapper {
+  overflow: hidden;
+}
+
+.floating-cards {
+  display: flex;
+  gap: 1.5rem;
+  animation: floating 20s linear infinite;
+}
+
+.card {
+  min-width: 250px; /* Adjusted width to fit multiple cards per row */
+  flex-shrink: 0;
+}
+
+/* Keyframe animation for floating effect */
+@keyframes floating {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<section id="valuesSection" class="overflow-hidden">
+  <!-- Our Values Section -->
+  <div class="pb-24">
+    <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">Our Values</h2>
+
+    <!-- Slider Container for the Values Cards -->
+    <div class="slider-container flex gap-6 animate-slide">
+      <!-- Card 1: Innovation -->
+      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
+        <h3 class="text-3xl font-bold text-gray-800 mb-3 ">Innovation</h3>
+        <p class="text-base text-gray-600 ">We embrace creativity to develop unique solutions.</p>
       </div>
 
-      <section id="valuesSection">
-        <!-- Our Values Section -->
-        <div class="pb-24">
-          <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">Our Values</h2>
+      <!-- Card 2: Quality -->
+      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
+        <h3 class="text-3xl font-bold text-gray-800 mb-3 ">Quality</h3>
+        <p class="text-base text-gray-600 ">Delivering nothing less than the highest standards of work.</p>
+      </div>
 
-          <!-- Cards Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Card 1: Innovation -->
-            <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-              <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Innovation</h3>
-              <p class="text-base text-gray-600 group-hover:text-white">We embrace creativity to develop unique solutions.</p>
-            </div>
+      <!-- Card 3: Integrity -->
+      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
+        <h3 class="text-3xl font-bold text-gray-800 mb-3 ">Integrity</h3>
+        <p class="text-base text-gray-600 ">We maintain transparency and honesty in all our interactions.</p>
+      </div>
 
-            <!-- Card 2: Quality -->
-            <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-              <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Quality</h3>
-              <p class="text-base text-gray-600 group-hover:text-white">Delivering nothing less than the highest standards of work.</p>
-            </div>
+      <!-- Card 4: Collaboration -->
+      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
+        <h3 class="text-3xl font-bold text-gray-800 mb-3 ">Collaboration</h3>
+        <p class="text-base text-gray-600 ">We work closely with our clients to ensure their vision becomes reality.</p>
+      </div>
 
-            <!-- Card 3: Integrity -->
-            <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-              <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Integrity</h3>
-              <p class="text-base text-gray-600 group-hover:text-white">We maintain transparency and honesty in all our interactions.</p>
-            </div>
+      <!-- Card 5: Customer-Centricity -->
+      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
+        <h3 class="text-3xl font-bold text-gray-800 mb-3">Customer-Centricity</h3>
+        <p class="text-base text-gray-600 ">Your success is our priority.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Card 4: Collaboration -->
-            <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-              <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Collaboration</h3>
-              <p class="text-base text-gray-600 group-hover:text-white">We work closely with our clients to ensure their vision becomes reality.</p>
-            </div>
+<style>
 
-            <!-- Card 5: Customer-Centricity -->
-            <div class="bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:bg-blue-900 group">
-              <h3 class="text-3xl font-bold text-gray-800 mb-3 group-hover:text-white">Customer-Centricity</h3>
-              <p class="text-base text-gray-600 group-hover:text-white">Your success is our priority.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+/* Slider animation */
+.slider-container {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: slide 20s linear infinite;
+}
+
+.card {
+  min-width: 250px; /* Adjust card width as needed */
+  flex-shrink: 0;
+}
+
+/* Keyframe animation for sliding effect */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% + 100vw)); /* Adjust based on card width */
+  }
+}
+</style>
+
+
+
+
+
+
 
       <!-- Team Members Section -->
       <div id="teamMembersSection" class="pt-24 pb-24 relative overflow-hidden">
@@ -516,7 +668,7 @@
           <div class="swiper-wrapper">
             <!-- Team member slides -->
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105">
+              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
@@ -537,7 +689,7 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105">
+              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
@@ -558,7 +710,7 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105">
+              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
@@ -579,7 +731,7 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105">
+              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
@@ -599,7 +751,7 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105">
+              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
@@ -619,7 +771,7 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105">
+              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
@@ -659,9 +811,7 @@
 
             
 
-          <div class="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 mt-2" ></div>
-          <div class="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 mt-2"></div>
-
+         
 
           
           <!-- Add Navigation -->
@@ -790,7 +940,7 @@
             <div
               class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
               <img
-                src="images/WebDevTechForte/652581_code_command_develop_javascript_language_icon.png"
+                src="/WebDevTechForte/652581_code_command_develop_javascript_language_icon.png"
                 alt="Angular" class="w-24 h-24">
               <p class="mt-4 text-lg font-semibold text-gray-700">JavaScript</p>
             </div>
@@ -799,7 +949,7 @@
             <div
               class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
               <img
-                src="images/WebDevTechForte/291686_wordpress_blog_logo_social_social media_icon.png"
+                src="/WebDevTechForte/291686_wordpress_blog_logo_social_social media_icon.png"
                 alt="Wordpress" class="w-24 h-24">
               <p class="mt-4 text-lg font-semibold text-gray-700">Wordpress</p>
             </div>
@@ -809,7 +959,7 @@
              <div
              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
              <img
-               src="images/WebDevTechForte/9055848_bxl_django_icon.png"
+               src="/WebDevTechForte/9055848_bxl_django_icon.png"
                alt="Wordpress" class="w-24 h-24">
              <p class="mt-4 text-lg font-semibold text-gray-700">Django</p>
            </div>
@@ -861,7 +1011,7 @@
 
             <div
               class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="../../static/companysite/images/1720.jpg" alt="Technologies Image" class="rounded-lg w-full">
+              <img src="images/1720.jpg" alt="Technologies Image" class="rounded-lg w-full">
             </div>
           </div>
         </div>
@@ -875,7 +1025,7 @@
             <!-- React Nate -->
             <div
               class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="../../static/companysite/images/AppDevTechForte/4691292_react native_react_icon.png"
+              <img src="images/AppDevTechForte/4691292_react native_react_icon.png"
                 alt="React JS" class="w-24 h-24">
               <p class="mt-4 text-lg font-semibold text-gray-700">React Native</p>
             </div>
@@ -883,7 +1033,7 @@
             <!-- Flutter -->
             <div
               class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="../../static/companysite/images/AppDevTechForte/4691465_flutter_icon.png" alt="Next JS"
+              <img src="images/AppDevTechForte/4691465_flutter_icon.png" alt="Next JS"
                 class="w-24 h-24">
               <p class="mt-4 text-lg font-semibold text-gray-700">Flutter</p>
             </div>
@@ -929,7 +1079,7 @@
 
             <div
               class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="../../static/companysite/images/gameDev.jpg" alt="Technologies Image" class="rounded-lg w-full">
+              <img src="images/gameDev.jpg" alt="Technologies Image" class="rounded-lg w-full">
             </div>
           </div>
         </div>
@@ -945,7 +1095,7 @@
             <!-- Unity -->
             <div
               class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="../../static/companysite/images/GameDevTechForte/4691514_unity_unity 3d_logo_icon.png"
+              <img src="images/GameDevTechForte/4691514_unity_unity 3d_logo_icon.png"
                 alt="React JS" class="w-24 h-24">
               <p class="mt-4 text-lg font-semibold text-gray-700">Unity</p>
             </div>
@@ -953,7 +1103,7 @@
             <!-- Unreal Engine -->
             <div
               class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="../../static/companysite/images/GameDevTechForte/617626_engine_unreal_icon.png" alt="Next JS"
+              <img src="images/GameDevTechForte/617626_engine_unreal_icon.png" alt="Next JS"
                 class="w-24 h-24">
               <p class="mt-4 text-lg font-semibold text-gray-700">Unreal Engine</p>
             </div>
@@ -998,7 +1148,7 @@
 
             <div
               class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="../../static/companysite/images/AiMlpic.jpg" alt="Technologies Image" class="rounded-lg w-full">
+              <img src="images/AiMlpic.jpg" alt="Technologies Image" class="rounded-lg w-full">
             </div>
           </div>
         </div>
@@ -1026,7 +1176,7 @@
 
             <div
               class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="../../static/companysite/images/What-is-Cloud-Computing.jpeg" alt="Technologies Image"
+              <img src="images/What-is-Cloud-Computing.jpeg" alt="Technologies Image"
                 class="rounded-lg w-full">
             </div>
           </div>
@@ -1058,7 +1208,7 @@
 
             <div
               class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="../../static/companysite/images/digitalMarketing.jpeg" alt="Technologies Image"
+              <img src="images/digitalMarketing.jpeg" alt="Technologies Image"
                 class="rounded-lg w-full">
             </div>
           </div>
@@ -1072,58 +1222,87 @@
   </style>
 
   <section id="contactSection"
-    class="mx-auto p-6 bg-black rounded-lg w-full max-w-[800px] h-auto mb-10 mt-12 transition-all duration-300 ease-in-out shadow-lg shadow-purple-500/50">
-    <h2 class="text-6xl font-bold text-blue-700 text-center mb-16 font-redhat">Let's Build Something Great Together!</h2>
-    <form class="space-y-6">
-      <!-- Name Input -->
-      <div>
-        <label for="name" class="block text-sm font-medium text-white pb-2 ml-1">Name</label>
-        <input type="text" id="name" name="name" required
-          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-12"
-          placeholder="Enter your company or personal name" />
+  class="mx-auto p-8 bg-[rgba(9,24,70,1)] rounded-lg w-full max-w-[900px] h-auto mb-10 mt-12 transition-all duration-300 ease-in-out shadow-lg ">
+  <div class="flex flex-col">
+    <!-- Heading -->
+    <h2 class="text-5xl lg:text-6xl font-bold text-white text-center mb-4 font-redhat w-full">
+      Let's Build Something Great Together!
+    </h2>
+    
+    <!-- Separator Line -->
+    <hr class="border-t border-gray-300 mb-4" />
+
+    <!-- Contact Information -->
+    <div class="flex justify-center space-x-4 mb-4">
+      <div class="flex items-center text-white">
+        <img src="images/icons8-email-50.png" alt="Email Icon" class="w-5 h-5 mr-1" />
+        <span>youremail@example.com</span>
+      </div>
+      <div class="flex items-center text-white">
+        <img src="images/icons8-telephone-32.png"  alt="Phone Icon" class=" w-5 h-5 mr-1" />
+        <span>(+123) 456-7890</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row lg:gap-8">
+      <!-- Left Column -->
+      <div class="flex-1 space-y-6">
+        <form class="space-y-6">
+          <!-- Name Input -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-white pb-2">Name</label>
+            <input type="text" id="name" name="name" required
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Enter your company or personal name" />
+          </div>
+
+          <!-- Email Input -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-white pb-2">Email Address</label>
+            <input type="email" id="email" name="email" required
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Enter your email" />
+          </div>
+
+          <!-- Service/Knowledge Select Dropdown -->
+          <div>
+            <label for="service" class="block text-sm font-medium text-white pb-2">Which service/solution are you
+              interested in?</label>
+            <select id="service" name="service" required
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+              <option value="" disabled selected>Select a service</option>
+              <option value="web-development">Web Development</option>
+              <option value="mobile-app-development">Mobile App Development</option>
+              <option value="digital-marketing">Digital Marketing</option>
+              <option value="ui-ux-design">UI/UX Design</option>
+              <option value="cloud-solutions">Cloud Solutions</option>
+              <option value="software-consulting">Software Consulting</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+        </form>
       </div>
 
-      <!-- Email Input -->
-      <div>
-        <label for="email" class="block text-sm font-medium text-white pb-2 ml-1">Email Address</label>
-        <input type="email" id="email" name="email" required
-          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-12"
-          placeholder="Enter your email" />
-      </div>
+      <!-- Right Column -->
+      <div class="flex-1 flex flex-col space-y-6 mt-8 lg:mt-0">
+        <!-- Message Input -->
+        <div class="w-full">
+          <label for="message" class="block text-sm font-medium text-white pb-2">Message</label>
+          <textarea id="message" name="message" required rows="6"
+            class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="Enter your message"></textarea>
+        </div>
 
-      <!-- Service/Knowledge Select Dropdown -->
-      <div>
-        <label for="service" class="block text-sm font-medium text-white pb-2 ml-1">Which service/solution are you
-          interested in?</label>
-        <select id="service" name="service" required
-          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-12">
-          <option value="" disabled selected>Select a service</option>
-          <option value="web-development">Web Development</option>
-          <option value="mobile-app-development">Mobile App Development</option>
-          <option value="digital-marketing">Digital Marketing</option>
-          <option value="ui-ux-design">UI/UX Design</option>
-          <option value="cloud-solutions">Cloud Solutions</option>
-          <option value="software-consulting">Software Consulting</option>
-        </select>
-      </div>
-
-      <!-- Message Input -->
-      <div>
-        <label for="message" class="block text-sm font-medium text-white ml-1 pb-2">Message</label>
-        <textarea id="message" name="message" required rows="4"
-          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mb-12"
-          placeholder="Enter your message"></textarea>
-      </div>
-
-      <!-- Submit Button -->
-      <div>
+        <!-- Submit Button -->
         <button type="submit"
-          class="w-full py-2 px-4 bg-blue-900 text-white font-medium font-redhat rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          class="ml-[300px] w-36 py-3 px-4 bg-orange-500 text-white font-medium font-redhat rounded-md hover:bg-white hover:text-black transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Send Message
         </button>
       </div>
-    </form>
-  </section><!-- END OF FORM  -->
+    </div>
+  </div>
+</section>
+
 
   <!-- ABOUT US CARD  -->
 
@@ -1135,12 +1314,12 @@
 
 
 
-  <footer class="bg-black">
+  <footer class="bg-[rgba(9,24,70,1)]">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
           <a href="home.html" class="flex items-center">
-            <img src='../../static/companysite/images/Devblock-removebg-preview.png' class="h-8 me-3"
+            <img src='images/white1.png' class="h-8 me-3"
               alt="FlowBite Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DevBlocks Studio</span>
           </a>
@@ -1256,12 +1435,12 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener('click', () => {
       // Remove the blue text color from all buttons
       navButtons.forEach((btn) => {
-        btn.classList.remove('text-blue-600');
+        btn.classList.remove('text-orange-500');
         btn.classList.add('text-white');
       });
 
       // Add blue text color to the clicked button
-      button.classList.add('text-blue-600');
+      button.classList.add('text-orange-500');
       button.classList.remove('text-white');
     });
   });
@@ -1375,17 +1554,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Get the navbar using DOM API
-    const navbarr = document.querySelector(".nav-main");
-    // Add a scroll event listener to the window
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) { // when scrolled downwards and covers more than 100px going down add the following styling 
-        navbarr.classList.add("bg-black", "transition-colors", "duration-300");
-        console.log("sroll y", window.scrollY)
-      } else {
-        navbarr.classList.remove("bg-black");
-        console.log("sroll y", window.scrollY)
-      }
-    });
+
 
 
     // Get the navbar buttons
@@ -1542,4 +1711,3 @@ document.addEventListener("DOMContentLoaded", () => {
 </body>
 
 </html>
-
