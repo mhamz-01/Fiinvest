@@ -645,64 +645,79 @@
   </div>
 </div>
 
+
 <section id="valuesSection" class="overflow-hidden pb-24">
   <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 px-4">Our Values</h2>
 
-  <div class="slider-container flex gap-6">
-    <!-- Value Cards -->
-    <div class="base-card p-6 flex flex-col justify-between border">
-      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Innovation</h3>
-      <p class="text-sm md:text-base text-gray-600">We embrace creativity to develop unique solutions.</p>
-    </div>
-    <div class="base-card p-6 flex flex-col justify-between border">
-      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Quality</h3>
-      <p class="text-sm md:text-base text-gray-600">Delivering nothing less than the highest standards of work.</p>
-    </div>
-    <div class="base-card p-6 flex flex-col justify-between border">
-      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Integrity</h3>
-      <p class="text-sm md:text-base text-gray-600">We maintain transparency and honesty in all our interactions.</p>
-    </div>
-    <div class="base-card p-6 flex flex-col justify-between border">
-      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Collaboration</h3>
-      <p class="text-sm md:text-base text-gray-600">We work closely with our clients to ensure their vision becomes reality.</p>
-    </div>
-    <div class="base-card p-6 flex flex-col justify-between border">
-      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Customer-Centricity</h3>
-      <p class="text-sm md:text-base text-gray-600">Your success is our priority.</p>
+  <!-- Swiper Container -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Value Cards as Swiper Slides -->
+      <div class="swiper-slide base-card p-6 flex flex-col justify-between border min-w-[280px]">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Innovation</h3>
+        <p class="text-sm md:text-base text-gray-600">We embrace creativity to develop unique solutions.</p>
+      </div>
+      <div class="swiper-slide base-card p-6 flex flex-col justify-between border min-w-[280px]">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Quality</h3>
+        <p class="text-sm md:text-base text-gray-600">Delivering nothing less than the highest standards of work.</p>
+      </div>
+      <div class="swiper-slide base-card p-6 flex flex-col justify-between border min-w-[280px]">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Integrity</h3>
+        <p class="text-sm md:text-base text-gray-600">We maintain transparency and honesty in all our interactions.</p>
+      </div>
+      <div class="swiper-slide base-card p-6 flex flex-col justify-between border min-w-[280px]">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Collaboration</h3>
+        <p class="text-sm md:text-base text-gray-600">We work closely with our clients to ensure their vision becomes reality.</p>
+      </div>
+      <div class="swiper-slide base-card p-6 flex flex-col justify-between border min-w-[280px]">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Customer-Centricity</h3>
+        <p class="text-sm md:text-base text-gray-600">Your success is our priority, we work closely with our clients to ensure quality</p>
+      </div>
     </div>
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const valuesSwiper = new Swiper('.swiper-container', {
+      loop: true, // Enables infinite loop
+      autoplay: {
+        delay: 2000, // Slide changes every 2 seconds
+        disableOnInteraction: false, // Keeps autoplay active after interactions
+      },
+      spaceBetween: 20, // Space between slides
+      slidesPerView: 1, // Number of slides visible at once
+      breakpoints: {
+        640: {
+          slidesPerView: 2, // Two slides visible for medium screens
+        },
+        1024: {
+          slidesPerView: 3, // Three slides visible for large screens
+        }
+      },
+    });
+  });
+</script>
+
+
+
 
 <style>
-/* Base card styles */
-.card {
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Floating animations */
-.floating-cards-right {
+/* Styles for floating cards in "Why Choose Devblock Studio" section */
+.floating-wrapper {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.floating-cards-right {
   animation: floatRight 30s linear infinite;
 }
 
 .floating-cards-left {
-  display: flex;
-  gap: 1.5rem;
   animation: floatLeft 30s linear infinite;
 }
 
-.slider-container {
-  display: flex;
-  gap: 1.5rem;
-  animation: slide 15s linear infinite; /* Reduced from 30s to 15s for faster movement */
-}
-
+/* Animation for floating cards */
 @keyframes floatRight {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(0); }
@@ -713,43 +728,46 @@
   100% { transform: translateX(-100%); }
 }
 
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-100% + 100vw)); }
+/* Styles for slider in "Our Values" section */
+.slider-container {
+  overflow-x: auto;
+  display: flex;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+  animation: none; /* Prevents floating animation on this section */
+}
+
+.base-card {
+  flex-shrink: 0;
+  min-width: 280px;
+  transition: all 0.3s ease;
+}
+
+.base-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .floating-cards-right,
-  .floating-cards-left,
-  .slider-container {
-    animation-duration: 20s; /* Faster on mobile */
+  .floating-cards-left {
+    animation-duration: 15s;
   }
-  
-  .card {
-    min-width: 280px;
+
+  .base-card {
     padding: 1rem;
   }
-  
-  .card h3 {
+
+  .base-card h3 {
     font-size: 1.5rem;
   }
-  
-  .card p {
+
+  .base-card p {
     font-size: 0.875rem;
   }
 }
-
-/* Pause animations on hover */
-.floating-wrapper:hover .floating-cards-right,
-.floating-wrapper:hover .floating-cards-left,
-#valuesSection:hover .slider-container {
-  animation-play-state: paused;
-}
 </style>
-
-
-
 
 
 
