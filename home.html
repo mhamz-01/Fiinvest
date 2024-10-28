@@ -2,6 +2,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,25 +12,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devblock Studios</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- <link href="../../static/companysite/dist/styles.css" rel="stylesheet"> Link to your CSS -->
+  <!-- <link href="dist/styles.css" rel="stylesheet"> Link to your CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap"
     rel="stylesheet">
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="icon" type="image/png" href="/Devblock-removebg-preview.png">
+  <link rel="icon" type="image/png" href="images/Devblock-removebg-preview.png">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 
 
 
   <style>
-    *{
+    /* General font styling */
+    * {
       font-family: 'Red Hat Display', sans-serif;
     }
-  </style>
 
-  
+    /* Base card styling */
+    .base-card {
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+      padding: 1.5rem; /* Adjusted padding for consistent spacing */
+    }
+
+    /* Hover effect for cards */
+    .hover-card:hover {
+      background-color: rgba(9, 24, 70, 1);
+      color: white;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Text color transition for smoother hover effect */
+    .text-transition {
+      color: #4B5563;
+      transition: color 0.3s ease-in-out;
+    }
+
+    /* Text color change on hover */
+    .hover-card:hover .text-transition {
+      color: white;
+    }
+
+    /* Contact container styling */
+    .contact-container {
+      margin: 2.5rem auto;
+      padding: 2rem;
+      background-color: rgba(9, 24, 70, 1);
+      border-radius: 0.5rem;
+      width: 100%;
+      max-width: 900px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Centering content within containers */
+    .flex-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Responsive styling for mobile view */
+    @media (max-width: 768px) {
+      .base-card {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Dynamic height to fit content */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0.5rem 0; /* Vertical margin for spacing */
+        box-sizing: border-box; /* Ensures padding doesn’t affect width */
+      }
+
+      /* Center-align text within cards for mobile */
+      .base-card h3, .base-card p {
+        text-align: center;
+      }
+    }
+
+    /* Ensuring hover effects don't conflict across different screen sizes */
+    @media (min-width: 768px) {
+      .hover-card {
+        cursor: pointer; /* Hand cursor on hover for larger screens */
+      }
+    }
+</style>
+
 
 </head>
 
@@ -154,13 +227,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Web Development Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="base-card hover-card group p-4 border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-code text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">Web Development</h3>
           </div>
-          <p class="text-sm text-gray-600 group-hover:text-white transition-colors duration-300 mb-3">Providing expert web development services to create visually stunning,
+          <p class="text-transition text-sm mb-3">Providing expert web development services to create visually stunning,
             user-friendly websites. We specialize in responsive design, seamless functionality, and optimizing for
             performance and SEO.</p>
           <div class="flex justify-end items-center mt-2">
@@ -171,13 +244,13 @@
 
         <!-- Game Development Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="base-card hover-card group p-4 border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-gamepad text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">Game Development</h3>
           </div>
-          <p class="text-sm text-gray-600 group-hover:text-white transition-colors duration-300 mb-3">Delivering immersive game development services, from concept to launch, with a
+          <p class="text-transition text-sm mb-3">Delivering immersive game development services, from concept to launch, with a
             focus on engaging gameplay and stunning visuals. Our expertise covers multi-platform game design, 2D/3D
             graphics, and interactive user experiences.</p>
           <div class="flex justify-end items-center mt-2">
@@ -188,13 +261,13 @@
 
         <!-- Cloud Solutions Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="base-card hover-card group p-4 border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-cloud text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">Cloud Solutions</h3>
           </div>
-          <p class="text-sm text-gray-600 group-hover:text-white transition-colors duration-300 mb-3">Offering scalable cloud solutions, ensuring seamless integration, security, and
+          <p class="text-transition text-sm mb-3">Offering scalable cloud solutions, ensuring seamless integration, security, and
             performance for your business applications and services.</p>
           <div class="flex justify-end items-center mt-2">
             <span class="text-sm text-blue-600 group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
@@ -204,13 +277,13 @@
 
         <!-- AI/Machine Learning Solutions Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="base-card hover-card group p-4 border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-robot text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">AI/Machine Learning Solutions</h3>
           </div>
-          <p class="text-sm text-gray-600 group-hover:text-white transition-colors duration-300 mb-3">Providing cutting-edge AI and machine learning solutions to automate, optimize,
+          <p class="text-transition text-sm mb-3">Providing cutting-edge AI and machine learning solutions to automate, optimize,
             and enhance your business processes with intelligent insights and predictions.</p>
           <div class="flex justify-end items-center mt-2">
             <span class="text-sm text-blue-600 group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
@@ -220,13 +293,13 @@
 
         <!-- App Development Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="base-card hover-card group p-4 border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-mobile-alt text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">App Development</h3>
           </div>
-          <p class="text-sm text-gray-600 group-hover:text-white transition-colors duration-300 mb-3">Creating intuitive, high-performance mobile applications tailored to meet your
+          <p class="text-transition text-sm mb-3">Creating intuitive, high-performance mobile applications tailored to meet your
             business goals and deliver seamless user experiences across platforms.</p>
           <div class="flex justify-end items-center mt-2">
             <span class="text-sm text-blue-600 group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
@@ -236,13 +309,13 @@
 
         <!-- Digital Marketing Card -->
         <button
-          class="group block bg-white p-4 rounded-lg shadow-lg hover:bg-[rgba(9,24,70,1)] hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out border border-blue-600 hover:border-white"
+          class="base-card hover-card group p-4 border border-blue-600 hover:border-white"
         >
           <div class="flex items-center mb-3">
             <i class="fas fa-bullhorn text-2xl mr-3 text-blue-600 group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">Digital Marketing</h3>
           </div>
-          <p class="text-sm text-gray-600 group-hover:text-white transition-colors duration-300 mb-3">Helping you reach a larger audience with targeted digital marketing strategies,
+          <p class="text-transition text-sm mb-3">Helping you reach a larger audience with targeted digital marketing strategies,
             SEO optimization, and content creation for business growth.</p>
           <div class="flex justify-end items-center mt-2">
             <span class="text-sm text-blue-600 group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
@@ -342,12 +415,12 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Project 1 -->
         <a href="projects.html"
-          class="group block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 ease-in-out hover:bg-[rgba(9,24,70,1)]  flex flex-col h-full">
+          class="base-card hover-card group flex flex-col h-full">
           <img src="images/ProjectPageImg1.jpg" alt="Project 1"
             class="w-full h-48 object-cover">
           <div class="p-5 flex flex-col flex-grow">
             <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-white transition-colors duration-300">Empowering XQUIC for Automated Financial Accuracy</h3>
-            <p class="text-sm text-gray-600 mb-3 group-hover:text-white transition-colors duration-300">
+            <p class="text-transition text-sm mb-3">
               XQUIC revolutionized the hospitality industry with AI-driven reconciliation and seamless integration,
               saving hotels time and money while automating 95% of revenue management processes. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem totam ut provident.
             </p>
@@ -357,14 +430,15 @@
   
         <!-- Project 2 -->
         <a href="projects.html"
-          class="group block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 ease-in-out hover:bg-[rgba(9,24,70,1)]  flex flex-col h-full">
+          class="base-card hover-card group flex flex-col h-full">
           <img src="images/ProjectDummy2.jpg" alt="Project 2"
             class="w-full h-48 object-cover">
           <div class="p-5 flex flex-col flex-grow">
             <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-white transition-colors duration-300">Automating People Operations with 30+ integrations</h3>
-            <p class="text-sm text-gray-600 mb-3 group-hover:text-white transition-colors duration-300">
+            <p class="text-transition text-sm mb-3">
               Devsinc helped Sapling rapidly expand their team, improve integrations, and support some of the world's
-              fastest-growing companies with powerful automation solutions. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cumque harum asperiores, repellendus modi voluptate corrupti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, voluptatem nostrum. Pariatur expedita impedit, reiciendis praesentium tempore minus magni sit in aperiam natus quo architecto molestias officia, perspiciatis corrupti quibusdam!
+              fastest-growing companies with powerful automation solutions. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cumque harum asperiores, repellendus modi voluptate corrupti excepturi id
+              officia ratione nostrum voluptatum aspernatur placeat architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, voluptatem nostrum. Pariatur expedita impedit, reiciendis praesentium tempore minus magni sit in aperiam natus quo architecto molestias officia, perspiciatis corrupti quibusdam!
             </p>
             <span class="text-sm text-indigo-600 font-semibold hover:underline group-hover:text-white transition-colors duration-300 mt-auto">Read the case study &rarr;</span>
           </div>
@@ -397,28 +471,15 @@
       <!-- Mission and Vision Cards -->
       <section id="missionAndVisionSection" class="relative overflow-hidden mb-24">
         <div class="container mx-auto px-4 max-w-4xl">
-          <!-- Slider Wrapper with horizontal layout -->
-          <div id="sliderWrapper" class="flex transition-transform duration-500">
-            <!-- Mission Card -->
-            <div class="flex-none w-full bg-white p-6 rounded-lg shadow-lg transition-all duration-300 ">
-              <h2 class="text-2xl font-bold font-redhat mb-4 text-center ">Our Mission</h2>
-              <p class="text-gray-700 text-center text-sm ">Empowering businesses with innovative digital solutions to transform
-                challenges into opportunities. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, asperiores,
-                culpa in perferendis facere corrupti excepturi id officia ratione nostrum voluptatum aspernatur placeat
-                architecto. Est voluptatem accusamus modi autem incidunt! Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Obcaecati nihil eius, deserunt perspiciatis dicta, at, porro officia recusandae quos
-                magni non incidunt. Sit est soluta voluptatem exercitationem omnis sequi natus.</p>
-            </div>
-            <!-- Vision Card -->
-            <div class="flex-none w-full bg-white p-6 rounded-lg shadow-lg transition-all duration-300 ">
-              <h2 class="text-2xl font-bold font-redhat mb-4 text-center group-hover:text-white">Our Vision</h2>
-              <p class="text-gray-700 text-center text-sm group-hover:text-white">To be a global leader in delivering cutting-edge software solutions
-                that revolutionize industries. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias
-                perspiciatis sed at, fuga minus ad consequatur magni nam aperiam consequuntur impedit eos numquam possimus
-                aut architecto consectetur? Voluptas, cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores fugiat voluptatem repellendus numquam possimus? Illum temporibus sunt et soluta, eligendi quam
-                dolor ut dolorem placeat odit vitae harum, doloribus assumenda.</p>
-            </div>
+          <!-- Single Card with Transition Effect -->
+          <div id="contentCard" class="w-full bg-white p-6 rounded-lg shadow-lg transition-opacity duration-500">
+            <!-- Mission and Vision Content -->
+            <h2 id="cardTitle" class="text-2xl font-bold font-redhat mb-4 text-center">Our Mission</h2>
+            <p id="cardText" class="text-gray-700 text-center text-sm">
+              Empowering businesses with innovative digital solutions to transform challenges into opportunities. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Fugit, asperiores, culpa in perferendis facere corrupti excepturi id
+              officia ratione nostrum voluptatum aspernatur placeat architecto.
+            </p>
           </div>
       
           <!-- Pagination Buttons -->
@@ -430,42 +491,82 @@
       </section>
       
       <script>
-        let currentIndex = 0;
-        const sliderWrapper = document.getElementById('sliderWrapper');
+        // Variables for content and state management
+        const contentCard = document.getElementById('contentCard');
+        const cardTitle = document.getElementById('cardTitle');
+        const cardText = document.getElementById('cardText');
         const missionButton = document.getElementById('missionButton');
         const visionButton = document.getElementById('visionButton');
-        const intervalTime = 3000;
       
-        function updateSlider() {
-          sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        const intervalTime = 4000; // Change interval time here
+        let currentIndex = 0;
+      
+        // Content for Mission and Vision
+        const contentData = [
+          {
+            title: "Our Mission",
+            text: "Empowering businesses with innovative digital solutions to transform challenges into opportunities. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, asperiores, culpa in perferendis facere corrupti excepturi id officia ratione nostrum voluptatum aspernatur placeat architecto."
+          },
+          {
+            title: "Our Vision",
+            text: "To be a global leader in delivering cutting-edge software solutions that revolutionize industries. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias perspiciatis sed at, fuga minus ad consequatur magni nam aperiam consequuntur impedit eos numquam possimus aut architecto consectetur? Voluptas, cupiditate."
+          }
+        ];
+      
+        // Update card content
+        function updateCardContent() {
+          contentCard.classList.add('opacity-0'); // Fade-out effect
+          setTimeout(() => {
+            cardTitle.textContent = contentData[currentIndex].title;
+            cardText.textContent = contentData[currentIndex].text;
+            contentCard.classList.remove('opacity-0'); // Fade-in effect
+            updatePagination();
+          }, 500); // Match with CSS transition duration
+        }
+      
+        // Pagination button visual update
+        function updatePagination() {
           missionButton.classList.toggle('bg-gray-500', currentIndex === 0);
           missionButton.classList.toggle('bg-gray-300', currentIndex !== 0);
           visionButton.classList.toggle('bg-gray-500', currentIndex === 1);
           visionButton.classList.toggle('bg-gray-300', currentIndex !== 1);
         }
       
+        // Auto-slide function
         function autoSlide() {
-          currentIndex = (currentIndex + 1) % 2; // Toggle between 0 and 1
-          updateSlider();
+          currentIndex = (currentIndex + 1) % contentData.length;
+          updateCardContent();
         }
-      
-        let slideInterval = setInterval(autoSlide, intervalTime);
       
         // Pagination button click handlers
         missionButton.addEventListener('click', () => {
           currentIndex = 0;
-          updateSlider();
-          clearInterval(slideInterval); // Stop auto-slide
-          slideInterval = setInterval(autoSlide, intervalTime); // Restart auto-slide
+          updateCardContent();
+          resetAutoSlide();
         });
       
         visionButton.addEventListener('click', () => {
           currentIndex = 1;
-          updateSlider();
-          clearInterval(slideInterval); // Stop auto-slide
-          slideInterval = setInterval(autoSlide, intervalTime); // Restart auto-slide
+          updateCardContent();
+          resetAutoSlide();
         });
+      
+        // Start auto-slide interval
+        let slideInterval = setInterval(autoSlide, intervalTime);
+      
+        // Restart auto-slide on manual change
+        function resetAutoSlide() {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(autoSlide, intervalTime);
+        }
       </script>
+      
+      <style>
+        #contentCard {
+          transition: opacity 0.5s ease-in-out;
+        }
+      </style>
+      
       
       
 
@@ -473,8 +574,8 @@
       <h2 class="text-5xl font-redhat font-bold text-center mb-12">What Do We Do?</h2>
 
       <!-- What We Do Card -->
-      <div class="p-6 rounded-lg shadow-lg transition-all duration-300  mb-24">
-        <p class="text-sm group-hover:text-white">At DevBlock Software House, we specialize in providing cutting-edge solutions that drive business growth
+      <div class="base-card p-6">
+        <p class="text-transition text-sm">At DevBlock Software House, we specialize in providing cutting-edge solutions that drive business growth
           and technological innovation. Our team of expert developers, designers, and strategists work collaboratively
           to deliver custom software solutions that address the unique challenges of each client. Whether it's web
           development, mobile app development, cloud solutions, or UI/UX design, we create seamless digital
@@ -482,175 +583,168 @@
           to help businesses streamline their operations, and digital marketing strategies to ensure their online
           presence thrives. At DevBlock, we don't just build software; we empower businesses to innovate, scale, and
           stay ahead in an ever-evolving digital landscape. Let us transform your ideas into impactful solutions.</p>
+          <br>
+          <p class="text-transition text-sm">At DevBlock Software House, we specialize in providing cutting-edge solutions that drive business growth
+            and technological innovation. Our team of expert developers, designers, and strategists work collaboratively
+            to deliver custom software solutions that address the unique challenges of each client. Whether it's web
+            development, mobile app development, cloud solutions, or UI/UX design, we create seamless digital
+            experiences that enhance productivity and customer engagement. We also provide software consulting services
+            to help businesses streamline their operations, and digital marketing strategies to ensure their online
+            presence thrives. At DevBlock, we don't just build software; we empower businesses to innovate, scale, and
+            stay ahead in an ever-evolving digital landscape. Let us transform your ideas into impactful solutions.</p>
       </div>
 
      <!-- Why Choose Devblock Studio Section -->
 <!-- Why Choose Devblock Studio Section -->
 <div class="pb-24 overflow-hidden">
-  <h2 class="text-5xl font-bold text-center text-gray-800 mb-12 font-redhat">Why Choose Devblock Studio?</h2>
+  <h2 class="mt-24 text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 font-redhat px-4">Why Choose Devblock Studio?</h2>
 
-  <!-- Floating Cards Wrapper with Two Rows -->
-  <div class="floating-wrapper space-y-6">
+  <!-- Floating Cards Wrapper -->
+  <div class="floating-wrapper space-y-8 md:space-y-12">
     <!-- Row 1 -->
-    <div class="floating-cards flex gap-6">
-      <div class="card bg-white shadow-lg rounded-lg p-5">
-
-
-        <h3 class="text-3xl font-bold text-gray-800 mb-3">Tailored Solutions</h3>
-        <p class="text-base text-gray-600">We craft solutions specifically designed to meet your business goals.</p>  
-      
-      
+    <div class="floating-cards-right flex gap-6">
+      <div class="base-card p-6 flex flex-col justify-between border">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Customized Solutions</h3>
+        <p class="text-sm md:text-base text-gray-600">We tailor each project to match the specific needs and goals of our clients.</p>
+      </div>
+      <div class="base-card p-6 flex flex-col justify-between border">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Proven Expertise</h3>
+        <p class="text-sm md:text-base text-gray-600">Our experienced team delivers solutions with precision and proficiency.</p>
+      </div>
+      <div class="base-card p-6 flex flex-col justify-between border">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Innovative Approaches</h3>
+        <p class="text-sm md:text-base text-gray-600">We integrate the latest technologies to bring innovative ideas to life.</p>
+      </div>
+      <div class="base-card p-6 flex flex-col justify-between border">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Collaborative Process</h3>
+        <p class="text-sm md:text-base text-gray-600">We work closely with clients to create a seamless and collaborative experience.</p>
       </div>
       
-      <div class="card bg-white shadow-lg rounded-lg p-5">  
-        
-        <h3 class="text-3xl font-bold text-gray-800 mb-3">Tailored Solutions</h3>
-        <p class="text-base text-gray-600">We craft solutions specifically designed to meet your business goals.</p>
-   </div>
-      <div class="card bg-white shadow-lg rounded-lg p-5"> 
-        
-        <h3 class="text-3xl font-bold text-gray-800 mb-3">Expert Team</h3>
-      <p class="text-base text-gray-600">Our developers and designers are industry experts with a deep understanding of technology and design trends.</p>
-
-  </div>
-      <div class="card bg-white shadow-lg rounded-lg p-5">  
-        
-        <h3 class="text-3xl font-bold text-gray-800 mb-3">Agile Development</h3>
-        <p class="text-base text-gray-600">We use agile methodologies to ensure rapid development, flexibility, and constant feedback.</p>
-  
-   </div>
     </div>
-
-
+  
     <!-- Row 2 -->
-    <div class="floating-cards flex gap-6">
-      <div class="card bg-white shadow-lg rounded-lg p-5"> 
-          <h3 class="text-3xl font-bold text-gray-800 mb-3">Client-Focused</h3>
-      <p class="text-base text-gray-600">We collaborate closely with you throughout the development process to ensure your vision is realized.</p>
-
-   </div>
-      <div class="card bg-white shadow-lg rounded-lg p-5">  
-        <h3 class="text-3xl font-bold text-gray-800 mb-3">Quality Assurance</h3>
-        <p class="text-base text-gray-600">We ensure that our solutions meet the highest standards of quality and performance.</p>
-  
-   </div>
-      <div class="card bg-white shadow-lg rounded-lg p-5"> 
-        <h3 class="text-3xl font-bold text-gray-800 mb-3">Innovation</h3>
-        <p class="text-base text-gray-600">We embrace creativity and stay at the forefront of technology trends to deliver cutting-edge solutions.</p>
-  
-   </div>
-      <div class="card bg-white shadow-lg rounded-lg p-5"> 
-        <h3 class="text-3xl font-bold text-gray-800 mb-3">Collaboration</h3>
-        <p class="text-base text-gray-600">We work closely with our clients to ensure their vision becomes reality.</p>
-  
- </div>
+    <div class="floating-cards-left flex gap-6">
+      <div class="base-card p-6 flex flex-col justify-between border">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Client-Centered</h3>
+        <p class="text-sm md:text-base text-gray-600">Your input guides us as we shape solutions to meet each unique vision.</p>
+      </div>
+      <div class="base-card p-6 flex flex-col justify-between border">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb">Quality Assurance</h3>
+        <p class="text-sm md:text-base text-gray-600">We maintain high standards, ensuring each solution meets top quality levels.</p>
+      </div>
+      <div class="base-card p-6 flex flex-col justify-between border">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Innovative Ideas</h3>
+        <p class="text-sm md:text-base text-gray-600">We embrace trends, delivering up-to-date, cutting-edge tech solutions.</p>
+      </div>
+      <div class="base-card p-6 flex flex-col justify-between border">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Unified Effort</h3>
+        <p class="text-sm md:text-base text-gray-600">Our team works in harmony with clients, bringing visions to life.</p>
+      </div>
+      
     </div>
   </div>
 </div>
 
+<section id="valuesSection" class="overflow-hidden pb-24">
+  <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 px-4">Our Values</h2>
 
-
-<style>
-  /* Floating effect */
-.floating-wrapper {
-  overflow: hidden;
-}
-
-.floating-cards {
-  display: flex;
-  gap: 1.5rem;
-  animation: floating 20s linear infinite;
-}
-
-.card {
-  min-width: 250px; /* Adjusted width to fit multiple cards per row */
-  flex-shrink: 0;
-}
-
-/* Keyframe animation for floating effect */
-@keyframes floating {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-</style>
-
-
-
-
-
-
-
-
-
-
-<section id="valuesSection" class="overflow-hidden">
-  <!-- Our Values Section -->
-  <div class="pb-24">
-    <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">Our Values</h2>
-
-    <!-- Slider Container for the Values Cards -->
-    <div class="slider-container flex gap-6 animate-slide">
-      <!-- Card 1: Innovation -->
-      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
-        <h3 class="text-3xl font-bold text-gray-800 mb-3 ">Innovation</h3>
-        <p class="text-base text-gray-600 ">We embrace creativity to develop unique solutions.</p>
-      </div>
-
-      <!-- Card 2: Quality -->
-      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
-        <h3 class="text-3xl font-bold text-gray-800 mb-3 ">Quality</h3>
-        <p class="text-base text-gray-600 ">Delivering nothing less than the highest standards of work.</p>
-      </div>
-
-      <!-- Card 3: Integrity -->
-      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
-        <h3 class="text-3xl font-bold text-gray-800 mb-3 ">Integrity</h3>
-        <p class="text-base text-gray-600 ">We maintain transparency and honesty in all our interactions.</p>
-      </div>
-
-      <!-- Card 4: Collaboration -->
-      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
-        <h3 class="text-3xl font-bold text-gray-800 mb-3 ">Collaboration</h3>
-        <p class="text-base text-gray-600 ">We work closely with our clients to ensure their vision becomes reality.</p>
-      </div>
-
-      <!-- Card 5: Customer-Centricity -->
-      <div class="card bg-white shadow-lg rounded-lg p-5 transition-all duration-300 ">
-        <h3 class="text-3xl font-bold text-gray-800 mb-3">Customer-Centricity</h3>
-        <p class="text-base text-gray-600 ">Your success is our priority.</p>
-      </div>
+  <div class="slider-container flex gap-6">
+    <!-- Value Cards -->
+    <div class="base-card p-6 flex flex-col justify-between border">
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Innovation</h3>
+      <p class="text-sm md:text-base text-gray-600">We embrace creativity to develop unique solutions.</p>
+    </div>
+    <div class="base-card p-6 flex flex-col justify-between border">
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Quality</h3>
+      <p class="text-sm md:text-base text-gray-600">Delivering nothing less than the highest standards of work.</p>
+    </div>
+    <div class="base-card p-6 flex flex-col justify-between border">
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Integrity</h3>
+      <p class="text-sm md:text-base text-gray-600">We maintain transparency and honesty in all our interactions.</p>
+    </div>
+    <div class="base-card p-6 flex flex-col justify-between border">
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Collaboration</h3>
+      <p class="text-sm md:text-base text-gray-600">We work closely with our clients to ensure their vision becomes reality.</p>
+    </div>
+    <div class="base-card p-6 flex flex-col justify-between border">
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Customer-Centricity</h3>
+      <p class="text-sm md:text-base text-gray-600">Your success is our priority.</p>
     </div>
   </div>
 </section>
 
 <style>
+/* Base card styles */
+.card {
+  transition: all 0.3s ease;
+}
 
-/* Slider animation */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Floating animations */
+.floating-cards-right {
+  display: flex;
+  gap: 1.5rem;
+  animation: floatRight 30s linear infinite;
+}
+
+.floating-cards-left {
+  display: flex;
+  gap: 1.5rem;
+  animation: floatLeft 30s linear infinite;
+}
+
 .slider-container {
   display: flex;
   gap: 1.5rem;
-  width: max-content;
-  animation: slide 20s linear infinite;
+  animation: slide 15s linear infinite; /* Reduced from 30s to 15s for faster movement */
 }
 
-.card {
-  min-width: 250px; /* Adjust card width as needed */
-  flex-shrink: 0;
+@keyframes floatRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
 }
 
-/* Keyframe animation for sliding effect */
+@keyframes floatLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 @keyframes slide {
-  0% {
-    transform: translateX(0);
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% + 100vw)); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .floating-cards-right,
+  .floating-cards-left,
+  .slider-container {
+    animation-duration: 20s; /* Faster on mobile */
   }
-  100% {
-    transform: translateX(calc(-100% + 100vw)); /* Adjust based on card width */
+  
+  .card {
+    min-width: 280px;
+    padding: 1rem;
   }
+  
+  .card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Pause animations on hover */
+.floating-wrapper:hover .floating-cards-right,
+.floating-wrapper:hover .floating-cards-left,
+#valuesSection:hover .slider-container {
+  animation-play-state: paused;
 }
 </style>
 
@@ -668,18 +762,18 @@
           <div class="swiper-wrapper">
             <!-- Team member slides -->
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
                     <div class="min-w-0 flex-auto">
-                      <p class="text-sm font-semibold leading-6 text-gray-900">Leslie Alexander</p>
-                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
                     </div>
                   </div>
                   <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
                   </div>
                 </li>
               </div>
@@ -689,18 +783,18 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
                     <div class="min-w-0 flex-auto">
-                      <p class="text-sm font-semibold leading-6 text-gray-900">Leslie Alexander</p>
-                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
                     </div>
                   </div>
                   <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
                   </div>
                 </li>
               </div>
@@ -710,18 +804,18 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
                     <div class="min-w-0 flex-auto">
-                      <p class="text-sm font-semibold leading-6 text-gray-900">Leslie Alexander</p>
-                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
                     </div>
                   </div>
                   <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
                   </div>
                 </li>
               </div>
@@ -731,18 +825,18 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
                     <div class="min-w-0 flex-auto">
-                      <p class="text-sm font-semibold leading-6 text-gray-900">Leslie Alexander</p>
-                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
                     </div>
                   </div>
                   <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
                   </div>
                 </li>
               </div>
@@ -751,18 +845,18 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
                     <div class="min-w-0 flex-auto">
-                      <p class="text-sm font-semibold leading-6 text-gray-900">Leslie Alexander</p>
-                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
                     </div>
                   </div>
                   <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
                   </div>
                 </li>
               </div>
@@ -771,18 +865,18 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[rgba(9,24,70,1)] hover:text-white">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
                     <div class="min-w-0 flex-auto">
-                      <p class="text-sm font-semibold leading-6 text-gray-900">Leslie Alexander</p>
-                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
                     </div>
                   </div>
                   <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
                   </div>
                 </li>
               </div>
@@ -791,18 +885,18 @@
 
 
             <div class="swiper-slide">
-              <div class="team-card bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
                 <li class="flex justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
                     <div class="min-w-0 flex-auto">
-                      <p class="text-sm font-semibold leading-6 text-gray-900">Leslie Alexander</p>
-                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">leslie.alexander@example.com</p>
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
                     </div>
                   </div>
                   <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
                   </div>
                 </li>
               </div>
@@ -858,358 +952,349 @@
 
   <section id="servicePageSection" class="hidden" style="margin-bottom: 100px; margin-top: 100px;">
     <div class="container mx-auto px-4 ">
-      <!-- Service Cards -->
-      <div class="space-y-16 md:space-y-24">
+      <!-- Service Cards - Adjust card sizes -->
+      <div class="space-y-12 md:space-y-20"> <!-- Reduced vertical spacing -->
         <!-- Web Development -->
         <div>
-          <div class="text-center mb-8 md:mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">Web Development</h2>
+          <div class="text-center mb-6 md:mb-12"> <!-- Reduced margin -->
+            <h2 class="text-3xl md:text-5xl font-bold mb-2 md:mb-3 font-redhat">Web Development</h2> <!-- Reduced font size -->
             <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art web development services
               tailored to your needs.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div
-              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
-              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">Innovative Web Design & Development
-                Services</h2>
-              <p class="text-sm md:text-base font-redhat">To tackle web app problem-solving, we utilize a diverse range
-                of technologies and tools that streamline development and enhance performance. Our tech stack typically
-                includes JavaScript frameworks like React for building dynamic user interfaces and Node.js for efficient
-                server-side programming. For data management, we rely on SQL databases such as PostgreSQL and NoSQL
-                databases like MongoDB to ensure flexible data storage and retrieval. We employ RESTful APIs for
-                seamless communication between frontend and backend components, enabling smooth data flow and
-                interaction. For debugging and performance monitoring, tools like Chrome DevTools and Postman help
-                identify issues and optimize application efficiency. Additionally, we incorporate version control
-                systems like Git to manage code changes collaboratively. By leveraging these technologies, we
-                efficiently address challenges and deliver robust web applications that meet user needs.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto"> <!-- Changed to items-stretch and consistent max-width -->
+            <!-- Text Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full and flex flex-col -->
+              <h2 class="text-2xl md:text-4xl font-bold font-redhat mb-4">Innovative Web Design & Development Services</h2>
+              <div class="flex-grow"> <!-- Added to ensure consistent height -->
+                <p class="text-sm md:text-base font-redhat">To tackle web app problem-solving, we utilize a diverse range
+                  of technologies and tools that streamline development and enhance performance. Our tech stack typically
+                  includes JavaScript frameworks like React for building dynamic user interfaces and Node.js for efficient
+                  server-side programming. For data management, we rely on SQL databases such as PostgreSQL and NoSQL
+                  databases like MongoDB to ensure flexible data storage and retrieval. We employ RESTful APIs for
+                  seamless communication between frontend and backend components, enabling smooth data flow and
+                  interaction. For debugging and performance monitoring, tools like Chrome DevTools and Postman help
+                  identify issues and optimize application efficiency. Additionally, we incorporate version control
+                  systems like Git to manage code changes collaboratively. By leveraging these technologies, we
+                  efficiently address challenges and deliver robust web applications that meet user needs.</p>
+              </div>
             </div>
 
-            <div
-              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="images/6041419.jpg" alt="Technologies Image" class="rounded-lg w-full">
+            <!-- Image Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full -->
+              <div class="aspect-w-16 aspect-h-9 w-full h-full"> <!-- Added aspect ratio container -->
+                <img 
+                  src="images/6041419.jpg" 
+                  alt="Technologies Image" 
+                  class="rounded-lg w-full h-full object-cover"
+                >
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- Technology Used Section - Center alignment -->
+        <div class="py-8 md:py-16 text-center max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl md:text-5xl font-bold font-redhat text-gray-800 mb-2 md:mb-3">Technology Used</h2>
+          <p class="text-gray-700 text-sm md:text-base mb-8 md:mb-12">Some of the technologies we use to build our web apps</p>
+          
+          <!-- Technology Grid - Centered container -->
+          <div class="flex justify-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+              <!-- Technology cards -->
+              <div class="base-card p-6 flex flex-col items-center">
+                <img src="images/WebDevTechForte/1174949_js_react js_logo_react_react native_icon.png"
+                  alt="React JS" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">React JS</p>
+              </div>
 
+              <!-- Next JS -->
+              <div class="base-card p-6 flex flex-col items-center">
+                <img src="images/WebDevTechForte/NextJs.png" alt="Next JS" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Next JS</p>
+              </div>
 
+              <!-- Node JS -->
+              <div class="base-card p-6 flex flex-col items-center">
+                <img src="images/WebDevTechForte/4375017_js_logo_node_icon.png" alt="Node JS"
+                  class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Node JS</p>
+              </div>
 
-        <!-- TECH FORTE IN WEB DEV -->
-        <div class="py-12 text-center">
-          <h2 class="text-6xl font-bold font-redhat text-gray-800" style="margin-bottom: 10px;">Technology Used</h2>
-           <p class="text-gray-700 text-sm md:text-base" style="margin-bottom: 100px;">Some of the technologies we use to build our web apps</p>
-        
-          <!-- Technology Grid -->
-        
-        
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
-            <!-- React JS -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img
-                src="images/WebDevTechForte/1174949_js_react js_logo_react_react native_icon.png"
-                alt="React JS" class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">React JS</p>
+              <!-- Angular -->
+              <div class="base-card p-6 flex flex-col items-center">
+                <img src="images/WebDevTechForte/4373284_angular_logo_logos_icon.png"
+                  alt="Angular" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Angular</p>
+              </div>
+
+              <!-- JavaScript -->
+              <div class="base-card  p-6 flex flex-col items-center">
+                <img
+                  src="images/WebDevTechForte/4691347_php_icon.png"
+                  alt="JavaScript" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">PHP</p>
+              </div>
+
+              <!-- Wordpress -->
+              <div class="base-card  p-6 flex flex-col items-center">
+                <img
+                  src="images/WebDevTechForte/291686_wordpress_blog_logo_social_social media_icon.png"
+                  alt="Wordpress" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Wordpress</p>
+              </div>
+
+              <!-- Django -->
+              <div class="base-card  p-6 flex flex-col items-center">
+                <img
+                  src="images/WebDevTechForte/9055848_bxl_django_icon.png"
+                  alt="Django" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Django</p>
+              </div>
+
+              <!-- Flask -->
+              <div class="base-card  p-6 flex flex-col items-center">
+                <img
+                  src="images/WebDevTechForte/4691324_flask_icon.png"
+                  alt="Flask" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Flask</p>
+              </div>
             </div>
-
-            <!-- Next JS -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="images/WebDevTechForte/NextJs.png" alt="Next JS" class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">Next JS</p>
-            </div>
-
-            <!-- Node JS -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="images/WebDevTechForte/4375017_js_logo_node_icon.png" alt="Node JS"
-                class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">Node JS</p>
-            </div>
-
-            <!-- Angular -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="images/WebDevTechForte/4373284_angular_logo_logos_icon.png"
-                alt="Angular" class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">Angular</p>
-            </div>
-
-            <!-- Add more technologies here if needed -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img
-                src="/WebDevTechForte/652581_code_command_develop_javascript_language_icon.png"
-                alt="Angular" class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">JavaScript</p>
-            </div>
-
-            <!-- Wordpress -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img
-                src="/WebDevTechForte/291686_wordpress_blog_logo_social_social media_icon.png"
-                alt="Wordpress" class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">Wordpress</p>
-            </div>
-
-
-             <!-- Django -->
-             <div
-             class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-             <img
-               src="/WebDevTechForte/9055848_bxl_django_icon.png"
-               alt="Wordpress" class="w-24 h-24">
-             <p class="mt-4 text-lg font-semibold text-gray-700">Django</p>
-           </div>
-
-            <!-- Flask -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img
-                src="images/WebDevTechForte/4691324_flask_icon.png"
-                alt="Wordpress" class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">Flask</p>
-            </div>
-
-
           </div>
         </div>
-
-        <!-- END OF TECH FORTE IN WEB DEV -->
-
-
-
-
-
-
-
-
-
 
         <!-- App Development -->
         <div>
-          <div class="text-center mb-8 md:mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">App Development</h2>
+          <div class="text-center mb-6 md:mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold mb-2 md:mb-3 font-redhat">App Development</h2>
             <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art app development services
               tailored to your needs.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div
-              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left">
-              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">Engineering Used</h2>
-              <p class="text-sm md:text-base font-redhat">In our app development process, we utilized a robust tech
-                stack to ensure efficiency and scalability. The backend was built using Python Flask, providing a
-                lightweight yet powerful framework for handling server-side logic and API integrations. For the
-                frontend, we used React.js, allowing for dynamic, responsive user interfaces. SQLAlchemy was integrated
-                for database management, offering seamless interaction with our PostgreSQL database. We also employed
-                Tailwind CSS for styling, ensuring a modern, mobile-friendly design, while CKEditor was incorporated for
-                content editing, enhancing user experience with rich-text capabilities.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto"> <!-- Changed to items-stretch and consistent max-width -->
+            <!-- Text Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full and flex flex-col -->
+              <h2 class="text-2xl md:text-4xl font-bold font-redhat mb-4">Engineering Used</h2>
+              <div class="flex-grow"> <!-- Added to ensure consistent height -->
+                <p class="text-sm md:text-base font-redhat">In our app development process, we utilized a robust tech
+                  stack to ensure efficiency and scalability. The backend was built using Python Flask, providing a
+                  lightweight yet powerful framework for handling server-side logic and API integrations. For the
+                  frontend, we used React.js, allowing for dynamic, responsive user interfaces. SQLAlchemy was integrated
+                  for database management, offering seamless interaction with our PostgreSQL database. We also employed
+                  Tailwind CSS for styling, ensuring a modern, mobile-friendly design, while CKEditor was incorporated for
+                  content editing, enhancing user experience with rich-text capabilities.</p>
+              </div>
             </div>
 
-            <div
-              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="images/1720.jpg" alt="Technologies Image" class="rounded-lg w-full">
+            <!-- Image Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full -->
+              <div class="aspect-w-16 aspect-h-9 w-full h-full"> <!-- Added aspect ratio container -->
+                <img 
+                  src="images/1720.jpg" 
+                  alt="Technologies Image" 
+                  class="rounded-lg w-full h-full object-cover"
+                >
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- Technology Used Section - Center alignment -->
+        <div class="py-8 md:py-16 text-center max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl md:text-5xl font-bold font-redhat text-gray-800 mb-2 md:mb-3">Technology Used</h2>
+          <p class="text-gray-700 text-sm md:text-base mb-8 md:mb-12">Some of the technologies we use to build our apps</p>
+          <!-- Technology Grid - Centered container -->
+          <div class="flex justify-center">
+            <div class="grid grid-cols-2 gap-4 md:gap-8">
+              <!-- Technology cards -->
+              <div class="base-card hover-scale-105 p-6 flex flex-col items-center">
+                <img src="images/AppDevTechForte/4691292_react native_react_icon.png"
+                  alt="React Native" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">React Native</p>
+              </div>
 
-        <!-- TECH FORTE IN App DEV -->
-        <div class="py-12 text-center">
-          <h2 class="text-6xl font-bold font-redhat text-gray-800" style="margin-bottom: 100px;">Technology Used</h2>
-          <!-- Technology Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
-            <!-- React Nate -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="images/AppDevTechForte/4691292_react native_react_icon.png"
-                alt="React JS" class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">React Native</p>
+              <!-- Flutter -->
+              <div class="base-card hover-scale-105 p-6 flex flex-col items-center">
+                <img src="images/AppDevTechForte/4691465_flutter_icon.png" alt="Flutter"
+                  class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Flutter</p>
+              </div>
             </div>
-
-            <!-- Flutter -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="images/AppDevTechForte/4691465_flutter_icon.png" alt="Next JS"
-                class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">Flutter</p>
-            </div>
-
-
-
-
           </div>
         </div>
-
-        <!-- END OF TECH FORTE IN App DEV -->
-
-
-
-
-
-
-
 
         <!-- Game Development -->
         <div>
-          <div class="text-center mb-8 md:mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">Game Development</h2>
+          <div class="text-center mb-6 md:mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold mb-2 md:mb-3 font-redhat">Game Development</h2>
             <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art game development services
               tailored to your needs.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div
-              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
-              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">The Art We Use</h2>
-              <p class="text-sm md:text-base font-redhat">In our game development process, we emphasize innovative
-                designs and creativity to create immersive experiences for players. Our design philosophy combines
-                stunning visuals with intuitive gameplay mechanics, ensuring that each game element serves a purpose
-                while contributing to the overall aesthetic. We use **concept art** to visualize characters,
-                environments, and assets, guiding our 3D modeling and animation processes. **User interface (UI)
-                design** is meticulously crafted to enhance user engagement, employing clean layouts and visually
-                appealing graphics. Additionally, we prioritize **sound design** and **music composition**, integrating
-                audio elements that complement the gameplay and evoke emotional responses. By fostering a collaborative
-                environment, our team continuously explores new ideas and artistic styles, pushing the boundaries of
-                creativity to deliver unique gaming experiences.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto"> <!-- Changed to items-stretch and consistent max-width -->
+            <!-- Text Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full and flex flex-col -->
+              <h2 class="text-2xl md:text-4xl font-bold font-redhat mb-4">The Art We Use</h2>
+              <div class="flex-grow"> <!-- Added to ensure consistent height -->
+                <p class="text-sm md:text-base font-redhat">In our game development process, we emphasize innovative
+                  designs and creativity to create immersive experiences for players. Our design philosophy combines
+                  stunning visuals with intuitive gameplay mechanics, ensuring that each game element serves a purpose
+                  while contributing to the overall aesthetic. We use **concept art** to visualize characters,
+                  environments, and assets, guiding our 3D modeling and animation processes. **User interface (UI)
+                  design** is meticulously crafted to enhance user engagement, employing clean layouts and visually
+                  appealing graphics. Additionally, we prioritize **sound design** and **music composition**, integrating
+                  audio elements that complement the gameplay and evoke emotional responses. By fostering a collaborative
+                  environment, our team continuously explores new ideas and artistic styles, pushing the boundaries of
+                  creativity to deliver unique gaming experiences.</p>
+              </div>
             </div>
 
-            <div
-              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="images/gameDev.jpg" alt="Technologies Image" class="rounded-lg w-full">
+            <!-- Image Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full -->
+              <div class="aspect-w-16 aspect-h-9 w-full h-full"> <!-- Added aspect ratio container -->
+                <img 
+                  src="images/gameDev.jpg" 
+                  alt="Technologies Image" 
+                  class="rounded-lg w-full h-full object-cover"
+                >
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- Technology Used Section - Center alignment -->
+        <div class="py-8 md:py-16 text-center max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl md:text-5xl font-bold font-redhat text-gray-800 mb-2 md:mb-3">Technology Used</h2>
+          <p class="text-gray-700 text-sm md:text-base mb-8 md:mb-12">Some of the technologies we use to build our games</p>
+          <!-- Technology Grid - Centered container -->
+          <div class="flex justify-center">
+            <div class="grid grid-cols-2 gap-4 md:gap-8">
+              <!-- Technology cards -->
+              <div class="base-card hover-scale-105 p-6 flex flex-col items-center">
+                <img src="images/GameDevTechForte/4691514_unity_unity 3d_logo_icon.png"
+                  alt="Unity" class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Unity</p>
+              </div>
 
-
-        
-        <!-- TECH FORTE IN App DEV -->
-        <div class="py-12 text-center">
-          <h2 class="text-6xl font-bold font-redhat text-gray-800" style="margin-bottom: 100px;">Technology Used</h2>
-          <!-- Technology Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
-            <!-- Unity -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="images/GameDevTechForte/4691514_unity_unity 3d_logo_icon.png"
-                alt="React JS" class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">Unity</p>
+              <!-- Unreal Engine -->
+              <div class="base-card hover-scale-105 p-6 flex flex-col items-center">
+                <img src="images/GameDevTechForte/617626_engine_unreal_icon.png" alt="Unreal Engine"
+                  class="w-12 h-12 md:w-16 md:h-16">
+                <p class="mt-2 md:mt-3 text-sm md:text-base font-semibold text-gray-700">Unreal Engine</p>
+              </div>
             </div>
-
-            <!-- Unreal Engine -->
-            <div
-              class="relative z-10 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <img src="images/GameDevTechForte/617626_engine_unreal_icon.png" alt="Next JS"
-                class="w-24 h-24">
-              <p class="mt-4 text-lg font-semibold text-gray-700">Unreal Engine</p>
-            </div>
-
-
-
-
           </div>
         </div>
-
-        <!-- END OF TECH FORTE IN App DEV -->
-
-
-
-
-
-
-
 
         <!-- AI/ML Solutions -->
         <div>
-          <div class="text-center mb-8 md:mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">AI/Machine Learning Solutions</h2>
+          <div class="text-center mb-6 md:mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold mb-2 md:mb-3 font-redhat">AI/Machine Learning Solutions</h2>
             <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art AI/ML solutions tailored to
               your needs.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div
-              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
-              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">Models And Training Methods</h2>
-              <p class="text-sm md:text-base font-redhat">In our machine learning projects, we employ a range of models
-                and training methods tailored to specific tasks. For supervised learning, we often use **decision
-                trees**, **support vector machines**, and **neural networks** for accurate predictions on labeled
-                datasets. In unsupervised learning, techniques like **k-means clustering** and **principal component
-                analysis (PCA)** help uncover hidden patterns. We utilize **cross-validation** to ensure model
-                robustness and avoid overfitting, while **transfer learning** with pre-trained models enhances
-                efficiency and accuracy. Our training process includes fine-tuning hyperparameters and **data
-                augmentation** to create high-performing solutions that address complex challenges across various
-                domains.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto"> <!-- Changed to items-stretch and consistent max-width -->
+            <!-- Text Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full and flex flex-col -->
+              <h2 class="text-2xl md:text-4xl font-bold font-redhat mb-4">Models And Training Methods</h2>
+              <div class="flex-grow"> <!-- Added to ensure consistent height -->
+                <p class="text-sm md:text-base font-redhat">In our machine learning projects, we employ a range of models
+                  and training methods tailored to specific tasks. For supervised learning, we often use **decision
+                  trees**, **support vector machines**, and **neural networks** for accurate predictions on labeled
+                  datasets. In unsupervised learning, techniques like **k-means clustering** and **principal component
+                  analysis (PCA)** help uncover hidden patterns. We utilize **cross-validation** to ensure model
+                  robustness and avoid overfitting, while **transfer learning** with pre-trained models enhances
+                  efficiency and accuracy. Our training process includes fine-tuning hyperparameters and **data
+                  augmentation** to create high-performing solutions that address complex challenges across various
+                  domains.</p>
+              </div>
             </div>
 
-            <div
-              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="images/AiMlpic.jpg" alt="Technologies Image" class="rounded-lg w-full">
+            <!-- Image Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full -->
+              <div class="aspect-w-16 aspect-h-9 w-full h-full"> <!-- Added aspect ratio container -->
+                <img 
+                  src="images/AiMlpic.jpg" 
+                  alt="Technologies Image" 
+                  class="rounded-lg w-full h-full object-cover"
+                >
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Cloud Solutions -->
         <div>
-          <div class="text-center mb-8 md:mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">Cloud Solutuions</h2>
+          <div class="text-center mb-6 md:mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold mb-2 md:mb-3 font-redhat">Cloud Solutuions</h2>
             <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art cloud solutions tailored to
               your needs.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div
-              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
-              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">How we Provide Solutions</h2>
-              <p class="text-sm md:text-base font-redhat">We provide comprehensive cloud solutions designed to enhance
-                scalability, security, and efficiency for businesses of all sizes. Our approach involves leveraging
-                cloud computing platforms such as AWS, Azure, and Google Cloud to deliver tailored services, including
-                infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS). By
-                utilizing these platforms, we enable clients to access resources on-demand, ensuring optimal performance
-                while reducing operational costs. Our team focuses on implementing robust security measures to protect
-                data and applications</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto"> <!-- Changed to items-stretch and consistent max-width -->
+            <!-- Text Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full and flex flex-col -->
+              <h2 class="text-2xl md:text-4xl font-bold font-redhat mb-4">How we Provide Solutions</h2>
+              <div class="flex-grow"> <!-- Added to ensure consistent height -->
+                <p class="text-sm md:text-base font-redhat">We provide comprehensive cloud solutions designed to enhance
+                  scalability, security, and efficiency for businesses of all sizes. Our approach involves leveraging
+                  cloud computing platforms such as AWS, Azure, and Google Cloud to deliver tailored services, including
+                  infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS). By
+                  utilizing these platforms, we enable clients to access resources on-demand, ensuring optimal performance
+                  while reducing operational costs. Our team focuses on implementing robust security measures to protect
+                  data and applications</p>
+              </div>
             </div>
 
-            <div
-              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="images/What-is-Cloud-Computing.jpeg" alt="Technologies Image"
-                class="rounded-lg w-full">
+            <!-- Image Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full -->
+              <div class="aspect-w-16 aspect-h-9 w-full h-full"> <!-- Added aspect ratio container -->
+                <img 
+                  src="images/What-is-Cloud-Computing.jpeg" 
+                  alt="Technologies Image" 
+                  class="rounded-lg w-full h-full object-cover"
+                >
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Digital Marketing -->
         <div>
-          <div class="text-center mb-8 md:mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold mb-2 md:mb-4 font-redhat">Digital Marketing</h2>
+          <div class="text-center mb-6 md:mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold mb-2 md:mb-3 font-redhat">Digital Marketing</h2>
             <p class="text-gray-700 text-sm md:text-base">Our team delivers state-of-the-art digital marketing services
               tailored to your needs.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div
-              class="p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 text-left border">
-              <h2 class="text-3xl md:text-5xl font-bold font-redhat mb-4 md:mb-8">Strategies Used</h2>
-              <p class="text-sm md:text-base font-redhat">We implement a variety of digital marketing strategies to
-                effectively reach and engage our target audience. Our approach includes search engine optimization (SEO)
-                to enhance online visibility and improve organic traffic to websites. We leverage content marketing,
-                creating valuable and relevant content that resonates with our audience and establishes authority in our
-                niche. Social media marketing plays a crucial role, utilizing platforms like Facebook, Instagram, and
-                LinkedIn to build brand awareness and foster community engagement. We also employ pay-per-click (PPC)
-                advertising for targeted campaigns that drive immediate traffic and conversions. Additionally, our
-                strategies incorporate email marketing, nurturing leads through personalized communication and offers.
-                By analyzing data and metrics, we continuously refine our strategies to optimize performance and achieve
-                measurable results for our clients.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-6xl mx-auto"> <!-- Changed to items-stretch and consistent max-width -->
+            <!-- Text Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full and flex flex-col -->
+              <h2 class="text-2xl md:text-4xl font-bold font-redhat mb-4">Strategies Used</h2>
+              <div class="flex-grow"> <!-- Added to ensure consistent height -->
+                <p class="text-sm md:text-base font-redhat">We implement a variety of digital marketing strategies to
+                  effectively reach and engage our target audience. Our approach includes search engine optimization (SEO)
+                  to enhance online visibility and improve organic traffic to websites. We leverage content marketing,
+                  creating valuable and relevant content that resonates with our audience and establishes authority in our
+                  niche. Social media marketing plays a crucial role, utilizing platforms like Facebook, Instagram, and
+                  LinkedIn to build brand awareness and foster community engagement. We also employ pay-per-click (PPC)
+                  advertising for targeted campaigns that drive immediate traffic and conversions. Additionally, our
+                  strategies incorporate email marketing, nurturing leads through personalized communication and offers.
+                  By analyzing data and metrics, we continuously refine our strategies to optimize performance and achieve
+                  measurable results for our clients.</p>
+              </div>
             </div>
 
-            <div
-              class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border">
-              <img src="images/digitalMarketing.jpeg" alt="Technologies Image"
-                class="rounded-lg w-full">
+            <!-- Image Card -->
+            <div class="base-card hover-scale-105 p-6 flex flex-col"> <!-- Added h-full -->
+              <div class="aspect-w-16 aspect-h-9 w-full h-full"> <!-- Added aspect ratio container -->
+                <img 
+                  src="images/digitalMarketing.jpeg" 
+                  alt="Technologies Image" 
+                  class="rounded-lg w-full h-full object-cover"
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -1219,13 +1304,13 @@
 
 
  
-  </style>
+
 
   <section id="contactSection"
-  class="mx-auto p-8 bg-[rgba(9,24,70,1)] rounded-lg w-full max-w-[900px] h-auto mb-10 mt-12 transition-all duration-300 ease-in-out shadow-lg ">
+  class="contact-container">
   <div class="flex flex-col">
     <!-- Heading -->
-    <h2 class="text-5xl lg:text-6xl font-bold text-white text-center mb-4 font-redhat w-full">
+    <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4 font-redhat w-full">
       Let's Build Something Great Together!
     </h2>
     
@@ -1233,14 +1318,14 @@
     <hr class="border-t border-gray-300 mb-4" />
 
     <!-- Contact Information -->
-    <div class="flex justify-center space-x-4 mb-4">
-      <div class="flex items-center text-white">
+    <div class="flex flex-col md:flex-row justify-center md:space-x-4 space-y-2 md:space-y-0 mb-4">
+      <div class="flex items-center justify-center text-white">
         <img src="images/icons8-email-50.png" alt="Email Icon" class="w-5 h-5 mr-1" />
-        <span>youremail@example.com</span>
+        <span class="text-sm md:text-base">info.devblockstudios@gmail.com</span>
       </div>
-      <div class="flex items-center text-white">
-        <img src="images/icons8-telephone-32.png"  alt="Phone Icon" class=" w-5 h-5 mr-1" />
-        <span>(+123) 456-7890</span>
+      <div class="flex items-center justify-center text-white">
+        <img src="images/icons8-telephone-32.png" alt="Phone Icon" class="w-5 h-5 mr-1" />
+        <span class="text-sm md:text-base">+923366977883</span>
       </div>
     </div>
 
@@ -1295,7 +1380,7 @@
 
         <!-- Submit Button -->
         <button type="submit"
-          class="ml-[300px] w-36 py-3 px-4 bg-orange-500 text-white font-medium font-redhat rounded-md hover:bg-white hover:text-black transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          class="mx-auto w-36 py-3 px-4 bg-orange-500 text-white font-medium font-redhat rounded-md hover:bg-white hover:text-black transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Send Message
         </button>
       </div>
@@ -1316,92 +1401,80 @@
 
   <footer class="bg-[rgba(9,24,70,1)]">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-      <div class="md:flex md:justify-between">
-        <div class="mb-6 md:mb-0">
-          <a href="home.html" class="flex items-center">
-            <img src='images/white1.png' class="h-8 me-3"
-              alt="FlowBite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DevBlocks Studio</span>
-          </a>
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="home.html" class="flex items-center">
+                    <img src='images/white1.png' class="h-8 me-3" alt="FlowBite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DevBlocks Studio</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <button class="hover:underline" id="projectsBtnFooter">Projects</button>
+                        </li>
+                        <li>
+                            <button class="hover:underline" id="servicesBtnFooter">Services</button>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="https://www.linkedin.com/company/devblockstudios/" class="hover:underline">LinkedIn</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Instagram</a>
+                        </li>
+                        <li class="mt-4">
+                          <a href="https://x.com/devblockstudio" class="hover:underline">Twitter</a>
+                      </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Us</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        
+                        <li class="mb-2">
+                            <span class="text-gray-500 dark:text-gray-400"> <a href="mailto:info.devblockstudios@gmail.com" class="hover:underline">info.devblockstudios@gmail.com</a></span>
+                        </li>
+                        <li>
+                            <span class="text-gray-500 dark:text-gray-400"> <a href="tel:+923366977883" class="hover:underline">+923366977883</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <button class="hover:underline" id="projectsBtnFooter">Projects</button>
-              </li>
-              <li>
-                <button class="hover:underline" id="servicesBtnFooter">Services</button>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="https://www.linkedin.com/company/devblockstudios/" class="hover:underline ">LinkedIn</a>
-              </li>
-              <li>
-                <a href="#" class="hover:underline">Instagram</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <button id="contactBtnFooter"
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Us</button>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <button id="valuesBtnFooter" class="hover:underline">Values</button>
-              </li>
-              <li>
-                <button id="missionBtnFooter" class="hover:underline">Mission</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="home.html"
-            class="hover:underline">DevBlocks Studio™</a>. All Rights Reserved.
-        </span>
-        <div class="flex mt-4 sm:justify-center sm:mt-0">
-          <a href="https://www.facebook.com/profile.php?id=61566619814832"
-            class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-              viewBox="0 0 8 19">
-              <path fill-rule="evenodd"
-                d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="sr-only">Facebook page</span>
-          </a>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="home.html" class="hover:underline">DevBlocks Studio™</a>. All Rights Reserved.</span>
+            <div class="flex mt-4 sm:justify-center sm:mt-0">
+                <a href="https://www.facebook.com/profile.php?id=61566619814832" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                        <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">Facebook page</span>
+                </a>
 
-          <a href="https://x.com/devblockstudio" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-              viewBox="0 0 20 17">
-              <path fill-rule="evenodd"
-                d="M20 1.892a8.178 8.178 0 0 0-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 0-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="sr-only">Twitter page</span>
-          </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-              viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="sr-only">GitHub account</span>
-          </a>
-
+                <a href="https://x.com/devblockstudio" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.2833 9.882L23.2178 0H21.1006L13.3422 8.685L7.14833 0H0L9.37778 13.065L0 23.4459H2.11722L10.3189 14.2621L16.8517 23.4459H24L14.2833 9.882ZM11.3461 13.1717L10.3767 11.817L2.86667 1.77178H6.14278L12.2328 9.882L13.2022 11.2367L21.1006 21.8012H17.8244L11.3461 13.1717Z"/>
+                    </svg>
+                    <span class="sr-only">X (Twitter) page</span>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">GitHub account</span>
+                </a>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
-
+</footer>
 
 
 
@@ -1615,10 +1688,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollToSection(contactSection);
     });
 
-    missionBtnFooter.addEventListener('click', () => {
-      showAllSections();
-      scrollToSection(missionAndVisionSection);
-    });
+    
 
     servicesBtn.addEventListener('click', () => {
       showAllSections();
@@ -1640,15 +1710,8 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollToSection(projectsSection);
     });
 
-    valuesBtnFooter.addEventListener('click', () => {
-      showAllSections();
-      scrollToSection(valuesSection);
-    });
-    contactBtnFooter.addEventListener('click', () => {
-      showAllSections();
-      scrollToSection(contactSection);
-    });
-
+    
+   
 
 
 
