@@ -14,99 +14,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="icon" type="image/png" href="images/Devblock-removebg-preview.png">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="src/home.css">
 
 
 
 
   <style>
-    /* General font styling */
-    * {
-      font-family: 'Red Hat Display', sans-serif;
-    }
-
-    /* Base card styling */
-    .base-card {
-      background-color: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease-in-out;
-      padding: 1.5rem; /* Adjusted padding for consistent spacing */
-    }
-
-    /* Hover effect for cards */
-    .hover-card:hover {
-      background-color: rgba(9, 24, 70, 1);
-      color: white;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Text color transition for smoother hover effect */
-    .text-transition {
-      color: #4B5563;
-      transition: color 0.3s ease-in-out;
-    }
-
-    /* Text color change on hover */
-    .hover-card:hover .text-transition {
-      color: white;
-    }
-
-    /* Contact container styling */
-    .contact-container {
-      margin: 2.5rem auto;
-      padding: 2rem;
-      background-color: rgba(9, 24, 70, 1);
-      border-radius: 0.5rem;
-      width: 100%;
-      max-width: 900px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Centering content within containers */
-    .flex-center {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Responsive styling for mobile view */
-    @media (max-width: 768px) {
-      .base-card {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Dynamic height to fit content */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0.5rem 0; /* Vertical margin for spacing */
-        box-sizing: border-box; /* Ensures padding doesn't affect width */
-      }
-
-      /* Center-align text within cards for mobile */
-      .base-card h3, .base-card p {
-        text-align: center;
-      }
-    }
-
-    /* Ensuring hover effects don't conflict across different screen sizes */
-    @media (min-width: 768px) {
-      .hover-card {
-        cursor: pointer; /* Hand cursor on hover for larger screens */
-      }
-    }
-
-
-    @keyframes colorShift {
-  0% { color: orange; }
-  50% { color: blue; }
-  100% { color: orange; }
-}
-
-#contactSection h2 {
-  animation: colorShift 3s infinite ease-in-out;
-  transition: color 0.5s ease;
-}
-
+   body{
+    background-color: black;
+   }
 </style>
 
 
@@ -121,16 +37,16 @@
 
 
   <!--************************ NAVBAR START **************************-->
-  <section id="navbar" class="bg-[rgba(9,24,70,1)] fixed w-full z-50 top-0 left-0">
+  <section id="navbar" class="bg-black fixed w-full z-50 top-0 left-0">
     <nav class="nav-main">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <!-- Logo and Brand Name Section -->
         <a href="home.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src='images/white1.png'
-            class="h-16 w-auto transition-transform duration-300 hover:scale-105" alt="DevBlock Logo" />
-          <span class="self-center text-base font-semibold whitespace-nowrap text-white font-redhat transition-colors duration-300 hover:text-orange-500">
-            DevBlock Studios
-          </span>
+          <img src='images/logo/fiinvestTransparentLOgo.png'
+            class="h-16 w-auto transition-transform duration-300 hover:scale-105" alt="Fiinvest Logo" />
+          <!-- <span class="self-center text-base font-semibold whitespace-nowrap text-white font-redhat transition-colors duration-300 hover:text-orange-500">
+            Think Ahead, Invest Wisely
+          </span> -->
         </a>
         
         <!-- Toggle button for mobile menu -->
@@ -184,28 +100,253 @@
 
 
   <!--**************************     BANNER     **********************************      -->
-  <div class="relative bg-cover bg-center h-screen pt-20" style="background-image: url('images/4884273.jpg');" id="banner">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div class="relative h-full flex items-center justify-center">
-      <div class="text-center px-4">
-        <h1 class="font-redhat font-bold text-white text-6xl md:text-9xl">
-          DevBlock Studios
-        </h1>
-        <h2 class="mt-4 font-redhat font-bold text-white text-lg md:text-xl">
-          Solving the problems with technology innovation and providing business solutions
+  <div class="relative h-screen pt-20" id="banner">
+    <!-- Video Background -->
+    <video 
+        class="absolute inset-0 w-full h-full object-cover transform scale-105"
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        poster="images/dummy.jpg">
+        <source src="videos/fiinvestHeroSectionVideo.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+    
+    <!-- Animated Content -->
+    <div class="relative h-full flex items-center justify-center px-4 md:px-0">
+        <div class="text-center max-w-4xl mx-auto animate-fadeIn">
+            <h1 class="font-redhat font-bold text-white text-6xl md:text-9xl mb-6 animate-slideDown">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#DBAB23] to-orange-500">
+                    Fiinvest
+                </span>
+            </h1>
+            <h2 class="mt-4 font-redhat font-bold text-white text-xl md:text-2xl mb-8 opacity-0 animate-slideUp">
+                Solving the problems with technology innovation and providing business solutions
+            </h2>
+            <div class="mt-8 space-y-4 md:space-y-0 md:space-x-4 opacity-0 animate-fadeIn">
+                <button id="bookAppointmentBtn"
+                    class="px-8 py-4 text-lg md:text-xl bg-[#DBAB23] text-black rounded-full w-full md:w-auto font-bold font-redhat hover:bg-white hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-2xl">
+                    Book An Appointment
+                </button>
+                <button 
+                    class="px-8 py-4 text-lg md:text-xl bg-transparent border-2 border-white text-white rounded-full w-full md:w-auto font-bold font-redhat hover:bg-white hover:text-black transform transition-all duration-300 hover:scale-105">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+    </div>
+</div>
+
+<!-- Add these styles to your existing <style> tag -->
+<style>
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .animate-slideDown {
+        animation: slideDown 1s ease-out forwards;
+    }
+
+    .animate-slideUp {
+        animation: slideUp 1s ease-out 0.5s forwards;
+    }
+
+    .animate-fadeIn {
+        opacity: 0;
+        animation: fadeIn 1s ease-out 1s forwards;
+    }
+
+    .hover\:scale-105:hover {
+        transform: scale(1.05);
+    }
+</style>
+  <!-- End Of Banner Component -->
+
+
+
+<!-- investment-guidance-section- START  -->
+
+
+<!-- Add this section after the banner and before the services section -->
+<section class="investment-guidance-section py-24">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row gap-32 max-w-7xl mx-auto items-center">
+      <!-- Left Column - Overlapping Images -->
+      <div class="flex-1 relative w-full min-h-[300px] md:min-h-[500px]"> <!-- Changed height to min-height -->
+        <!-- Back Image -->
+        <div class="absolute right-0 bottom-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-lg overflow-hidden shadow-2xl transform translate-x-2 md:translate-x-4 translate-y-2 md:translate-y-4 z-10"> <!-- Added z-index -->
+          <img 
+            src="images/ind2-ausfin.jpg" 
+            alt="Investment Background" 
+            class="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+        <!-- Front Image -->
+        <div class="absolute left-0 top-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-lg overflow-hidden shadow-2xl z-20"> <!-- Added z-index -->
+          <img 
+            src="images/aus_fin-img.jpg" 
+            alt="Investment Foreground" 
+            class="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+      </div>
+
+
+      <!-- Right Column - Text Content -->
+      <div class="flex-1 flex flex-col justify-center"> <!-- Already has justify-center -->
+        <h2 class="text-4xl md:text-5xl font-bold font-redhat mb-8 text-[#DBAB23]">
+            Your Money Deserves a Strategy, Not a Guess.
         </h2>
-        <div class="mt-8">
-          <button id="bookAppointmentBtn"
-            class="p-2 md:p-4 text-lg md:text-xl bg-[rgba(9,24,70,1)] text-white rounded-full w-full md:w-80 font-semibold font-redhat hover:bg-orange-500 hover:text-white transition duration-300">
-            Book An Appointment!
-          </button>
+        
+        <div class="border-2 border-[#DBAB23] p-8 rounded-lg bg-[#DBAB23] shadow-lg mb-8">
+            <h3 class="text-2xl font-bold font-redhat mb-4 text-black">
+          Expert Financial Solutions
+      </h3>
+      <p class="text-black mb-6">
+          Navigate the complex world of investments with our expert guidance. We provide comprehensive solutions tailored to your financial goals, ensuring sustainable growth and security for your future.
+      </p>
+      <ul class="space-y-4 mb-8">
+          <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span class="text-black">Personalized Investment Plans</span>
+          </li>
+          <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span class="text-black">Risk Management</span>
+          </li>
+          <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span class="text-black">Portfolio Optimization</span>
+          </li>
+      </ul>
+      <button class="bg-black text-[#DBAB23] px-8 py-3 rounded-full hover:bg-black hover:text-white transition duration-300 w-full md:w-auto font-bold">
+          Learn More
+      </button>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- End Of Banner Component -->
 
+
+<!-- investment-guidance-section END -->
+
+
+
+
+
+
+
+
+
+<!-- SERVICES SECTION FIINVEST START -->
+
+<section class="bg-gradient-to-r from-[#DBAB23] to-orange-500 py-24">
+  <div class="container mx-auto px-4">
+    <!-- Section Title -->
+    <h2 class="text-5xl font-bold text-white text-center mb-16 font-redhat">
+      Our Services
+    </h2>
+
+    <!-- Two Column Text -->
+    <div class="flex flex-col md:flex-row gap-8 mb-20 max-w-6xl mx-auto">
+      <!-- Left Column -->
+      <div class="flex-1">
+        <p class="text-white text-lg">
+          At Fiinvest, we specialize in providing comprehensive financial solutions tailored to your needs. Our expert team brings years of experience in investment management and financial planning.
+        </p>
+      </div>
+      <!-- Right Column -->
+      <div class="flex-1">
+        <p class="text-white text-lg">
+          Whether you're planning for retirement, looking to grow your wealth, or seeking to protect your assets, we have the expertise and tools to help you achieve your financial goals.
+        </p>
+      </div>
+    </div>
+
+    <!-- Three Column Services -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Service 1 -->
+      <div class="flex flex-col items-center p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-20 h-20 bg-[#DBAB23] rounded-full flex items-center justify-center mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2 text-center font-redhat">Investment Planning</h3>
+        <p class="text-gray-600 text-center">Strategic investment solutions for sustainable growth</p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="flex flex-col items-center p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-20 h-20 bg-[#DBAB23] rounded-full flex items-center justify-center mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2 text-center font-redhat">Financial Analysis</h3>
+        <p class="text-gray-600 text-center">Comprehensive analysis of your financial portfolio</p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="flex flex-col items-center p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-20 h-20 bg-[#DBAB23] rounded-full flex items-center justify-center mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2 text-center font-redhat">Wealth Management</h3>
+        <p class="text-gray-600 text-center">Expert guidance for wealth preservation and growth</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION FIINVEST END  -->
 
 
 
@@ -224,99 +365,99 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Web Development Card -->
         <button
-          class="base-card hover-card group p-4 border border-[rgba(9,24,70,1)] hover:border-white"
+          class="base-card hover-card group p-4 border border-black hover:border-white"
         >
           <div class="flex items-center mb-3">
-            <i class="fas fa-code text-2xl mr-3 text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <i class="fas fa-code text-2xl mr-3 text-black group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">Web Development</h3>
           </div>
           <p class="text-transition text-sm mb-3">Providing expert web development services to create visually stunning,
             user-friendly websites. We specialize in responsive design, seamless functionality, and optimizing for
             performance and SEO.</p>
           <div class="flex justify-end items-center mt-2">
-            <span class="text-sm text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
-            <i class="fas fa-arrow-right text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <span class="text-sm text-black group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-black group-hover:text-white transition-colors duration-300"></i>
           </div>
         </button>
 
         <!-- Game Development Card -->
         <button
-          class="base-card hover-card group p-4 border border-[rgba(9,24,70,1)] hover:border-white"
+          class="base-card hover-card group p-4 border border-black hover:border-white"
         >
           <div class="flex items-center mb-3">
-            <i class="fas fa-gamepad text-2xl mr-3 text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <i class="fas fa-gamepad text-2xl mr-3 text-black group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">Game Development</h3>
           </div>
           <p class="text-transition text-sm mb-3">Delivering immersive game development services, from concept to launch, with a
             focus on engaging gameplay and stunning visuals. Our expertise covers multi-platform game design, 2D/3D
             graphics, and interactive user experiences.</p>
           <div class="flex justify-end items-center mt-2">
-            <span class="text-sm text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
-            <i class="fas fa-arrow-right text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <span class="text-sm text-black group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-black group-hover:text-white transition-colors duration-300"></i>
           </div>
         </button>
 
         <!-- Cloud Solutions Card -->
         <button
-          class="base-card hover-card group p-4 border border-[rgba(9,24,70,1)] hover:border-white"
+          class="base-card hover-card group p-4 border border-black hover:border-white"
         >
           <div class="flex items-center mb-3">
-            <i class="fas fa-cloud text-2xl mr-3 text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <i class="fas fa-cloud text-2xl mr-3 text-black group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">Cloud Solutions</h3>
           </div>
           <p class="text-transition text-sm mb-3">Offering scalable cloud solutions, ensuring seamless integration, security, and
             performance for your business applications and services.</p>
           <div class="flex justify-end items-center mt-2">
-            <span class="text-sm text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
-            <i class="fas fa-arrow-right text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <span class="text-sm text-black group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-black group-hover:text-white transition-colors duration-300"></i>
           </div>
         </button>
 
         <!-- AI/Machine Learning Solutions Card -->
         <button
-          class="base-card hover-card group p-4 border border-[rgba(9,24,70,1)] hover:border-white"
+          class="base-card hover-card group p-4 border border-black hover:border-white"
         >
           <div class="flex items-center mb-3">
-            <i class="fas fa-robot text-2xl mr-3 text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <i class="fas fa-robot text-2xl mr-3 text-black group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">AI/Machine Learning Solutions</h3>
           </div>
           <p class="text-transition text-sm mb-3">Providing cutting-edge AI and machine learning solutions to automate, optimize,
             and enhance your business processes with intelligent insights and predictions.</p>
           <div class="flex justify-end items-center mt-2">
-            <span class="text-sm text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
-            <i class="fas fa-arrow-right text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <span class="text-sm text-black group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-black group-hover:text-white transition-colors duration-300"></i>
           </div>
         </button>
 
         <!-- App Development Card -->
         <button
-          class="base-card hover-card group p-4 border border-[rgba(9,24,70,1)] hover:border-white"
+          class="base-card hover-card group p-4 border border-black hover:border-white"
         >
           <div class="flex items-center mb-3">
-            <i class="fas fa-mobile-alt text-2xl mr-3 text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <i class="fas fa-mobile-alt text-2xl mr-3 text-black group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">App Development</h3>
           </div>
           <p class="text-transition text-sm mb-3">Creating intuitive, high-performance mobile applications tailored to meet your
             business goals and deliver seamless user experiences across platforms.</p>
           <div class="flex justify-end items-center mt-2">
-            <span class="text-sm text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
-            <i class="fas fa-arrow-right text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <span class="text-sm text-black group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-black group-hover:text-white transition-colors duration-300"></i>
           </div>
         </button>
 
         <!-- Digital Marketing Card -->
         <button
-          class="base-card hover-card group p-4 border border-[rgba(9,24,70,1)] hover:border-white"
+          class="base-card hover-card group p-4 border border-black hover:border-white"
         >
           <div class="flex items-center mb-3">
-            <i class="fas fa-bullhorn text-2xl mr-3 text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <i class="fas fa-bullhorn text-2xl mr-3 text-black group-hover:text-white transition-colors duration-300"></i>
             <h3 class="text-lg font-semibold font-redhat text-gray-800 group-hover:text-white transition-colors duration-300">Digital Marketing</h3>
           </div>
           <p class="text-transition text-sm mb-3">Helping you reach a larger audience with targeted digital marketing strategies,
             SEO optimization, and content creation for business growth.</p>
           <div class="flex justify-end items-center mt-2">
-            <span class="text-sm text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
-            <i class="fas fa-arrow-right text-[rgba(9,24,70,1)] group-hover:text-white transition-colors duration-300"></i>
+            <span class="text-sm text-black group-hover:text-white transition-colors duration-300 font-bold mr-2">Learn More</span>
+            <i class="fas fa-arrow-right text-black group-hover:text-white transition-colors duration-300"></i>
           </div>
         </button>
       </div>
@@ -358,7 +499,7 @@
           </div>
           <!-- Hover curtain effect -->
           <div
-            class="absolute inset-0 bg-[rgba(9,24,70,1)] bg-opacity-90 flex items-center justify-center flex-col text-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+            class="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center flex-col text-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
             <h2 class="text-lg font-bold font-redhat mb-4">Want to avail of these services?</h2>
             <button class="px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300">
               Click Here
@@ -381,7 +522,7 @@
           </div>
           <!-- Hover curtain effect -->
           <div
-            class="absolute inset-0 bg-[rgba(9,24,70,1)] bg-opacity-90 flex items-center justify-center flex-col text-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+            class="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center flex-col text-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
             <h2 class="text-lg font-bold font-redhat mb-4">Want to avail of these services?</h2>
             <button class="px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300">
               Click Here
@@ -840,6 +981,46 @@
               </div>
             </div>
 
+
+
+
+            <div class="swiper-slide">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
+                <li class="flex justify-between gap-x-6 py-5">
+                  <div class="flex min-w-0 gap-x-4">
+                    <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
+                    <div class="min-w-0 flex-auto">
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
+                    </div>
+                  </div>
+                  <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                  </div>
+                </li>
+              </div>
+            </div>
+
+
+
+            <div class="swiper-slide">
+              <div class="team-card base-card hover-card p-6 transform hover:scale-105">
+                <li class="flex justify-between gap-x-6 py-5">
+                  <div class="flex min-w-0 gap-x-4">
+                    <img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="h-12 w-12 flex-none rounded-full bg-gray-50" />
+                    <div class="min-w-0 flex-auto">
+                      <p class="text-sm font-semibold leading-6 ">Leslie Alexander</p>
+                      <p class="mt-1 truncate text-xs leading-5 ">leslie.alexander@example.com</p>
+                    </div>
+                  </div>
+                  <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                    <p class="text-sm leading-6 text-transition">Co-Founder / CEO</p>
+                    <p class="mt-1 text-xs leading-5 text-transition">Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time></p>
+                  </div>
+                </li>
+              </div>
+            </div>
 
 
 
@@ -1409,7 +1590,7 @@
 
 
 
-  <footer class="bg-[rgba(9,24,70,1)]">
+  <footer class="bg-black">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">

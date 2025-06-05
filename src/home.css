@@ -1,0 +1,112 @@
+ /* General font styling */
+ * {
+    font-family: 'Red Hat Display', sans-serif;
+  }
+
+  /* Base card styling */
+  .base-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    padding: 1.5rem; /* Adjusted padding for consistent spacing */
+  }
+
+  /* Hover effect for cards */
+  .hover-card:hover {
+    background-color: rgba(9, 24, 70, 1);
+    color: white;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Text color transition for smoother hover effect */
+  .text-transition {
+    color: #4B5563;
+    transition: color 0.3s ease-in-out;
+  }
+
+  /* Text color change on hover */
+  .hover-card:hover .text-transition {
+    color: white;
+  }
+
+  /* Contact container styling */
+  .contact-container {
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background-color: rgba(9, 24, 70, 1);
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Centering content within containers */
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Responsive styling for mobile view */
+  @media (max-width: 768px) {
+    .base-card {
+      width: 100%; /* Full width on mobile */
+      height: auto; /* Dynamic height to fit content */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0.5rem 0; /* Vertical margin for spacing */
+      box-sizing: border-box; /* Ensures padding doesn't affect width */
+    }
+
+    /* Center-align text within cards for mobile */
+    .base-card h3, .base-card p {
+      text-align: center;
+    }
+  }
+
+  /* Ensuring hover effects don't conflict across different screen sizes */
+  @media (min-width: 768px) {
+    .hover-card {
+      cursor: pointer; /* Hand cursor on hover for larger screens */
+    }
+  }
+
+
+  @keyframes colorShift {
+0% { color: orange; }
+50% { color: blue; }
+100% { color: orange; }
+}
+
+#contactSection h2 {
+animation: colorShift 3s infinite ease-in-out;
+transition: color 0.5s ease;
+}
+
+
+/* Video Background Styles */
+#banner video {
+    /* Optimize video performance */
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+/* Handle smaller screens */
+@media (max-width: 768px) {
+    #banner video {
+        /* Optional: adjust video position for mobile */
+        object-position: center;
+    }
+}
+
+/* Fallback for browsers that don't support video */
+.no-video #banner {
+    background-image: url('images/dummy.jpg');
+    background-size: cover;
+    background-position: center;
+}
