@@ -75,11 +75,6 @@
   }
 
 
-  @keyframes colorShift {
-0% { color: orange; }
-50% { color: blue; }
-100% { color: orange; }
-}
 
 #contactSection h2 {
 animation: colorShift 3s infinite ease-in-out;

@@ -15,7 +15,12 @@
 <link rel="stylesheet" href="src/projects.css">
 
 
-
+<style>
+  body {
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #000; /* Light background for better contrast */
+  }
+  </style>
 
 
 </head>
@@ -33,57 +38,138 @@
 
 
 
-<!-- NAV BAR -->
-  <section id="navbar">
-    <nav class="nav-main fixed w-full z-20 top-0 start-0">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="home.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src='images/Devblock-removebg-preview.png'
-            class="h-8 transition-transform duration-300 hover:scale-105" alt="Flowbite Logo" />
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white font-redhat transition-colors duration-300 hover:text-blue-700 dark:hover:text-blue-500">DevBlocks</span>
-        </a>
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          
-          <button id="mobile-menu-toggle" data-collapse-toggle="navbar-sticky" type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition-all duration-300"
-            aria-controls="navbar-sticky" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-        </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-          <ul
-            class="flex flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg bg-gray-50 md:bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white/30 backdrop-blur-lg">
+ <!--************************ NAVBAR START **************************-->
+ <section id="navbar" class="bg-black/90 backdrop-blur-sm fixed w-full z-50 top-0 left-0 border-b border-gray-800">
+  <nav class="nav-main">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-4">
+      <!-- Navigation Menu - Moved to Left -->
+      <div class="flex-1">
+        <div class="hidden md:flex items-center space-x-8">
+          <ul class="flex space-x-8">
             <li>
-              <button id="homeBtn"
-                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 font-redhat transition-all duration-300 hover:scale-105 hover:bg-blue-800">Home</button>
+              <button id="homeBtn" class="nav-btn relative group">
+                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Home</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+              </button>
             </li>
             <li>
-              <button id="servicesBtn"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Services</button>
+              <button id="servicesBtn" class="nav-btn relative group">
+                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Services</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+              </button>
             </li>
             <li>
-              <button id="projectsBtn"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Projects</button>
+              <button id="projectsBtn" class="nav-btn relative group">
+                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Projects</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+              </button>
             </li>
             <li>
-              <button id="aboutBtn"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">About</button>
+              <button id="aboutBtn" class="nav-btn relative group">
+                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">About</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+              </button>
             </li>
             <li>
-              <button id="contactBtn"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-redhat transition-all duration-300 hover:scale-105">Contact</button>
+              <button id="contactBtn" class="px-6 py-2 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 font-medium">
+                Contact
+              </button>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
-  </section>
 
+      <!-- Logo - Moved to Right -->
+      <a href="home.html" class="flex items-center space-x-3 order-first md:order-last">
+        <img src='images/logo/fiinvestTransparentLOgo.png' 
+          class="h-16 w-auto transition-all duration-300 hover:scale-105" 
+          alt="Fiinvest Logo" 
+        />
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden">
+        <button id="mobile-menu-toggle" 
+          class="p-2 rounded-lg text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DBAB23]"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="navbar-sticky" class="hidden w-full md:hidden mt-4">
+        <ul class="flex flex-col space-y-4 p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg">
+          <li>
+            <button id="homeBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+              Home
+            </button>
+          </li>
+          <li>
+            <button id="servicesBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+              Services
+            </button>
+          </li>
+          <li>
+            <button id="projectsBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+              Projects
+            </button>
+          </li>
+          <li>
+            <button id="aboutBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+              About
+            </button>
+          </li>
+          <li>
+            <button id="contactBtnMobile" class="w-full px-4 py-2 bg-[#DBAB23] text-black rounded-lg hover:bg-white transition-all duration-300">
+              Contact
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
+
+<!-- Add these styles to your existing style tag -->
+<style>
+.nav-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #DBAB23;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-btn:hover::after,
+.nav-btn.active::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  #navbar-sticky {
+    animation: slideDown 0.3s ease-out;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+<div class="mt-20"></div> <!-- Adjust this as needed to create space below the navbar -->
+  
 
   <!-- END OF NAVBAR -->
 
@@ -128,188 +214,417 @@
 
 
 
-<!-- PROJECT OVERVIEW -->
-    <section class="py-16 bg-white" id="projectOverview">
-      <h1 class="text-6xl font-bold text-center pb-12"> Project Details</h1>
-      <div class="container mx-auto flex flex-col md:flex-row items-start justify-between space-y-8 md:space-y-0 md:space-x-8">
-        
-        <!-- Left Side - Project Overview (with equal height) -->
-        <div class="md:w-1/2 space-y-4 transform transition duration-300 hover:scale-105 flex-grow">
-          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl h-full flex flex-col justify-between">
-            <div>
-              <h1 class="text-4xl font-bold text-blue-700">Project Overview</h1>
-              <p class="text-xl text-gray-600 mt-4">
-                XQUIC revolutionized the hospitality industry by introducing AI-driven reconciliation solutions for managing finances across hotels and resorts. Their system automated 95% of the revenue management process, drastically reducing manual errors and optimizing accuracy. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas veniam laborum expedita aspernatur provident porro aperiam harum exercitationem incidunt ut. Laboriosam pariatur consequuntur nam dignissimos doloremque sunt. Fuga, sapiente maxime.
-              </p>
+
+
+
+<section class="w-full bg-[#DBAB23] py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-5xl md:text-7xl font-bold text-black text-center font-redhat leading-tight">
+      Consultancies Provided<br/>
+      <span class="text-white">by Fiinvest</span>
+    </h2>
+  </div>
+</section>
+
+<!-- Services/Consultancy Section -->
+<section class="py-24">
+  <div class="container mx-auto px-4">
+    <!-- Service Row 1 - Private Equity -->
+    <div class="flex flex-col md:flex-row items-center gap-16 mb-32">
+      <div class="flex-1 order-2 md:order-1">
+        <div class="space-y-6 bg-[#161616] backdrop-blur-sm p-8 rounded-2xl border border-gray-800">
+          <div class="inline-block">
+            <span class="text-[#DBAB23] font-medium tracking-wide">01 | PRIVATE EQUITY</span>
+            <div class="h-1 w-full bg-[#DBAB23] mt-2"></div>
+          </div>
+          <h3 class="text-4xl md:text-5xl font-bold text-white font-redhat leading-tight">
+            Strategic Private<br/>Equity Solutions
+          </h3>
+          <p class="text-white/80 text-lg leading-relaxed">
+            Unlock exceptional growth opportunities through our comprehensive private equity consulting services. We provide expert guidance in deal structuring, portfolio management, and value creation strategies.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Deal Structuring</span>
             </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Portfolio Optimization</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Exit Strategy</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Value Creation</span>
+            </div>
+          </div>
           
+          <!-- Added CTA Button -->
+          <div class="mt-8 pt-6 border-t border-gray-800">
+            <button onclick="window.location.href='#contactSection'" 
+              class="group w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#DBAB23] text-[#DBAB23] rounded-lg hover:bg-[#DBAB23] hover:text-black transition-all duration-300 flex items-center justify-center space-x-2">
+              <span class="font-medium">Explore Private Equity Opportunities</span>
+              <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </button>
           </div>
         </div>
-    
-        <!-- Right Side - Tools & Technologies (with 2 cards) -->
-        <div class="md:w-1/2 space-y-4 flex flex-col justify-between">
-          <!-- Tools & Technologies Card -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl">
-            <h2 class="text-lg font-bold text-gray-800">Tools & Technologies Used</h2>
-            <ul class="mt-4 text-gray-600 space-y-2">
-              <li><strong>Python</strong> for AI and data processing</li>
-              <li><strong>Flask</strong> for backend development</li>
-              <li><strong>SQL</strong> for data storage</li>
-              <li><strong>APIs</strong> for seamless integration</li>
-              <li><strong>Tailwind CSS</strong> for responsive design</li>
-            </ul>
-          </div>
-    
-          <!-- Additional Features Card -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl">
-            <h2 class="text-lg font-bold text-gray-800">Additional Features</h2>
-            <ul class="mt-4 text-gray-600 space-y-2">
-              <li>AI-based data reconciliation with 95% accuracy</li>
-              <li>Real-time reporting for better oversight</li>
-              <li>Custom APIs for hotel management systems</li>
-            </ul>
-          </div>
-        </div>
-      
       </div>
-    </section>
-<!-- END OF PROJECT OVERVIEW -->
-
-
-
-
-<!-- PROJECT CHALLENGES -->
-    <section class="py-16 bg-white" id="projectChallenges">
-      <div class="container mx-auto flex flex-col md:flex-row items-start justify-between space-y-8 md:space-y-0 md:space-x-8">
-        
-        <!-- Left Side - Project Overview (with equal height) -->
-        <div class="md:w-1/2 space-y-4 transform transition duration-300 hover:scale-105 flex-grow">
-          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl h-full flex flex-col justify-between">
-            <div>
-              <h1 class="text-4xl font-bold text-blue-700">Project Challengs</h1>
-              <p class="text-xl text-gray-600 mt-4">
-                XQUIC revolutionized the hospitality industry by introducing AI-driven reconciliation solutions for managing finances across hotels and resorts. Their system automated 95% of the revenue management process, drastically reducing manual errors and optimizing accuracy. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas veniam laborum expedita aspernatur provident porro aperiam harum exercitationem incidunt ut. Laboriosam pariatur consequuntur nam dignissimos doloremque sunt. Fuga, sapiente maxime. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, sed. Nulla quidem alias odit necessitatibus dolorum. Modi dolorum aspernatur unde facilis incidunt consequatur eius pariatur .
-              </p>
+      <div class="flex-1 order-1 md:order-2">
+        <div class="relative group">
+          <img src="images/privatequity.jpg" alt="Private Equity" class="w-full rounded-lg shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#DBAB23]/20 to-transparent rounded-lg"></div>
+          
+          <!-- Badges -->
+          <div class="absolute top-4 left-4 flex flex-col gap-3">
+            <div class="bg-black/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center space-x-2">
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-white text-sm">Active Investments</span>
             </div>
-            
+            <div class="bg-[#DBAB23]/90 backdrop-blur-sm px-4 py-2 rounded-full">
+              <span class="text-black font-medium">$500M+ Managed</span>
+            </div>
+          </div>
+
+          <!-- Success Rate Badge -->
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-full">
+            <span class="text-black font-bold text-xl">95%</span>
+            <span class="text-black/70 text-xs block">Success Rate</span>
           </div>
         </div>
-    
-        <!-- Right Side - Image Card -->
-        <div class="md:w-1/2 space-y-4 flex flex-col justify-between">
-          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl flex flex-col justify-between h-full">
-            <img src="images/ProjectDummy2.jpg" alt="Project Image" class="mt-4 rounded-lg shadow-md">
-            <p class="mt-4 text-gray-600">
-              Description of the project image goes here. You can highlight key features or the importance of the image in relation to the project.
-            </p>
-          </div>
-        </div>
-    
       </div>
-    </section>
-    
-<!-- END OF PROJECT CHALLENGES -->
-
-
-
-
-    
-    
-    
-  <!-- Solutions Provided by Us Section -->
-<section class="mt-16 pb-16" id="solutionsProvided">
-  <h2 class="text-6xl font-bold text-center text-gray-800 mb-8">Solutions Provided by Us</h2>
-  <div class="flex flex-wrap justify-center gap-8">
-    <!-- Solution Card 1 -->
-    <div class="w-full md:w-5/12 xl:w-5/12 bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105 flex flex-col justify-between">
-      <h3 class="text-2xl font-semibold text-gray-800">Solution 1</h3>
-      <p class="text-lg text-gray-600 mt-4">We provide AI-driven tools to optimize financial management and automate key processes, reducing errors and increasing efficiency. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aut omnis nemo suscipit molestiae eaque repellat tempore atque! Libero doloremque labore natus odit consequatur deserunt exercitationem facere officiis! Rerum, ducimus.</p>
     </div>
 
-    <!-- Solution Card 2 -->
-    <div class="w-full md:w-5/12 xl:w-5/12 bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105 flex flex-col justify-between">
-      <h3 class="text-2xl font-semibold text-gray-800">Solution 2</h3>
-      <p class="text-lg text-gray-600 mt-4">Our customized insights help businesses scale by providing actionable data for decision-making and future planning. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim repudiandae facere, fugit recusandae eaque quisquam et provident consequatur nulla, aliquid eum blanditiis excepturi error est voluptatem harum assumenda officia placeat.</p>
-    </div>
-  </div>
+    <!-- Service Row 2 - Mutual Funds -->
+    <div class="flex flex-col md:flex-row items-center gap-16 mb-32">
+      <div class="flex-1">
+        <div class="relative group">
+          <img src="images/mutualfunds.jpg" alt="Mutual Funds" class="w-full rounded-lg shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-l from-[#DBAB23]/20 to-transparent rounded-lg"></div>
+          
+          <!-- Badges -->
+          <div class="absolute top-4 left-4 flex flex-col gap-3">
+            <div class="bg-black/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center space-x-2">
+              <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span class="text-white text-sm">Diverse Portfolio</span>
+            </div>
+            <div class="bg-[#DBAB23]/90 backdrop-blur-sm px-4 py-2 rounded-full">
+              <span class="text-black font-medium">20+ Fund Options</span>
+            </div>
+          </div>
 
-  <!-- Picture Card -->
-  <div class="flex justify-center mt-8"> <!-- Centering the picture card -->
-    <div class="w-full md:w-8/12 xl:w-8/12 bg-white shadow-lg rounded-lg transition-transform duration-300 transform hover:scale-105"> <!-- Increased width here -->
-      <img src="images/DummyProject1Banner.png" alt="Description of image" class="w-full h-96 object-cover rounded-lg">
+          <!-- Performance Badge -->
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-full">
+            <span class="text-black font-bold text-xl">15%</span>
+            <span class="text-black/70 text-xs block">Avg. Returns</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1">
+        <div class="space-y-6 bg-[#161616] backdrop-blur-sm p-8 rounded-2xl border border-gray-800">
+          <div class="inline-block">
+            <span class="text-[#DBAB23] font-medium tracking-wide">02 | MUTUAL FUNDS</span>
+            <div class="h-1 w-full bg-[#DBAB23] mt-2"></div>
+          </div>
+          <h3 class="text-4xl md:text-5xl font-bold text-white font-redhat leading-tight">
+            Expert Mutual Fund<br/>Management
+          </h3>
+          <p class="text-white/80 text-lg leading-relaxed">
+            Maximize your investment potential with our tailored mutual fund solutions. Our expertise helps you navigate diverse investment options and build resilient portfolios aligned with your goals.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Fund Selection</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Risk Assessment</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Portfolio Diversification</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Performance Monitoring</span>
+            </div>
+          </div>
+          
+          <!-- Added CTA Button -->
+          <div class="mt-8 pt-6 border-t border-gray-800">
+            <button onclick="window.location.href='#contactSection'" 
+              class="group w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#DBAB23] text-[#DBAB23] rounded-lg hover:bg-[#DBAB23] hover:text-black transition-all duration-300 flex items-center justify-center space-x-2">
+              <span class="font-medium">Start Your Investment Journey</span>
+              <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        
+      </div>
+
+
+    </div>
+
+    <!-- Service Row 3 - Stocks -->
+    <div class="flex flex-col md:flex-row items-center gap-16">
+      <div class="flex-1 order-2 md:order-1">
+        <div class="space-y-6 bg-[#161616] backdrop-blur-sm p-8 rounded-2xl border border-gray-800">
+          <div class="inline-block">
+            <span class="text-[#DBAB23] font-medium tracking-wide">03 | STOCKS</span>
+            <div class="h-1 w-full bg-[#DBAB23] mt-2"></div>
+          </div>
+          <h3 class="text-4xl md:text-5xl font-bold text-white font-redhat leading-tight">
+            Strategic Stock<br/>Trading Advisory
+          </h3>
+          <p class="text-white/80 text-lg leading-relaxed">
+            Navigate the stock market with confidence using our expert trading strategies and market analysis. We provide comprehensive research and personalized recommendations for optimal returns.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Market Analysis</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Trading Strategies</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Risk Management</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-[#DBAB23] rounded-full"></div>
+              <span class="text-white">Portfolio Tracking</span>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-gray-800">
+            <button onclick="window.location.href='#contactSection'" 
+              class="group w-full md:w-auto px-8 py-4 bg-transparent border-2 border-[#DBAB23] text-[#DBAB23] rounded-lg hover:bg-[#DBAB23] hover:text-black transition-all duration-300 flex items-center justify-center space-x-2">
+              <span class="font-medium">Start Trading Today</span>
+              <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 order-1 md:order-2">
+        <div class="relative group">
+          <img src="images/stocks.jpg" alt="Stocks" class="w-full rounded-lg shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#DBAB23]/20 to-transparent rounded-lg"></div>
+          
+          <!-- Badges -->
+          <div class="absolute top-4 left-4 flex flex-col gap-3">
+            <div class="bg-black/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center space-x-2">
+              <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              <span class="text-white text-sm">Live Trading</span>
+            </div>
+            <div class="bg-[#DBAB23]/90 backdrop-blur-sm px-4 py-2 rounded-full">
+              <span class="text-black font-medium">24/7 Support</span>
+            </div>
+          </div>
+
+          <!-- Trading Volume Badge -->
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-full">
+            <span class="text-black font-bold text-xl">1M+</span>
+            <span class="text-black/70 text-xs block">Daily Trades</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
- <!-- END OF SOLUTIONS PROVIDED -->
 
+<!-- Contact Form Section -->
+<section class="py-24 relative overflow-hidden" id="contactSection">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 bg-[#000000] opacity-90"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/10 to-transparent"></div>
+  
+  <div class="container mx-auto px-4 relative">
+    <!-- Section Header -->
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="text-[#DBAB23] font-medium tracking-wider mb-2 block animate-fadeIn">GET IN TOUCH</span>
+      <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 font-redhat leading-tight animate-slideUp">
+        Let's Start Your <span class="text-[#DBAB23]">Financial Journey</span>
+      </h2>
+      <p class="text-white/70 text-lg animate-fadeIn">
+        Schedule a consultation with our expert advisors and take the first step towards your financial success
+      </p>
+    </div>
 
+    <!-- Contact Form -->
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-[#161616]/80 backdrop-blur-lg p-8 md:p-12 rounded-2xl border border-gray-800 shadow-2xl">
+        <form class="space-y-8">
+          <!-- Name Fields Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="group">
+              <input type="text" required
+                class="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white focus:border-[#DBAB23] transition-colors peer"
+                placeholder=" "
+              />
+              <label class="absolute -top-4 left-0 text-sm text-gray-400 peer-focus:text-[#DBAB23] transition-colors">
+                First Name*
+              </label>
+            </div>
+            <div class="group">
+              <input type="text" required
+                class="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white focus:border-[#DBAB23] transition-colors peer"
+                placeholder=" "
+              />
+              <label class="absolute -top-4 left-0 text-sm text-gray-400 peer-focus:text-[#DBAB23] transition-colors">
+                Last Name*
+              </label>
+            </div>
+          </div>
 
+          <!-- Email & Phone Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="group">
+              <input type="email" required
+                class="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white focus:border-[#DBAB23] transition-colors peer"
+                placeholder=" "
+              />
+              <label class="absolute -top-4 left-0 text-sm text-gray-400 peer-focus:text-[#DBAB23] transition-colors">
+                Email Address*
+              </label>
+            </div>
+            <div class="group">
+              <input type="tel"
+                class="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white focus:border-[#DBAB23] transition-colors peer"
+                placeholder=" "
+              />
+              <label class="absolute -top-4 left-0 text-sm text-gray-400 peer-focus:text-[#DBAB23] transition-colors">
+                Phone Number
+              </label>
+            </div>
+          </div>
 
+          <!-- Service Selection -->
+          <div class="group">
+            <select required
+              class="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white focus:border-[#DBAB23] transition-colors"
+            >
+              <option value="" disabled selected class="bg-[#161616]">Select Service*</option>
+              <option value="private-equity" class="bg-[#161616]">Private Equity</option>
+              <option value="mutual-funds" class="bg-[#161616]">Mutual Funds</option>
+              <option value="stocks" class="bg-[#161616]">Stock Trading</option>
+            </select>
+          </div>
 
+          <!-- Message -->
+          <div class="group">
+            <textarea required rows="4"
+              class="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white focus:border-[#DBAB23] transition-colors peer"
+              placeholder=" "
+            ></textarea>
+            <label class="absolute -top-4 left-0 text-sm text-gray-400 peer-focus:text-[#DBAB23] transition-colors">
+              Your Message*
+            </label>
+          </div>
 
-<!-- CUSTOMER REVIEW -->
-
-
-<section id="customerReview" class="pb-12">
-  <h1 class="text-center font-bold text-6xl pt-12 pb-24">Customer Review</h1>
-  <figure class="max-w-screen-lg mx-auto text-center bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 transform hover:scale-105"> <!-- Increased width class here -->
-    <svg class="w-10 h-10 mx-auto mb-3 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-      <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-    </svg>
-    <blockquote>
-      <p class="text-2xl italic font-medium text-gray-900">"Flowbite is just awesome. It contains tons of pre-designed components and pages starting from the login screen to complex dashboards. Perfect choice for your next SaaS application."</p>
-    </blockquote>
-    <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
-      <img class="w-12 h-12 rounded-full border-2 border-blue-500" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
-      <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500">
-        <cite class="pe-3 font-medium text-gray-900">Michael Gough</cite>
-        <cite class="ps-3 text-sm text-gray-500">CEO at Google</cite>
+          <!-- Submit Button -->
+          <div class="flex justify-center">
+            <button type="submit"
+              class="group relative px-8 py-4 bg-[#DBAB23] text-black rounded-lg overflow-hidden transition-all duration-300 hover:bg-white"
+            >
+              <span class="relative z-10 font-medium text-lg">Schedule Consultation</span>
+              <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            </button>
+          </div>
+        </form>
       </div>
-    </figcaption>
-  </figure>
-</section>
+    </div>
 
-
-<!-- END OF CUSTOMER REVIEW -->
-
-
-
-<!-- BANNER -->
-
-<div class="relative bg-cover bg-center h-[650px] "
-    style="background-image: url('images/projectConBanner.jpg');" id="banner">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div class="relative h-full flex items-center justify-center">
-      <div class="text-center px-4">
-        <h1 class="font-redhat font-bold text-white text-6xl md:text-9xl">
-          Let's Turn Your Vision into Reality!
-        </h1>
-        <h2 class="mt-4 font-redhat font-bold text-white text-lg md:text-xl">
-          Solving the problems with technology innovation and providing business solutions
-        </h2>
-        <div class="mt-8">
-          <button
-          id="contactBtnBanner"
-            class="p-2 md:p-4 text-lg md:text-xl bg-blue-900 text-white rounded-full w-full md:w-96 font-semibold font-redhat hover:bg-white hover:text-blue-900 transition duration-300"
-          >
-            Contact Us!
-          </button>
+    <!-- Contact Info Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+      <!-- Phone -->
+      <div class="bg-[#161616]/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-colors">
+        <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
         </div>
+        <h3 class="text-xl font-bold text-white mb-2">Phone</h3>
+        <p class="text-white/70">+1 234 567 890</p>
+      </div>
+
+      <!-- Email -->
+      <div class="bg-[#161616]/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-colors">
+        <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Email</h3>
+        <p class="text-white/70">contact@fiinvest.com</p>
+      </div>
+
+      <!-- Location -->
+      <div class="bg-[#161616]/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-colors">
+        <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Location</h3>
+        <p class="text-white/70">123 Financial District, Dubai</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- END OF BANNER -->
+<!-- Add these styles to your existing style tag -->
+<style>
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out;
+}
 
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+.group {
+  position: relative;
+}
 
-
-
-
-
+.peer:focus + label,
+.peer:not(:placeholder-shown) + label {
+  transform: translateY(-24px) scale(0.85);
+  color: #DBAB23;
+}
+</style>
 
        
     <!-- Footer -->
