@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devblock Studios</title>
+  <title>Fiinvest</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- <link href="dist/styles.css" rel="stylesheet"> Link to your CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap"
@@ -12,7 +12,7 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="icon" type="image/png" href="images/Devblock-removebg-preview.png">
+  <link rel="icon" type="image/png" href="images/logo/fiinvestTransparentLOgo.png">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="src/home.css">
 
@@ -47,13 +47,20 @@
 
 
   <!--************************ NAVBAR START **************************-->
-<section id="navbar" class="bg-black/90 backdrop-blur-sm fixed w-full z-50 top-0 left-0 border-b border-gray-800">
-  <nav class="nav-main">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-4">
-      <!-- Navigation Menu - Moved to Left -->
-      <div class="flex-1">
-        <div class="hidden md:flex items-center space-x-8">
-          <ul class="flex space-x-8">
+  <section id="navbar" class="bg-black/90 backdrop-blur-sm fixed w-full z-50 top-0 left-0 border-b border-gray-800">
+    <nav class="nav-main">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-4">
+        <!-- Logo - Moved to Left -->
+        <a href="home.html" class="flex items-center space-x-3">
+          <img src='images/logo/fiinvestTransparentLOgo.png' 
+            class="h-16 w-auto transition-all duration-300 hover:scale-105" 
+            alt="Fiinvest Logo" 
+          />
+        </a>
+  
+        <!-- Navigation Menu - Moved to Right -->
+        <div class="hidden md:block">
+          <ul class="flex items-center space-x-8">
             <li>
               <button id="homeBtn" class="nav-btn relative group">
                 <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Home</span>
@@ -67,8 +74,8 @@
               </button>
             </li>
             <li>
-              <button id="projectsBtn" class="nav-btn relative group">
-                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Projects</span>
+              <button id="TeamBtn" class="nav-btn relative group">
+                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Team</span>
                 <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </button>
             </li>
@@ -85,60 +92,51 @@
             </li>
           </ul>
         </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="flex md:hidden">
+          <button id="mobile-menu-toggle" 
+            class="p-2 rounded-lg text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DBAB23]"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+            </svg>
+          </button>
+        </div>
+  
+        <!-- Mobile Menu -->
+        <div id="navbar-sticky" class="hidden w-full md:hidden mt-4">
+          <ul class="flex flex-col space-y-4 p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg">
+            <li>
+              <button id="homeBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+                Home
+              </button>
+            </li>
+            <li>
+              <button id="servicesBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+                Services
+              </button>
+            </li>
+            <li>
+              <button id="TeamBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+                Team
+              </button>
+            </li>
+            <li>
+              <button id="aboutBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+                About
+              </button>
+            </li>
+            <li>
+              <button id="contactBtnMobile" class="w-full px-4 py-2 bg-[#DBAB23] text-black rounded-lg hover:bg-white transition-all duration-300">
+                Contact
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-
-      <!-- Logo - Moved to Right -->
-      <a href="home.html" class="flex items-center space-x-3 order-first md:order-last">
-        <img src='images/logo/fiinvestTransparentLOgo.png' 
-          class="h-16 w-auto transition-all duration-300 hover:scale-105" 
-          alt="Fiinvest Logo" 
-        />
-      </a>
-      
-      <!-- Mobile Menu Button -->
-      <div class="flex md:hidden">
-        <button id="mobile-menu-toggle" 
-          class="p-2 rounded-lg text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DBAB23]"
-        >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="navbar-sticky" class="hidden w-full md:hidden mt-4">
-        <ul class="flex flex-col space-y-4 p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg">
-          <li>
-            <button id="homeBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
-              Home
-            </button>
-          </li>
-          <li>
-            <button id="servicesBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
-              Services
-            </button>
-          </li>
-          <li>
-            <button id="projectsBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
-              Projects
-            </button>
-          </li>
-          <li>
-            <button id="aboutBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
-              About
-            </button>
-          </li>
-          <li>
-            <button id="contactBtnMobile" class="w-full px-4 py-2 bg-[#DBAB23] text-black rounded-lg hover:bg-white transition-all duration-300">
-              Contact
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</section>
+    </nav>
+  </section>
 
 <!-- Add these styles to your existing style tag -->
 <style>
@@ -188,7 +186,7 @@
 
 
   <!--**************************     BANNER     **********************************      -->
-  <div class="relative h-screen pt-20" id="banner">
+  <div class="relative h-screen pt-20 z-20" id="banner">
     <!-- Video Background -->
     <video 
         class="absolute inset-0 w-full h-full object-cover transform scale-105"
@@ -220,7 +218,7 @@
                     Book An Appointment
                 </button>
                 <button 
-                    class="px-8 py-4 text-lg md:text-xl bg-transparent border-2 border-white text-white rounded-full w-full md:w-auto font-bold font-redhat hover:bg-white hover:text-black transform transition-all duration-300 hover:scale-105">
+                    class="px-8 py-4 text-lg md:text-xl bg-transparent border-2 border-white text-white rounded-full w-full md:w-auto font-bold font-redhat hover:bg-white hover:text-black transform transition-all duration-300 hover:scale-105" onclick="window.location.href='services.html'">  
                     Learn More
                 </button>
             </div>
@@ -381,7 +379,7 @@
           </ul>
 
           <!-- Enhanced CTA Button -->
-          <button class="group relative px-8 py-4 bg-[#DBAB23] text-black rounded-lg overflow-hidden transition-all duration-300 hover:bg-white w-full md:w-auto transform hover:scale-105">
+          <button class="group relative px-8 py-4 bg-[#DBAB23] text-black rounded-lg overflow-hidden transition-all duration-300 hover:bg-white w-full md:w-auto transform hover:scale-105" onclick="window.location.href='services.html'"> 
             <span class="relative z-10 font-medium flex items-center justify-center">
               Learn More
               <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -438,7 +436,7 @@
     <!-- Services Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
       <!-- Private Equity Service -->
-      <button class="group w-full text-left" onclick="serviceClick('private-equity')">
+      <button class="group w-full text-left" onclick="window.location.href='services.html'">
         <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
           <!-- Service Icon -->
           <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
@@ -470,7 +468,7 @@
 
       <!-- Repeat similar structure for Stocks and Mutual Funds -->
       <!-- ... other services ... -->
-      <button class="group w-full text-left" onclick="serviceClick('private-equity')">
+      <button class="group w-full text-left" onclick="window.location.href='services.html'">
         <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
           <!-- Service Icon -->
           <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
@@ -503,7 +501,7 @@
 
 
 
-      <button class="group w-full text-left" onclick="serviceClick('private-equity')">
+      <button class="group w-full text-left" onclick="window.location.href='services.html'">
         <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
           <!-- Service Icon -->
           <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
@@ -618,44 +616,7 @@
   });
   </script>
     <!-- Add this script for handling service clicks -->
-    <script>
-   function serviceClick(serviceType) {
-  // Store the service type
-  localStorage.setItem('selectedService', serviceType);
-  
-  // Navigate to services page with service type as hash
-  window.location.href = `services.html#${serviceType}`;
-}
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Function to scroll to element with offset for navbar
-  function scrollToElement(elementId) {
-    const element = document.getElementById(elementId);
-    if (element) {
-      const navbarHeight = document.querySelector('nav').offsetHeight;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  }
-
-  // Check if there's a hash in the URL
-  if (window.location.hash) {
-    // Remove the # from the hash
-    const serviceId = window.location.hash.substring(1);
     
-    // Add a slight delay to ensure page is fully loaded
-    setTimeout(() => {
-      scrollToElement(serviceId);
-    }, 100);
-  }
-});
-    </script>
   </div>
 </section>
 
@@ -663,7 +624,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <!-- Team Members Section -->
-<section class="reveal team-section py-24">
+<section id="TeamSection" class="reveal team-section py-24">
   <div class="absolute inset-0">
     <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
     <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5 animate-float"></div>
@@ -690,141 +651,144 @@ document.addEventListener('DOMContentLoaded', function() {
       <!-- Team Member Card -->
       
 
-      <div class="relative group h-[555px]">
-        <!-- Image and Gradient -->
-        <div class="absolute inset-0">
-          <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-        </div>
-        
-        <!-- Content Container -->
-        <div class="absolute inset-0 flex flex-col p-6">
-          <!-- Buttons at top with improved visibility -->
-          <div class="flex items-center justify-center space-x-4 mb-auto bg-black/30 py-3 px-4 rounded-lg backdrop-blur-sm">
-            <button class="px-6 py-2 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-colors duration-300 font-medium">
-              Contact
-            </button>
-            <div class="h-6 w-px bg-white/50"></div> <!-- Enhanced divider -->
-            <button class="px-6 py-2 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-300 font-medium">
-              Profile
-            </button>
-          </div>
-          
-          <!-- Text Content at bottom -->
-          <div class="mt-auto">
-            <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
-            <!-- Added divider below CEO heading -->
-            <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
-            <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
-            <p class="text-white/80 mb-4">
-              Technical visionary with expertise in cutting-edge technologies and system architecture.
-            </p>
-          </div>
-        </div>
-      </div>
+      <!-- Replace the existing team member card content with this: -->
+
+<div class="relative group h-[555px]">
+  <!-- Image and Gradient -->
+  <div class="absolute inset-0">
+    <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+  </div>
+  
+  <!-- Content Container -->
+  <div class="absolute inset-0 flex flex-col p-6">
+    <!-- Text Content -->
+    <div class="mt-auto">
+      <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
+      <!-- Added divider below CEO heading -->
+      <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
+      <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
+      <p class="text-white/80 mb-6">
+        Technical visionary with expertise in cutting-edge technologies and system architecture.
+      </p>
+      
+      <!-- Single Learn More Button -->
+      <button 
+        onclick="openProfileModal('ceo')" 
+        class="group relative px-8 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 flex items-center space-x-2"
+      >
+        <span class="font-medium">Learn More</span>
+        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
 
       
-      <div class="relative group h-[555px]">
-        <!-- Image and Gradient -->
-        <div class="absolute inset-0">
-          <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-        </div>
-        
-        <!-- Content Container -->
-        <div class="absolute inset-0 flex flex-col p-6">
-          <!-- Buttons at top with improved visibility -->
-          <div class="flex items-center justify-center space-x-4 mb-auto bg-black/30 py-3 px-4 rounded-lg backdrop-blur-sm">
-            <button class="px-6 py-2 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-colors duration-300 font-medium">
-              Contact
-            </button>
-            <div class="h-6 w-px bg-white/50"></div> <!-- Enhanced divider -->
-            <button class="px-6 py-2 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-300 font-medium">
-              Profile
-            </button>
-          </div>
-          
-          <!-- Text Content at bottom -->
-          <div class="mt-auto">
-            <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
-            <!-- Added divider below CEO heading -->
-            <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
-            <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
-            <p class="text-white/80 mb-4">
-              Technical visionary with expertise in cutting-edge technologies and system architecture.
-            </p>
-          </div>
-        </div>
-      </div>
+<div class="relative group h-[555px]">
+  <!-- Image and Gradient -->
+  <div class="absolute inset-0">
+    <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+  </div>
+  
+  <!-- Content Container -->
+  <div class="absolute inset-0 flex flex-col p-6">
+    <!-- Text Content -->
+    <div class="mt-auto">
+      <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
+      <!-- Added divider below CEO heading -->
+      <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
+      <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
+      <p class="text-white/80 mb-6">
+        Technical visionary with expertise in cutting-edge technologies and system architecture.
+      </p>
+      
+      <!-- Single Learn More Button -->
+      <button 
+        onclick="openProfileModal('ceo')" 
+        class="group relative px-8 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 flex items-center space-x-2"
+      >
+        <span class="font-medium">Learn More</span>
+        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
 
       
-      <div class="relative group h-[555px]">
-        <!-- Image and Gradient -->
-        <div class="absolute inset-0">
-          <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-        </div>
-   <!--  -->
-        <!-- Content Container -->
-        <div class="absolute inset-0 flex flex-col p-6">
-          <!-- Buttons at top with improved visibility -->
-          <div class="flex items-center justify-center space-x-4 mb-auto bg-black/30 py-3 px-4 rounded-lg backdrop-blur-sm">
-            <button class="px-6 py-2 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-colors duration-300 font-medium">
-              Contact
-            </button>
-            <div class="h-6 w-px bg-white/50"></div> <!-- Enhanced divider -->
-            <button class="px-6 py-2 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-300 font-medium">
-              Profile
-            </button>
-          </div>
-          
-          <!-- Text Content at bottom -->
-          <div class="mt-auto">
-            <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
-            <!-- Added divider below CEO heading -->
-            <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
-            <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
-            <p class="text-white/80 mb-4">
-              Technical visionary with expertise in cutting-edge technologies and system architecture.
-            </p>
-          </div>
-        </div>
-      </div>
+<div class="relative group h-[555px]">
+  <!-- Image and Gradient -->
+  <div class="absolute inset-0">
+    <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+  </div>
+  
+  <!-- Content Container -->
+  <div class="absolute inset-0 flex flex-col p-6">
+    <!-- Text Content -->
+    <div class="mt-auto">
+      <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
+      <!-- Added divider below CEO heading -->
+      <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
+      <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
+      <p class="text-white/80 mb-6">
+        Technical visionary with expertise in cutting-edge technologies and system architecture.
+      </p>
+      
+      <!-- Single Learn More Button -->
+      <button 
+        onclick="openProfileModal('ceo')" 
+        class="group relative px-8 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 flex items-center space-x-2"
+      >
+        <span class="font-medium">Learn More</span>
+        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
 
 
       
-      <div class="relative group h-[555px]">
-        <!-- Image and Gradient -->
-        <div class="absolute inset-0">
-          <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-     </div>
-        
-        <!-- Content Container -->
-        <div class="absolute inset-0 flex flex-col p-6">
-          <!-- Buttons at top with improved visibility -->
-          <div class="flex items-center justify-center space-x-4 mb-auto bg-black/30 py-3 px-4 rounded-lg backdrop-blur-sm">
-            <button class="px-6 py-2 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-colors duration-300 font-medium">
-              Contact
-            </button>
-            <div class="h-6 w-px bg-white/50"></div> <!-- Enhanced divider -->
-            <button class="px-6 py-2 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-300 font-medium">
-              Profile
-            </button>
-          </div>
-          
-          <!-- Text Content at bottom -->
-          <div class="mt-auto">
-            <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
-            <!-- Added divider below CEO heading -->
-            <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
-            <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
-            <p class="text-white/80 mb-4">
-              Technical visionary with expertise in cutting-edge technologies and system architecture.
-            </p>
-          </div>
-        </div>
-      </div>
+<div class="relative group h-[555px]">
+  <!-- Image and Gradient -->
+  <div class="absolute inset-0">
+    <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+  </div>
+  
+  <!-- Content Container -->
+  <div class="absolute inset-0 flex flex-col p-6">
+    <!-- Text Content -->
+    <div class="mt-auto">
+      <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
+      <!-- Added divider below CEO heading -->
+      <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
+      <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
+      <p class="text-white/80 mb-6">
+        Technical visionary with expertise in cutting-edge technologies and system architecture.
+      </p>
+      
+      <!-- Single Learn More Button -->
+      <button 
+        onclick="openProfileModal('ceo')" 
+        class="group relative px-8 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 flex items-center space-x-2"
+      >
+        <span class="font-medium">Learn More</span>
+        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
 
 
       
@@ -845,9 +809,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Office Location Section -->
 <section class="reveal py-24 relative overflow-hidden">
   <!-- Background Elements -->
-  <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent pointer-events-none"></div>
   
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-4 relative z-10">
     <!-- Section Header -->
     <div class="max-w-7xl mx-auto mb-16">
       <h2 class="text-6xl md:text-8xl font-bold text-white font-redhat leading-tight">
@@ -858,7 +822,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
      <!-- Two Column Layout -->
-     <div class="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto">
+     <div class="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto relative">
       <!-- Left Column - Contact Info -->
       <div class="flex-1">
         <div class="bg-[#161616]/80 backdrop-blur-sm rounded-2xl p-8 h-[400px] transition-opacity duration-500 border border-gray-800 hover:border-[#DBAB23]" id="locationContent">
@@ -875,7 +839,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
     <!-- Controls Container -->
-    <div class="flex flex-col items-center mt-12 space-y-6">
+    <div class="flex flex-col items-center mt-12 space-y-6 relative z-20">
      <!-- Location Indicators -->
 <div class="flex justify-center space-x-6">
   <button id="indicator0" class="w-16 h-1 rounded-full bg-[#DBAB23] transition-all duration-300" data-location="0"></button>
@@ -1451,72 +1415,7 @@ document.getElementById('visionButton').addEventListener('click', () => {
 
 
 
-<style>
-/* Styles for floating cards in "Why Choose Devblock Studio" section */
-.floating-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
 
-.floating-cards-right {
-  animation: floatRight 20s linear infinite;
-}
-
-.floating-cards-left {
-  animation: floatLeft 20s linear infinite;
-}
-
-/* Animation for floating cards */
-@keyframes floatRight {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes floatLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-/* Styles for slider in "Our Values" section */
-.slider-container {
-  overflow-x: auto;
-  display: flex;
-  gap: 1.5rem;
-  scroll-snap-type: x mandatory;
-  animation: none; /* Prevents floating animation on this section */
-}
-
-.base-card {
-  flex-shrink: 0;
-  min-width: 280px;
-  transition: all 0.3s ease;
-}
-
-.base-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .floating-cards-right,
-  .floating-cards-left {
-    animation-duration: 15s;
-  }
-
-  .base-card {
-    padding: 1rem;
-  }
-
-  .base-card h3 {
-    font-size: 1.5rem;
-  }
-
-  .base-card p {
-    font-size: 0.875rem;
-  }
-}
 </style>
 
 
@@ -1741,7 +1640,7 @@ document.getElementById('visionButton').addEventListener('click', () => {
             <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="servicesBtnFooter">Services</button>
           </li>
           <li>
-            <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="projectsBtnFooter">Projects</button>
+            <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="TeamBtnFooter">Team</button>
           </li>
           <li>
             <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="aboutBtnFooter">About Us</button>
@@ -1878,7 +1777,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+const homeBtnMobile = document.getElementById('homeBtnMobile');
+const servicesBtnMobile = document.getElementById('servicesBtnMobile');
+const TeamBtnMobile = document.getElementById('TeamBtnMobile');
+const aboutBtnMobile = document.getElementById('aboutBtnMobile');
+const contactBtnMobile = document.getElementById('contactBtnMobile');
 
+// Function to handle mobile menu clicks
+function handleMobileMenuClick(section) {
+  // First close the mobile menu
+  const navbarSticky = document.getElementById('navbar-sticky');
+  navbarSticky.classList.add('hidden');
+  
+  // Then scroll to section
+  const navbarHeight = document.querySelector('nav').offsetHeight;
+  const elementPosition = section.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
+}
+
+// Add event listeners for mobile buttons
+homeBtnMobile.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('navbar-sticky').classList.add('hidden');
+});
+
+servicesBtnMobile.addEventListener('click', () => {
+  const servicesSection = document.getElementById('servicesSection');
+  handleMobileMenuClick(servicesSection);
+});
+
+TeamBtnMobile.addEventListener('click', () => {
+  const TeamSection = document.getElementById('TeamSection');
+  handleMobileMenuClick(TeamSection);
+});
+
+aboutBtnMobile.addEventListener('click', () => {
+  const aboutUsPageSection = document.getElementById('AboutUsPageSection');
+  handleMobileMenuClick(aboutUsPageSection);
+});
+
+contactBtnMobile.addEventListener('click', () => {
+  const contactSection = document.getElementById('contactSection');
+  handleMobileMenuClick(contactSection);
+});
+
+// Optional: Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  const navbarSticky = document.getElementById('navbar-sticky');
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  
+  if (!navbarSticky.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+    navbarSticky.classList.add('hidden');
+  }
+});
 
 
 
@@ -1942,7 +1898,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get the navbar buttons
     const homeBtn = document.getElementById('homeBtn');
     const servicesBtn = document.getElementById('servicesBtn');
-    const projectsBtn = document.getElementById('projectsBtn');
+    const TeamBtn = document.getElementById('TeamBtn');
     const contactBtn = document.getElementById('contactBtn');
     const aboutBtn = document.getElementById('aboutBtn');
     const bookAppointmentBtn = document.getElementById('bookAppointmentBtn');
@@ -1950,7 +1906,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // FOOTER BUTTONS
 
     const servicesBtnFooter = document.getElementById('servicesBtnFooter');
-    const projectsBtnFooter = document.getElementById('projectsBtnFooter');
+    const TeamBtnFooter = document.getElementById('TeamBtnFooter');
     const contactBtnFooter = document.getElementById('contactBtnFooter');
     const missionBtnFooter = document.getElementById('missionBtnFooter');
     const valuesBtnFooter = document.getElementById('valuesBtnFooter');
@@ -1958,7 +1914,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Get the sections
     const servicesSection = document.getElementById('servicesSection');
-    const projectsSection = document.getElementById('projectsSection');
+    const TeamSection = document.getElementById('TeamSection');
     const contactSection = document.getElementById('contactSection');
     const aboutUsPageSection = document.getElementById('AboutUsPageSection');
     const missionAndVisionSection = document.getElementById('missionAndVisionSection');
@@ -1978,45 +1934,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Function to show all sections and hide servicePageSection
-    function showAllSections() {
-      allSections.forEach(section => section.classList.remove('hidden'));
-      servicePageSection.classList.add('hidden');
-
-      // Ensure navbar is visible when all sections are shown
-      navbar.style.display = 'block';
-    }
-
+   
     // Event listeners for buttons
     homeBtn.addEventListener('click', () => {
-      showAllSections();
+      ;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     bookAppointmentBtn.addEventListener('click', () => {
-      showAllSections();
+      ;
       scrollToSection(contactSection);
     });
 
     
 
     servicesBtn.addEventListener('click', () => {
-      showAllSections();
+      
       scrollToSection(servicesSection);
     });
 
-    projectsBtn.addEventListener('click', () => {
-      showAllSections();
-      scrollToSection(projectsSection);
+    TeamBtn.addEventListener('click', () => {
+      ;
+      scrollToSection(TeamSection);
     });
 
     servicesBtnFooter.addEventListener('click', () => {
-      showAllSections();
+      ;
       scrollToSection(servicesSection);
     });
 
-    projectsBtnFooter.addEventListener('click', () => {
-      showAllSections();
-      scrollToSection(projectsSection);
+    TeamBtnFooter.addEventListener('click', () => {
+      ;
+      scrollToSection(TeamSection);
     });
 
     
@@ -2032,12 +1981,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     contactBtn.addEventListener('click', () => {
-      showAllSections();
+      ;
       scrollToSection(contactSection);
     });
 
     aboutBtn.addEventListener('click', () => {
-      showAllSections();
+      ;
       scrollToSection(aboutUsPageSection);
     });
 

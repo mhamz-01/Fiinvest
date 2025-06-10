@@ -91,3 +91,88 @@
       font-size: 1.25rem; /* 20px */
     }
   }
+  <style>
+  /* Add this to your existing styles */
+  .animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .animated-lines {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .animated-lines::before,
+  .animated-lines::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    min-width: 300vw;
+    min-height: 300vw;
+    background-color: transparent;
+    border-radius: 45%;
+    animation: rotate 15s linear infinite;
+  }
+  
+  .animated-lines::before {
+    bottom: 15vh;
+    border: 2px solid rgba(219, 171, 35, 0.1);
+    animation-duration: 20s;
+  }
+  
+  .animated-lines::after {
+    bottom: 12vh;
+    border: 2px solid rgba(219, 171, 35, 0.15);
+    animation-duration: 25s;
+  }
+  
+  /* Add diagonal lines */
+  .diagonal-lines {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+  }
+  
+  .diagonal-line {
+    position: absolute;
+    width: 1px;
+    height: 200%;
+    background: linear-gradient(to bottom, 
+      transparent,
+      rgba(219, 171, 35, 0.3),
+      rgba(219, 171, 35, 0.5),
+      rgba(219, 171, 35, 0.3),
+      transparent
+    );
+    animation: moveDiagonal 15s linear infinite;
+  }
+  
+  .diagonal-line:nth-child(1) { left: 20%; animation-delay: 0s; }
+  .diagonal-line:nth-child(2) { left: 40%; animation-delay: -3s; }
+  .diagonal-line:nth-child(3) { left: 60%; animation-delay: -6s; }
+  .diagonal-line:nth-child(4) { left: 80%; animation-delay: -9s; }
+  
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, 0) rotateZ(0deg);
+    }
+    100% {
+      transform: translate(-50%, 0) rotateZ(360deg);
+    }
+  }
+  
+  @keyframes moveDiagonal {
+    0% {
+      transform: translateY(-50%) rotate(45deg);
+    }
+    100% {
+      transform: translateY(0%) rotate(45deg);
+    }
+  }
+  </style>
