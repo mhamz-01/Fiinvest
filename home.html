@@ -33,7 +33,17 @@
 
 <body>
 
-
+  <div class="fixed inset-0 pointer-events-none -z-10">
+    <div class="absolute inset-0">
+      <div class="animated-lines"></div>
+      <div class="diagonal-lines opacity-20">
+        <div class="diagonal-line"></div>
+        <div class="diagonal-line"></div>
+        <div class="diagonal-line"></div>
+        <div class="diagonal-line"></div>
+      </div>
+    </div>
+  </div>
 
 
   <!--************************ NAVBAR START **************************-->
@@ -283,66 +293,103 @@
 
 
 <!-- Add this section after the banner and before the services section -->
-<section class="investment-guidance-section py-24">
+<section class="reveal investment-guidance-section py-24 relative overflow-hidden">
+  <!-- Animated Background -->
+ <!-- Replace the existing particles-container div with this new lines-container -->
+<div class="absolute inset-0">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
+  <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5 animate-float"></div>
+  <!-- Animated Lines -->
+  <div class="lines-container absolute inset-0 overflow-hidden"></div>
+</div>
+
   <div class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row gap-32 max-w-7xl mx-auto items-center">
-      <!-- Left Column - Overlapping Images -->
-      <div class="flex-1 relative w-full min-h-[300px] md:min-h-[500px]"> <!-- Changed height to min-height -->
-        <!-- Back Image -->
-        <div class="absolute right-0 bottom-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-lg overflow-hidden shadow-2xl transform translate-x-2 md:translate-x-4 translate-y-2 md:translate-y-4 z-10"> <!-- Added z-index -->
+      <!-- Left Column - Enhanced Image Gallery -->
+      <div class="flex-1 relative w-full min-h-[300px] md:min-h-[500px] animate-fade-in-up perspective-container">
+        <!-- Back Image with 3D Effect -->
+        <div class="absolute right-0 bottom-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-xl overflow-hidden shadow-2xl transform translate-x-2 md:translate-x-4 translate-y-2 md:translate-y-4 z-10 hover:rotate-y-12 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           <img 
             src="images/ind2-ausfin.jpg" 
             alt="Investment Background" 
-            class="w-full h-full object-cover rounded-lg"
+            class="w-full h-full object-cover rounded-xl transform hover:scale-110 transition-all duration-700 filter brightness-110"
           />
+          <!-- Hover Overlay -->
+          <div class="absolute inset-0 bg-[#DBAB23]/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
         </div>
-        <!-- Front Image -->
-        <div class="absolute left-0 top-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-lg overflow-hidden shadow-2xl z-20"> <!-- Added z-index -->
+
+        <!-- Front Image with Enhanced Effects -->
+        <div class="absolute left-0 top-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-xl overflow-hidden shadow-2xl z-20 hover:rotate-y-[-12deg] transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           <img 
             src="images/aus_fin-img.jpg" 
             alt="Investment Foreground" 
-            class="w-full h-full object-cover rounded-lg"
+            class="w-full h-full object-cover rounded-xl transform hover:scale-110 transition-all duration-700 filter brightness-110"
           />
+          <!-- Interactive Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-r from-[#DBAB23]/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
         </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#DBAB23]/10 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute -top-4 -left-4 w-20 h-20 bg-[#DBAB23]/10 rounded-full blur-xl animate-pulse delay-300"></div>
       </div>
 
-
-      <!-- Right Column - Text Content -->
-      <div class="flex-1 flex flex-col justify-center"> <!-- Already has justify-center -->
-        <h2 class="text-4xl md:text-5xl font-bold font-redhat mb-8 text-[#DBAB23]">
+      <!-- Right Column - Enhanced Content -->
+      <div class="flex-1 flex flex-col justify-center animate-fade-in-right">
+        <div class="relative">
+          <!-- Animated Decorative Element -->
+          <div class="absolute -left-4 top-0 w-1 h-20 bg-gradient-to-b from-[#DBAB23] to-transparent animate-glow"></div>
+          
+          <h2 class="text-4xl md:text-5xl font-bold font-redhat mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#DBAB23] to-orange-500 animate-gradient relative">
             Your Money Deserves a Strategy, Not a Guess.
-        </h2>
+            <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-[#DBAB23]/30 rounded-full animate-width"></span>
+          </h2>
+        </div>
         
-        <div class="border-2 border-[#DBAB23] p-8 rounded-lg bg-[#DBAB23] shadow-lg mb-8">
-            <h3 class="text-2xl font-bold font-redhat mb-4 text-black">
-          Expert Financial Solutions
-      </h3>
-      <p class="text-black mb-6">
-          Navigate the complex world of investments with our expert guidance. We provide comprehensive solutions tailored to your financial goals, ensuring sustainable growth and security for your future.
-      </p>
-      <ul class="space-y-4 mb-8">
-          <li class="flex items-center space-x-3">
-              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+        <!-- Enhanced Content Card -->
+        <div class="group bg-[#161616]/80 backdrop-blur-lg p-8 rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-500 shadow-xl hover:shadow-[#DBAB23]/20 transform hover:-translate-y-1">
+          <!-- Enhanced Card Header -->
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-12 h-12 rounded-lg bg-[#DBAB23]/10 flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.1 0 2.1.4 2.8 1.2l7.4 7.4-2.8 2.8-7.4-7.4C11.4 11.3 11 10.3 11 9.2c0-1.1.4-2.1 1.2-2.8C12.9 5.6 13.9 5.2 15 5.2s2.1.4 2.8 1.2l.4.4"/>
               </svg>
-              <span class="text-black">Personalized Investment Plans</span>
-          </li>
-          <li class="flex items-center space-x-3">
-              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+            </div>
+            <h3 class="text-2xl font-bold font-redhat text-white group-hover:text-[#DBAB23] transition-colors">
+              Expert Financial Solutions
+            </h3>
+          </div>
+
+          <!-- Enhanced Description -->
+          <p class="text-white/80 mb-6 leading-relaxed transform hover:scale-[1.02] transition-transform">
+            Navigate the complex world of investments with our expert guidance. We provide comprehensive solutions tailored to your financial goals, ensuring sustainable growth and security for your future.
+          </p>
+
+          <!-- Enhanced Features List -->
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center space-x-3 group/item hover:translate-x-2 transition-transform">
+              <span class="w-8 h-8 rounded-lg bg-[#DBAB23]/10 flex items-center justify-center">
+                <svg class="w-4 h-4 text-[#DBAB23] transform group-hover/item:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                </svg>
+              </span>
+              <span class="text-white/80 group-hover/item:text-[#DBAB23] transition-colors">Personalized Investment Plans</span>
+            </li>
+            <!-- Add more features as needed -->
+          </ul>
+
+          <!-- Enhanced CTA Button -->
+          <button class="group relative px-8 py-4 bg-[#DBAB23] text-black rounded-lg overflow-hidden transition-all duration-300 hover:bg-white w-full md:w-auto transform hover:scale-105">
+            <span class="relative z-10 font-medium flex items-center justify-center">
+              Learn More
+              <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
-              <span class="text-black">Risk Management</span>
-          </li>
-          <li class="flex items-center space-x-3">
-              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
-              </svg>
-              <span class="text-black">Portfolio Optimization</span>
-          </li>
-      </ul>
-      <button class="bg-black text-[#DBAB23] px-8 py-3 rounded-full hover:bg-black hover:text-white transition duration-300 w-full md:w-auto font-bold">
-          Learn More
-      </button>
+            </span>
+            <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+          </button>
         </div>
       </div>
     </div>
@@ -350,10 +397,8 @@
 </section>
 
 
-
-<!-- investment-guidance-section END -->
-
-
+  
+  <!-- Add this script for scroll reveal animation -->
 
 
 
@@ -363,64 +408,254 @@
 
 <!-- SERVICES SECTION FIINVEST START -->
 
-<section class="bg-gradient-to-r from-[#DBAB23] to-orange-500 py-24">
-  <div class="container mx-auto px-4">
-    <!-- Section Title -->
-    <h2 class="text-5xl font-bold text-white text-center mb-16 font-redhat">
-      Our Services
-    </h2>
+<section id="servicesSection" class="relative py-32 overflow-hidden">
+  <!-- Background with softer gradient -->
+  <div class="absolute inset-0">
+    <!-- Softer gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#9A7B1F]/20 to-[#D68D1A]/20"></div>
+    
+    <!-- Animated lines container -->
+    <div class="services-lines-container absolute inset-0"></div>
+  </div>
 
-    <!-- Two Column Text -->
-    <div class="flex flex-col md:flex-row gap-8 mb-20 max-w-6xl mx-auto">
-      <!-- Left Column -->
-      <div class="flex-1">
-        <p class="text-white text-lg">
-          At Fiinvest, we specialize in providing comprehensive financial solutions tailored to your needs. Our expert team brings years of experience in investment management and financial planning.
-        </p>
-      </div>
-      <!-- Right Column -->
-      <div class="flex-1">
-        <p class="text-white text-lg">
-          Whether you're planning for retirement, looking to grow your wealth, or seeking to protect your assets, we have the expertise and tools to help you achieve your financial goals.
-        </p>
-      </div>
+
+  <div class="container mx-auto px-4 relative">
+    <!-- Enhanced Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-24">
+      <span class="text-white/80 font-medium tracking-wider mb-4 block">EXPERTISE & SOLUTIONS</span>
+      <h2 class="text-5xl md:text-6xl font-bold text-white mb-8 font-redhat leading-tight">
+        Our Professional 
+        <span class="relative inline-block">
+          Services
+          <span class="absolute -bottom-2 left-0 w-full h-1 bg-white/20"></span>
+        </span>
+      </h2>
+      <p class="text-white/80 text-lg leading-relaxed">
+        Comprehensive financial solutions tailored to your needs, backed by years of expertise and proven success.
+      </p>
     </div>
 
-    <!-- Three Column Services -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <!-- Service 1 -->
-      <div class="flex flex-col items-center p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-20 h-20 bg-[#DBAB23] rounded-full flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-800 mb-2 text-center font-redhat">Investment Planning</h3>
-        <p class="text-gray-600 text-center">Strategic investment solutions for sustainable growth</p>
-      </div>
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <!-- Private Equity Service -->
+      <button class="group w-full text-left" onclick="serviceClick('private-equity')">
+        <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
+          <!-- Service Icon -->
+          <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
 
-      <!-- Service 2 -->
-      <div class="flex flex-col items-center p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-20 h-20 bg-[#DBAB23] rounded-full flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-800 mb-2 text-center font-redhat">Financial Analysis</h3>
-        <p class="text-gray-600 text-center">Comprehensive analysis of your financial portfolio</p>
-      </div>
+          <!-- Service Content -->
+          <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
+            Private Equity
+          </h3>
+          <p class="text-white/70 leading-relaxed mb-6">
+            Strategic investments in private companies with exceptional growth potential, backed by thorough analysis and industry expertise.
+          </p>
 
-      <!-- Service 3 -->
-      <div class="flex flex-col items-center p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-20 h-20 bg-[#DBAB23] rounded-full flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
-          </svg>
+          <!-- Learn More Link -->
+          <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
+            <span class="font-medium">Learn More</span>
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700"></div>
         </div>
-        <h3 class="text-2xl font-bold text-gray-800 mb-2 text-center font-redhat">Wealth Management</h3>
-        <p class="text-gray-600 text-center">Expert guidance for wealth preservation and growth</p>
-      </div>
+      </button>
+
+      <!-- Repeat similar structure for Stocks and Mutual Funds -->
+      <!-- ... other services ... -->
+      <button class="group w-full text-left" onclick="serviceClick('private-equity')">
+        <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
+          <!-- Service Icon -->
+          <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+
+          <!-- Service Content -->
+          <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
+            Mutual Funds
+          </h3>
+          <p class="text-white/70 leading-relaxed mb-6">
+            Strategic investments in private companies with exceptional growth potential, backed by thorough analysis and industry expertise.
+          </p>
+
+          <!-- Learn More Link -->
+          <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
+            <span class="font-medium">Learn More</span>
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700"></div>
+        </div>
+      </button>
+
+
+
+
+      <button class="group w-full text-left" onclick="serviceClick('private-equity')">
+        <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
+          <!-- Service Icon -->
+          <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+
+          <!-- Service Content -->
+          <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
+            Stocks
+          </h3>
+          <p class="text-white/70 leading-relaxed mb-6">
+            Strategic investments in private companies with exceptional growth potential, backed by thorough analysis and industry expertise.
+          </p>
+
+          <!-- Learn More Link -->
+          <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
+            <span class="font-medium">Learn More</span>
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700"></div>
+        </div>
+      </button>
     </div>
+  </div>
+</section>
+
+<style>
+  /* Add these styles for the services section background animation */
+  .services-lines-container {
+    overflow: hidden;
+    opacity: 0.1;
+  }
+  
+  .services-lines-container::before,
+  .services-lines-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    min-width: 300vw;
+    min-height: 300vw;
+    background-color: transparent;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .services-lines-container::before {
+    bottom: 15vh;
+    border-radius: 45%;
+    border: 1px solid #DBAB23;
+    animation-duration: 25s;
+  }
+  
+  .services-lines-container::after {
+    bottom: 12vh;
+    border-radius: 47%;
+    border: 1px solid #D68D1A;
+    animation-duration: 30s;
+  }
+  
+  /* Vertical lines animation */
+  .services-line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, 
+      transparent,
+      #DBAB23,
+      transparent
+    );
+    animation: lineMove 8s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, 0) rotateZ(0deg);
+    }
+    100% {
+      transform: translate(-50%, 0) rotateZ(360deg);
+    }
+  }
+  
+  @keyframes lineMove {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  </style>
+  
+  <script>
+  // Add this script to dynamically create the animated lines
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.services-lines-container');
+    
+    // Create vertical lines
+    for(let i = 0; i < 5; i++) {
+      const line = document.createElement('div');
+      line.className = 'services-line';
+      line.style.left = `${(i + 1) * 20}%`;
+      line.style.animationDelay = `${i * 1.5}s`;
+      container.appendChild(line);
+    }
+  });
+  </script>
+    <!-- Add this script for handling service clicks -->
+    <script>
+   function serviceClick(serviceType) {
+  // Store the service type
+  localStorage.setItem('selectedService', serviceType);
+  
+  // Navigate to services page with service type as hash
+  window.location.href = `services.html#${serviceType}`;
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Function to scroll to element with offset for navbar
+  function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const navbarHeight = document.querySelector('nav').offsetHeight;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  // Check if there's a hash in the URL
+  if (window.location.hash) {
+    // Remove the # from the hash
+    const serviceId = window.location.hash.substring(1);
+    
+    // Add a slight delay to ensure page is fully loaded
+    setTimeout(() => {
+      scrollToElement(serviceId);
+    }, 100);
+  }
+});
+    </script>
   </div>
 </section>
 
@@ -428,9 +663,27 @@
 
 
 <!-- Team Members Section -->
-<section class="team-section py-24">
+<section class="reveal team-section py-24">
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
+    <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5 animate-float"></div>
+    <!-- Animated Lines -->
+    <div class="lines-container absolute inset-0 overflow-hidden">
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <div class="line-3"></div>
+    </div>
+  </div>
   <div class="container mx-auto px-4">
-    <h2 class="text-5xl font-bold text-center text-white mb-16 font-redhat">Our Team</h2>
+    <div class="text-center mb-16">
+      <span class="text-[#DBAB23] font-medium tracking-wider mb-2 block">OUR TEAM</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-redhat">
+        Meet the <span class="text-[#DBAB23]">Experts</span> Behind Our Success
+      </h2>
+      <p class="text-white/70 text-lg max-w-3xl mx-auto">
+        A team of dedicated professionals working to deliver excellence in financial services
+      </p>
+    </div>
     
     <!-- Team Grid Container -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
@@ -511,7 +764,7 @@
           <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
         </div>
-     TEAM MEMBERS SECTION END   <!--  -->
+   <!--  -->
         <!-- Content Container -->
         <div class="absolute inset-0 flex flex-col p-6">
           <!-- Buttons at top with improved visibility -->
@@ -590,7 +843,7 @@
 <!-- office location section start -->
 
 <!-- Office Location Section -->
-<section class="py-24 relative overflow-hidden">
+<section class="reveal py-24 relative overflow-hidden">
   <!-- Background Elements -->
   <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
   
@@ -1267,14 +1520,14 @@ document.getElementById('visionButton').addEventListener('click', () => {
 </style>
 
 
-
+</section>
 
      
 
   <!-- About Us Page Section End  -->
 
 
-  <footer class="bg-black">
+  <section class="bg-black">
     <!-- Contact Form Section -->
     <div class="relative overflow-hidden py-24" id="contactSection">
       <!-- Background Overlay -->
@@ -1434,7 +1687,7 @@ document.getElementById('visionButton').addEventListener('click', () => {
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
 
 
@@ -1581,7 +1834,19 @@ document.getElementById('visionButton').addEventListener('click', () => {
 
 
 
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Create additional diagonal lines dynamically
+    const diagonalLines = document.querySelector('.diagonal-lines');
+    for (let i = 0; i < 4; i++) {
+      const line = document.createElement('div');
+      line.className = 'diagonal-line';
+      line.style.left = `${(i + 1) * 20}%`;
+      line.style.animationDelay = `${-i * 3}s`;
+      diagonalLines.appendChild(line);
+    }
+  });
+  </script>
 
 
   <!-- Swiper JS -->
@@ -1821,10 +2086,10 @@ document.addEventListener("DOMContentLoaded", () => {
   
   <!-- Modal Content -->
   <div class="relative min-h-screen flex items-center justify-center p-4">
-    <div class="bg-[#161616] w-full max-w-3xl rounded-2xl shadow-2xl border border-gray-800 overflow-hidden">
-      <!-- Close Button -->
-      <button id="closeModal" class="absolute top-4 right-4 text-white/60 hover:text-white transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="relative bg-[#161616] w-full max-w-3xl rounded-2xl shadow-2xl border border-gray-800 overflow-hidden">
+      <!-- Close Button - Updated positioning and styling -->
+      <button id="closeModal" class="absolute top-2 right-2 z-50 p-2 bg-black/50 backdrop-blur-sm rounded-full text-white hover:text-[#DBAB23] transition-all duration-300 md:top-4 md:right-4">
+        <svg class="w-8 h-8 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
@@ -1833,34 +2098,34 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="flex flex-col md:flex-row">
         <!-- Left Side - Image -->
         <div class="w-full md:w-2/5">
-          <div class="relative h-[300px] md:h-full">
+          <div class="relative h-[250px] md:h-full">
             <img id="modalImage" src="" alt="Team Member" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent md:bg-gradient-to-r"></div>
           </div>
         </div>
 
         <!-- Right Side - Content -->
-        <div class="w-full md:w-3/5 p-8">
-          <div class="space-y-6">
+        <div class="w-full md:w-3/5 p-6 md:p-8">
+          <div class="space-y-4 md:space-y-6">
             <!-- Role & Name -->
             <div>
-              <h3 id="modalRole" class="text-[#DBAB23] text-xl font-medium mb-2"></h3>
-              <h2 id="modalName" class="text-4xl font-bold text-white"></h2>
+              <h3 id="modalRole" class="text-[#DBAB23] text-lg md:text-xl font-medium mb-2"></h3>
+              <h2 id="modalName" class="text-3xl md:text-4xl font-bold text-white"></h2>
             </div>
 
             <!-- Description -->
-            <p id="modalDescription" class="text-white/80 leading-relaxed"></p>
+            <p id="modalDescription" class="text-white/80 leading-relaxed text-sm md:text-base"></p>
 
             <!-- Skills -->
             <div>
-              <h4 class="text-white font-medium mb-3">Expertise</h4>
+              <h4 class="text-white font-medium mb-2 md:mb-3">Expertise</h4>
               <div id="modalSkills" class="flex flex-wrap gap-2">
                 <!-- Skills will be inserted here -->
               </div>
             </div>
 
             <!-- Social Links -->
-            <div class="pt-6 border-t border-gray-800">
+            <div class="pt-4 md:pt-6 border-t border-gray-800">
               <div class="flex space-x-4">
                 <a id="modalLinkedIn" href="#" target="_blank" class="text-white/60 hover:text-[#DBAB23] transition-colors">
                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -1880,7 +2145,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   </div>
 </div>
-
 <!-- Add this script before the closing body tag -->
 <script>
 // Team member data
@@ -1959,6 +2223,7 @@ document.addEventListener('keydown', (e) => {
 });
 </script>
 </body>
+
 
 </html>
 
