@@ -16,10 +16,7 @@
 
 
 <style>
-  body {
-    font-family: 'Red Hat Display', sans-serif;
-    background-color: #000; /* Light background for better contrast */
-  }
+  
   </style>
 
 
@@ -76,12 +73,7 @@
               <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </button>
           </li>
-          <li>
-            <button id="projectsBtn" class="nav-btn relative group">
-              <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Projects</span>
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </button>
-          </li>
+         
           <li>
             <button id="aboutBtn" class="nav-btn relative group">
               <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">About</span>
@@ -120,11 +112,7 @@
               Team
             </button>
           </li>
-          <li>
-            <button id="projectsBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
-              Projects
-            </button>
-          </li>
+         
           <li>
             <button id="aboutBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
               About
@@ -142,39 +130,7 @@
 </section>
 <!-- Add these styles to your existing style tag -->
 <style>
-.nav-btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #DBAB23;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
 
-.nav-btn:hover::after,
-.nav-btn.active::after {
-  transform: scaleX(1);
-}
-
-@media (max-width: 768px) {
-  #navbar-sticky {
-    animation: slideDown 0.3s ease-out;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 </style>
 <div class="mt-20"></div> <!-- Adjust this as needed to create space below the navbar -->
   
@@ -637,43 +593,7 @@
 
 <!-- Add these styles to your existing style tag -->
 <style>
-.animate-slideUp {
-  animation: slideUp 0.8s ease-out;
-}
 
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.group {
-  position: relative;
-}
-
-.peer:focus + label,
-.peer:not(:placeholder-shown) + label {
-  transform: translateY(-24px) scale(0.85);
-  color: #DBAB23;
-}
 </style>
 
        
@@ -805,8 +725,8 @@
     
       
     
-    <script>
-
+    <script >
+      
 const navbarr = document.querySelector(".nav-main");
   // Add a scroll event listener to the window
   window.addEventListener("scroll", () => {
@@ -820,11 +740,35 @@ const navbarr = document.querySelector(".nav-main");
   });
 
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('navbar-sticky');
+
+    mobileMenuButton.addEventListener('click', function() {
+        // Toggle the 'hidden' class
+        mobileMenu.classList.toggle('hidden');
+        
+        // Optional: Add slide animation classes
+        if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('animate-slideDown');
+        } else {
+            mobileMenu.classList.remove('animate-slideDown');
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = mobileMenu.contains(event.target);
+        const isClickOnButton = mobileMenuButton.contains(event.target);
+        
+        if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+});
 
 
-
-    </script>
-    <script>
+    
       document.addEventListener('DOMContentLoaded', function() {
         const homeBtn = document.getElementById('homeBtn');
         const TeamBtn = document.getElementById('TeamBtn');
@@ -838,6 +782,10 @@ const navbarr = document.querySelector(".nav-main");
         const valuesBtnFooter = document.getElementById('valuesBtnFooter');  
         const bookAppointmentBtn = document.getElementById('bookAppointmentBtn');
         const contactBtnBanner = document.getElementById('contactBtnBanner');
+        const homeBtnMobile = document.getElementById('homeBtnMobile');
+        const TeamBtnMobile = document.getElementById('TeamBtnMobile');
+        const contactBtnMobile = document.getElementById('contactBtnMobile');
+        const aboutBtnMobile = document.getElementById('aboutBtnMobile');
         
 
         function redirectToHomeWithSection(sectionId) {
@@ -889,7 +837,46 @@ const navbarr = document.querySelector(".nav-main");
         contactBtnBanner.addEventListener('click', function() {
           redirectToHomeWithSection('contactSection');
         });
+        
       });
+
+
+      // Add this inside your existing DOMContentLoaded event listener
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing code...
+
+    // Mobile Menu Button Handlers
+    homeBtnMobile.addEventListener('click', function() {
+        window.location.href = 'home.html';
+        // Close mobile menu after click
+        mobileMenu.classList.add('hidden');
+    });
+
+    TeamBtnMobile.addEventListener('click', function() {
+        redirectToHomeWithSection('TeamSection');
+        // Close mobile menu after click
+        mobileMenu.classList.add('hidden');
+    });
+
+    aboutBtnMobile.addEventListener('click', function() {
+        redirectToHomeWithSection('AboutUsPageSection');
+        // Close mobile menu after click
+        mobileMenu.classList.add('hidden');
+    });
+
+    contactBtnMobile.addEventListener('click', function() {
+        redirectToHomeWithSection('contactSection');
+        // Close mobile menu after click
+        mobileMenu.classList.add('hidden');
+    });
+
+    // Helper function for redirection (if not already defined)
+    function redirectToHomeWithSection(sectionId) {
+        window.location.href = `home.html?section=${sectionId}`;
+    }
+});
+
     </script>
 </body>
 

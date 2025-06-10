@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="max-age=31536000">
   <title>Fiinvest</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- <link href="dist/styles.css" rel="stylesheet"> Link to your CSS -->
@@ -15,17 +16,10 @@
   <link rel="icon" type="image/png" href="images/logo/fiinvestTransparentLOgo.png">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="src/home.css">
-
-
-
-
-  <style>
-   body{
-    background-color: black;
-   }
-</style>
-
-
+  <!-- Preload critical assets -->
+ <link rel="preload" href="images/logo/fiinvestTransparentLOgo.png" as="image">
+ <link rel="preload" href="videos/fiinvestHeroSectionVideo.mp4" as="video">
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 
@@ -52,83 +46,94 @@
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-4">
         <!-- Logo - Moved to Left -->
         <a href="home.html" class="flex items-center space-x-3">
-          <img src='images/logo/fiinvestTransparentLOgo.png' 
-            class="h-16 w-auto transition-all duration-300 hover:scale-105" 
-            alt="Fiinvest Logo" 
-          />
+          <img loading="lazy" src='images/logo/fiinvestTransparentLOgo.png'
+            class="h-16 w-auto transition-all duration-300 hover:scale-105" alt="Fiinvest Logo" />
         </a>
-  
+
         <!-- Navigation Menu - Moved to Right -->
         <div class="hidden md:block">
           <ul class="flex items-center space-x-8">
             <li>
               <button id="homeBtn" class="nav-btn relative group">
-                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Home</span>
-                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span
+                  class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Home</span>
+                <span
+                  class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </button>
             </li>
             <li>
               <button id="servicesBtn" class="nav-btn relative group">
-                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Services</span>
-                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span
+                  class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Services</span>
+                <span
+                  class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </button>
             </li>
             <li>
               <button id="TeamBtn" class="nav-btn relative group">
-                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Team</span>
-                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span
+                  class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">Team</span>
+                <span
+                  class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </button>
             </li>
             <li>
               <button id="aboutBtn" class="nav-btn relative group">
-                <span class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">About</span>
-                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span
+                  class="block py-2 text-white font-medium hover:text-[#DBAB23] transition-colors duration-300">About</span>
+                <span
+                  class="absolute bottom-0 left-0 w-full h-0.5 bg-[#DBAB23] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </button>
             </li>
             <li>
-              <button id="contactBtn" class="px-6 py-2 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 font-medium">
+              <button id="contactBtn"
+                class="px-6 py-2 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 font-medium">
                 Contact
               </button>
             </li>
           </ul>
         </div>
-        
+
         <!-- Mobile Menu Button -->
         <div class="flex md:hidden">
-          <button id="mobile-menu-toggle" 
-            class="p-2 rounded-lg text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DBAB23]"
-          >
+          <button id="mobile-menu-toggle"
+            class="p-2 rounded-lg text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DBAB23]">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </button>
         </div>
-  
+
         <!-- Mobile Menu -->
         <div id="navbar-sticky" class="hidden w-full md:hidden mt-4">
           <ul class="flex flex-col space-y-4 p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg">
             <li>
-              <button id="homeBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+              <button id="homeBtnMobile"
+                class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
                 Home
               </button>
             </li>
             <li>
-              <button id="servicesBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+              <button id="servicesBtnMobile"
+                class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
                 Services
               </button>
             </li>
             <li>
-              <button id="TeamBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+              <button id="TeamBtnMobile"
+                class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
                 Team
               </button>
             </li>
             <li>
-              <button id="aboutBtnMobile" class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
+              <button id="aboutBtnMobile"
+                class="w-full text-left px-4 py-2 text-white hover:text-[#DBAB23] transition-colors duration-300">
                 About
               </button>
             </li>
             <li>
-              <button id="contactBtnMobile" class="w-full px-4 py-2 bg-[#DBAB23] text-black rounded-lg hover:bg-white transition-all duration-300">
+              <button id="contactBtnMobile"
+                class="w-full px-4 py-2 bg-[#DBAB23] text-black rounded-lg hover:bg-white transition-all duration-300">
                 Contact
               </button>
             </li>
@@ -138,47 +143,13 @@
     </nav>
   </section>
 
-<!-- Add these styles to your existing style tag -->
-<style>
-.nav-btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #DBAB23;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
+  <!-- Add these styles to your existing style tag -->
+ 
+  <div class="mt-20"></div> <!-- Adjust this as needed to create space below the navbar -->
 
-.nav-btn:hover::after,
-.nav-btn.active::after {
-  transform: scaleX(1);
-}
 
-@media (max-width: 768px) {
-  #navbar-sticky {
-    animation: slideDown 0.3s ease-out;
-  }
-}
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
-<div class="mt-20"></div> <!-- Adjust this as needed to create space below the navbar -->
-  
-  
 
-  
   <!--**************************     END OF NAVBAR **********************************      -->
 
 
@@ -186,735 +157,670 @@
 
 
   <!--**************************     BANNER     **********************************      -->
-  <div class="relative h-screen pt-20 z-20" id="banner">
-    <!-- Video Background -->
+  <div class="relative min-h-screen z-20" id="banner">
+    <!-- Video Background - Kept and Optimized -->
     <video 
-        class="absolute inset-0 w-full h-full object-cover transform scale-105"
+        class="absolute inset-0 w-full h-full object-cover transform scale-105" 
         autoplay 
         muted 
         loop 
         playsinline
-        poster="images/dummy.jpg">
-        <source src="videos/fiinvestHeroSectionVideo.mp4" type="video/mp4">
+        preload="metadata"
+        poster="images/dummy.jpg"
+    >
+        <source 
+            src="videos/fiinvestHeroSectionVideo.mp4" 
+            type="video/mp4"
+            media="(min-width: 768px)" 
+        >
     </video>
-    
-    <!-- Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
-    
-    <!-- Animated Content -->
-    <div class="relative h-full flex items-center justify-center px-4 md:px-0">
-        <div class="text-center max-w-4xl mx-auto animate-fadeIn">
-            <h1 class="font-redhat font-bold text-white text-6xl md:text-9xl mb-6 animate-slideDown">
+
+    <!-- Enhanced Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
+
+    <!-- Centered Content Section -->
+    <div class="relative min-h-screen flex items-center justify-center px-4 md:px-0">
+        <div class="text-center max-w-4xl mx-auto">
+            <!-- Enhanced Main Heading -->
+            <h1 class="font-redhat font-bold text-white text-4xl sm:text-6xl lg:text-8xl mb-6">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#DBAB23] to-orange-500">
-                    Fiinvest
+                    Financial Excellence
+                    <br class="hidden sm:block"/>
+                    Redefined
                 </span>
             </h1>
-            <h2 class="mt-4 font-redhat font-bold text-white text-xl md:text-2xl mb-8 opacity-0 animate-slideUp">
-                Solving the problems with technology innovation and providing business solutions
+
+            <!-- Enhanced Subheading -->
+            <h2 class="mt-4 font-redhat text-white text-lg sm:text-xl lg:text-2xl mb-8 mx-auto max-w-3xl leading-relaxed">
+                Your trusted partner in wealth management and investment solutions. 
+                Building prosperous futures through strategic financial planning.
             </h2>
-            <div class="mt-8 space-y-4 md:space-y-0 md:space-x-4 opacity-0 animate-fadeIn">
-                <button id="bookAppointmentBtn"
-                    class="px-8 py-4 text-lg md:text-xl bg-[#DBAB23] text-black rounded-full w-full md:w-auto font-bold font-redhat hover:bg-white hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-2xl">
-                    Book An Appointment
-                </button>
+
+            <!-- Enhanced CTA Buttons -->
+            <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
                 <button 
-                    class="px-8 py-4 text-lg md:text-xl bg-transparent border-2 border-white text-white rounded-full w-full md:w-auto font-bold font-redhat hover:bg-white hover:text-black transform transition-all duration-300 hover:scale-105" onclick="window.location.href='services.html'">  
-                    Learn More
+                    id="bookAppointmentBtn"
+                    class="w-full sm:w-auto px-8 py-4 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 font-medium flex items-center justify-center space-x-2 group"
+                >
+                    <span>Schedule Consultation</span>
+                    <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
                 </button>
+                
+                <button 
+                    onclick="window.location.href='services.html'"
+                    class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-medium flex items-center justify-center space-x-2 group"
+                >
+                    <span>Explore Services</span>
+                    <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Added Trust Indicators -->
+            <div class="mt-12 grid grid-cols-3 gap-8 text-center max-w-3xl mx-auto">
+                <div class="p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+                    <p class="text-[#DBAB23] font-bold text-3xl mb-2">15+</p>
+                    <p class="text-white/70 text-sm">Years Experience</p>
+                </div>
+                <div class="p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+                    <p class="text-[#DBAB23] font-bold text-3xl mb-2">$500M+</p>
+                    <p class="text-white/70 text-sm">Assets Managed</p>
+                </div>
+                <div class="p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+                    <p class="text-[#DBAB23] font-bold text-3xl mb-2">1000+</p>
+                    <p class="text-white/70 text-sm">Satisfied Clients</p>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-        </svg>
-    </div>
 </div>
-
-<!-- Add these styles to your existing <style> tag -->
-<style>
-    @keyframes slideDown {
-        0% {
-            transform: translateY(-50px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideUp {
-        0% {
-            transform: translateY(50px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    .animate-slideDown {
-        animation: slideDown 1s ease-out forwards;
-    }
-
-    .animate-slideUp {
-        animation: slideUp 1s ease-out 0.5s forwards;
-    }
-
-    .animate-fadeIn {
-        opacity: 0;
-        animation: fadeIn 1s ease-out 1s forwards;
-    }
-
-    .hover\:scale-105:hover {
-        transform: scale(1.05);
-    }
-</style>
+  <!-- Add these styles to your existing <style> tag -->
+ 
   <!-- End Of Banner Component -->
 
 
 
-<!-- investment-guidance-section- START  -->
+  <!-- investment-guidance-section- START  -->
 
 
-<!-- Add this section after the banner and before the services section -->
-<section class="reveal investment-guidance-section py-24 relative overflow-hidden">
-  <!-- Animated Background -->
- <!-- Replace the existing particles-container div with this new lines-container -->
-<div class="absolute inset-0">
-  <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
-  <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5 animate-float"></div>
-  <!-- Animated Lines -->
-  <div class="lines-container absolute inset-0 overflow-hidden"></div>
-</div>
+  <!-- Add this section after the banner and before the services section -->
+  <section class="reveal investment-guidance-section py-24 relative overflow-hidden">
+    <!-- Animated Background -->
+    <!-- Replace the existing particles-container div with this new lines-container -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
+      <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5 animate-float"></div>
+      <!-- Animated Lines -->
+      <div class="lines-container absolute inset-0 overflow-hidden"></div>
+    </div>
 
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row gap-32 max-w-7xl mx-auto items-center">
-      <!-- Left Column - Enhanced Image Gallery -->
-      <div class="flex-1 relative w-full min-h-[300px] md:min-h-[500px] animate-fade-in-up perspective-container">
-        <!-- Back Image with 3D Effect -->
-        <div class="absolute right-0 bottom-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-xl overflow-hidden shadow-2xl transform translate-x-2 md:translate-x-4 translate-y-2 md:translate-y-4 z-10 hover:rotate-y-12 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-          <img 
-            src="images/ind2-ausfin.jpg" 
-            alt="Investment Background" 
-            class="w-full h-full object-cover rounded-xl transform hover:scale-110 transition-all duration-700 filter brightness-110"
-          />
-          <!-- Hover Overlay -->
-          <div class="absolute inset-0 bg-[#DBAB23]/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
-
-        <!-- Front Image with Enhanced Effects -->
-        <div class="absolute left-0 top-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-xl overflow-hidden shadow-2xl z-20 hover:rotate-y-[-12deg] transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-          <img 
-            src="images/aus_fin-img.jpg" 
-            alt="Investment Foreground" 
-            class="w-full h-full object-cover rounded-xl transform hover:scale-110 transition-all duration-700 filter brightness-110"
-          />
-          <!-- Interactive Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-r from-[#DBAB23]/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
-
-        <!-- Decorative Elements -->
-        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#DBAB23]/10 rounded-full blur-xl animate-pulse"></div>
-        <div class="absolute -top-4 -left-4 w-20 h-20 bg-[#DBAB23]/10 rounded-full blur-xl animate-pulse delay-300"></div>
-      </div>
-
-      <!-- Right Column - Enhanced Content -->
-      <div class="flex-1 flex flex-col justify-center animate-fade-in-right">
-        <div class="relative">
-          <!-- Animated Decorative Element -->
-          <div class="absolute -left-4 top-0 w-1 h-20 bg-gradient-to-b from-[#DBAB23] to-transparent animate-glow"></div>
-          
-          <h2 class="text-4xl md:text-5xl font-bold font-redhat mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#DBAB23] to-orange-500 animate-gradient relative">
-            Your Money Deserves a Strategy, Not a Guess.
-            <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-[#DBAB23]/30 rounded-full animate-width"></span>
-          </h2>
-        </div>
-        
-        <!-- Enhanced Content Card -->
-        <div class="group bg-[#161616]/80 backdrop-blur-lg p-8 rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-500 shadow-xl hover:shadow-[#DBAB23]/20 transform hover:-translate-y-1">
-          <!-- Enhanced Card Header -->
-          <div class="flex items-center space-x-4 mb-6">
-            <div class="w-12 h-12 rounded-lg bg-[#DBAB23]/10 flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.1 0 2.1.4 2.8 1.2l7.4 7.4-2.8 2.8-7.4-7.4C11.4 11.3 11 10.3 11 9.2c0-1.1.4-2.1 1.2-2.8C12.9 5.6 13.9 5.2 15 5.2s2.1.4 2.8 1.2l.4.4"/>
-              </svg>
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-32 max-w-7xl mx-auto items-center">
+        <!-- Left Column - Enhanced Image Gallery -->
+        <div class="flex-1 relative w-full min-h-[300px] md:min-h-[500px] animate-fade-in-up perspective-container">
+          <!-- Back Image with 3D Effect -->
+          <div
+            class="absolute right-0 bottom-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-xl overflow-hidden shadow-2xl transform translate-x-2 md:translate-x-4 translate-y-2 md:translate-y-4 z-10 hover:rotate-y-12 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <img loading="lazy"  src="images/ind2-ausfin.jpg" alt="Investment Background"
+              class="w-full h-full object-cover rounded-xl transform hover:scale-110 transition-all duration-700 filter brightness-110" />
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-[#DBAB23]/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
             </div>
-            <h3 class="text-2xl font-bold font-redhat text-white group-hover:text-[#DBAB23] transition-colors">
-              Expert Financial Solutions
-            </h3>
           </div>
 
-          <!-- Enhanced Description -->
-          <p class="text-white/80 mb-6 leading-relaxed transform hover:scale-[1.02] transition-transform">
-            Navigate the complex world of investments with our expert guidance. We provide comprehensive solutions tailored to your financial goals, ensuring sustainable growth and security for your future.
-          </p>
+          <!-- Front Image with Enhanced Effects -->
+          <div
+            class="absolute left-0 top-0 w-[80%] h-[80%] md:w-4/5 md:h-4/5 rounded-xl overflow-hidden shadow-2xl z-20 hover:rotate-y-[-12deg] transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <img loading="lazy" src="images/aus_fin-img.jpg" alt="Investment Foreground"
+              class="w-full h-full object-cover rounded-xl transform hover:scale-110 transition-all duration-700 filter brightness-110" />
+            <!-- Interactive Overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-[#DBAB23]/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+            </div>
+          </div>
 
-          <!-- Enhanced Features List -->
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-center space-x-3 group/item hover:translate-x-2 transition-transform">
-              <span class="w-8 h-8 rounded-lg bg-[#DBAB23]/10 flex items-center justify-center">
-                <svg class="w-4 h-4 text-[#DBAB23] transform group-hover/item:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+          <!-- Decorative Elements -->
+          <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#DBAB23]/10 rounded-full blur-xl animate-pulse"></div>
+          <div class="absolute -top-4 -left-4 w-20 h-20 bg-[#DBAB23]/10 rounded-full blur-xl animate-pulse delay-300">
+          </div>
+        </div>
+
+        <!-- Right Column - Enhanced Content -->
+        <div class="flex-1 flex flex-col justify-center animate-fade-in-right">
+          <div class="relative">
+            <!-- Animated Decorative Element -->
+            <div class="absolute -left-4 top-0 w-1 h-20 bg-gradient-to-b from-[#DBAB23] to-transparent animate-glow">
+            </div>
+
+            <h2
+              class="text-4xl md:text-5xl font-bold font-redhat mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#DBAB23] to-orange-500 animate-gradient relative">
+              Your Money Deserves a Strategy, Not a Guess.
+              <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-[#DBAB23]/30 rounded-full animate-width"></span>
+            </h2>
+          </div>
+
+          <!-- Enhanced Content Card -->
+          <div
+            class="group bg-[#161616]/80 backdrop-blur-lg p-8 rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-500 shadow-xl hover:shadow-[#DBAB23]/20 transform hover:-translate-y-1">
+            <!-- Enhanced Card Header -->
+            <div class="flex items-center space-x-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-lg bg-[#DBAB23]/10 flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8c1.1 0 2.1.4 2.8 1.2l7.4 7.4-2.8 2.8-7.4-7.4C11.4 11.3 11 10.3 11 9.2c0-1.1.4-2.1 1.2-2.8C12.9 5.6 13.9 5.2 15 5.2s2.1.4 2.8 1.2l.4.4" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold font-redhat text-white group-hover:text-[#DBAB23] transition-colors">
+                Expert Financial Solutions
+              </h3>
+            </div>
+
+            <!-- Enhanced Description -->
+            <p class="text-white/80 mb-6 leading-relaxed transform hover:scale-[1.02] transition-transform">
+              Navigate the complex world of investments with our expert guidance. We provide comprehensive solutions
+              tailored to your financial goals, ensuring sustainable growth and security for your future.
+            </p>
+
+            <!-- Enhanced Features List -->
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center space-x-3 group/item hover:translate-x-2 transition-transform">
+                <span class="w-8 h-8 rounded-lg bg-[#DBAB23]/10 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-[#DBAB23] transform group-hover/item:rotate-12 transition-transform"
+                    fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                  </svg>
+                </span>
+                <span class="text-white/80 group-hover/item:text-[#DBAB23] transition-colors">Personalized Investment
+                  Plans</span>
+              </li>
+              <!-- Add more features as needed -->
+            </ul>
+
+            <!-- Enhanced CTA Button -->
+            <button
+              class="group relative px-8 py-4 bg-[#DBAB23] text-black rounded-lg overflow-hidden transition-all duration-300 hover:bg-white w-full md:w-auto transform hover:scale-105"
+              onclick="window.location.href='services.html'">
+              <span class="relative z-10 font-medium flex items-center justify-center">
+                Learn More
+                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </span>
-              <span class="text-white/80 group-hover/item:text-[#DBAB23] transition-colors">Personalized Investment Plans</span>
-            </li>
-            <!-- Add more features as needed -->
-          </ul>
+              <div
+                class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left">
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <!-- Enhanced CTA Button -->
-          <button class="group relative px-8 py-4 bg-[#DBAB23] text-black rounded-lg overflow-hidden transition-all duration-300 hover:bg-white w-full md:w-auto transform hover:scale-105" onclick="window.location.href='services.html'"> 
-            <span class="relative z-10 font-medium flex items-center justify-center">
-              Learn More
-              <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+
+
+
+
+
+
+
+
+  <!-- SERVICES SECTION FIINVEST START -->
+
+  <section id="servicesSection" class="relative py-32 overflow-hidden">
+    <!-- Background with softer gradient -->
+    <div class="absolute inset-0">
+      <!-- Softer gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#9A7B1F]/20 to-[#D68D1A]/20"></div>
+
+      <!-- Animated lines container -->
+      <div class="services-lines-container absolute inset-0"></div>
+    </div>
+
+
+    <div class="container mx-auto px-4 relative">
+      <!-- Enhanced Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-24">
+        <span class="text-white/80 font-medium tracking-wider mb-4 block">EXPERTISE & SOLUTIONS</span>
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-8 font-redhat leading-tight">
+          Our Professional
+          <span class="relative inline-block">
+            Services
+            <span class="absolute -bottom-2 left-0 w-full h-1 bg-white/20"></span>
+          </span>
+        </h2>
+        <p class="text-white/80 text-lg leading-relaxed">
+          Comprehensive financial solutions tailored to your needs, backed by years of expertise and proven success.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <!-- Private Equity Service -->
+        <button class="group w-full text-left" onclick="window.location.href='services.html'">
+          <div
+            class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
+            <!-- Service Icon -->
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-            </span>
-            <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            </div>
 
+            <!-- Service Content -->
+            <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
+              Private Equity
+            </h3>
+            <p class="text-white/70 leading-relaxed mb-6">
+              Strategic private market investments focused on long-term value creation. Our expert team identifies, analyzes, and invests in high-potential private companies, providing growth capital and operational expertise to maximize returns.
+            </p>
 
-  
-  <!-- Add this script for scroll reveal animation -->
+            <!-- Learn More Link -->
+            <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
+              <span class="font-medium">Learn More</span>
+              <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
 
-
-
-
-
-
-
-<!-- SERVICES SECTION FIINVEST START -->
-
-<section id="servicesSection" class="relative py-32 overflow-hidden">
-  <!-- Background with softer gradient -->
-  <div class="absolute inset-0">
-    <!-- Softer gradient background -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#9A7B1F]/20 to-[#D68D1A]/20"></div>
-    
-    <!-- Animated lines container -->
-    <div class="services-lines-container absolute inset-0"></div>
-  </div>
-
-
-  <div class="container mx-auto px-4 relative">
-    <!-- Enhanced Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-24">
-      <span class="text-white/80 font-medium tracking-wider mb-4 block">EXPERTISE & SOLUTIONS</span>
-      <h2 class="text-5xl md:text-6xl font-bold text-white mb-8 font-redhat leading-tight">
-        Our Professional 
-        <span class="relative inline-block">
-          Services
-          <span class="absolute -bottom-2 left-0 w-full h-1 bg-white/20"></span>
-        </span>
-      </h2>
-      <p class="text-white/80 text-lg leading-relaxed">
-        Comprehensive financial solutions tailored to your needs, backed by years of expertise and proven success.
-      </p>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      <!-- Private Equity Service -->
-      <button class="group w-full text-left" onclick="window.location.href='services.html'">
-        <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
-          <!-- Service Icon -->
-          <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+            <!-- Decorative Elements -->
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700">
+            </div>
           </div>
-
-          <!-- Service Content -->
-          <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
-            Private Equity
-          </h3>
-          <p class="text-white/70 leading-relaxed mb-6">
-            Strategic investments in private companies with exceptional growth potential, backed by thorough analysis and industry expertise.
-          </p>
-
-          <!-- Learn More Link -->
-          <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
-            <span class="font-medium">Learn More</span>
-            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </div>
-
-          <!-- Decorative Elements -->
-          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700"></div>
-        </div>
-      </button>
-
-      <!-- Repeat similar structure for Stocks and Mutual Funds -->
-      <!-- ... other services ... -->
-      <button class="group w-full text-left" onclick="window.location.href='services.html'">
-        <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
-          <!-- Service Icon -->
-          <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-
-          <!-- Service Content -->
-          <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
-            Mutual Funds
-          </h3>
-          <p class="text-white/70 leading-relaxed mb-6">
-            Strategic investments in private companies with exceptional growth potential, backed by thorough analysis and industry expertise.
-          </p>
-
-          <!-- Learn More Link -->
-          <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
-            <span class="font-medium">Learn More</span>
-            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </div>
-
-          <!-- Decorative Elements -->
-          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700"></div>
-        </div>
-      </button>
-
-
-
-
-      <button class="group w-full text-left" onclick="window.location.href='services.html'">
-        <div class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
-          <!-- Service Icon -->
-          <div class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-
-          <!-- Service Content -->
-          <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
-            Stocks
-          </h3>
-          <p class="text-white/70 leading-relaxed mb-6">
-            Strategic investments in private companies with exceptional growth potential, backed by thorough analysis and industry expertise.
-          </p>
-
-          <!-- Learn More Link -->
-          <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
-            <span class="font-medium">Learn More</span>
-            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </div>
-
-          <!-- Decorative Elements -->
-          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700"></div>
-        </div>
-      </button>
-    </div>
-  </div>
-</section>
-
-<style>
-  /* Add these styles for the services section background animation */
-  .services-lines-container {
-    overflow: hidden;
-    opacity: 0.1;
-  }
-  
-  .services-lines-container::before,
-  .services-lines-container::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    min-width: 300vw;
-    min-height: 300vw;
-    background-color: transparent;
-    animation-name: rotate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  
-  .services-lines-container::before {
-    bottom: 15vh;
-    border-radius: 45%;
-    border: 1px solid #DBAB23;
-    animation-duration: 25s;
-  }
-  
-  .services-lines-container::after {
-    bottom: 12vh;
-    border-radius: 47%;
-    border: 1px solid #D68D1A;
-    animation-duration: 30s;
-  }
-  
-  /* Vertical lines animation */
-  .services-line {
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(180deg, 
-      transparent,
-      #DBAB23,
-      transparent
-    );
-    animation: lineMove 8s linear infinite;
-  }
-  
-  @keyframes rotate {
-    0% {
-      transform: translate(-50%, 0) rotateZ(0deg);
-    }
-    100% {
-      transform: translate(-50%, 0) rotateZ(360deg);
-    }
-  }
-  
-  @keyframes lineMove {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(100%);
-    }
-  }
-  </style>
-  
-  <script>
-  // Add this script to dynamically create the animated lines
-  document.addEventListener('DOMContentLoaded', function() {
-    const container = document.querySelector('.services-lines-container');
-    
-    // Create vertical lines
-    for(let i = 0; i < 5; i++) {
-      const line = document.createElement('div');
-      line.className = 'services-line';
-      line.style.left = `${(i + 1) * 20}%`;
-      line.style.animationDelay = `${i * 1.5}s`;
-      container.appendChild(line);
-    }
-  });
-  </script>
-    <!-- Add this script for handling service clicks -->
-    
-  </div>
-</section>
-
-<!-- SERVICES SECTION FIINVEST END  -->
-
-
-<!-- Team Members Section -->
-<section id="TeamSection" class="reveal team-section py-24">
-  <div class="absolute inset-0">
-    <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
-    <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5 animate-float"></div>
-    <!-- Animated Lines -->
-    <div class="lines-container absolute inset-0 overflow-hidden">
-      <div class="line-1"></div>
-      <div class="line-2"></div>
-      <div class="line-3"></div>
-    </div>
-  </div>
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <span class="text-[#DBAB23] font-medium tracking-wider mb-2 block">OUR TEAM</span>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-redhat">
-        Meet the <span class="text-[#DBAB23]">Experts</span> Behind Our Success
-      </h2>
-      <p class="text-white/70 text-lg max-w-3xl mx-auto">
-        A team of dedicated professionals working to deliver excellence in financial services
-      </p>
-    </div>
-    
-    <!-- Team Grid Container -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
-      <!-- Team Member Card -->
-      
-
-      <!-- Replace the existing team member card content with this: -->
-
-<div class="relative group h-[555px]">
-  <!-- Image and Gradient -->
-  <div class="absolute inset-0">
-    <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
-  </div>
-  
-  <!-- Content Container -->
-  <div class="absolute inset-0 flex flex-col p-6">
-    <!-- Text Content -->
-    <div class="mt-auto">
-      <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
-      <!-- Added divider below CEO heading -->
-      <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
-      <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
-      <p class="text-white/80 mb-6">
-        Technical visionary with expertise in cutting-edge technologies and system architecture.
-      </p>
-      
-      <!-- Single Learn More Button -->
-      <button 
-        onclick="openProfileModal('ceo')" 
-        class="group relative px-8 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 flex items-center space-x-2"
-      >
-        <span class="font-medium">Learn More</span>
-        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-
-      
-<div class="relative group h-[555px]">
-  <!-- Image and Gradient -->
-  <div class="absolute inset-0">
-    <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
-  </div>
-  
-  <!-- Content Container -->
-  <div class="absolute inset-0 flex flex-col p-6">
-    <!-- Text Content -->
-    <div class="mt-auto">
-      <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
-      <!-- Added divider below CEO heading -->
-      <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
-      <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
-      <p class="text-white/80 mb-6">
-        Technical visionary with expertise in cutting-edge technologies and system architecture.
-      </p>
-      
-      <!-- Single Learn More Button -->
-      <button 
-        onclick="openProfileModal('ceo')" 
-        class="group relative px-8 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 flex items-center space-x-2"
-      >
-        <span class="font-medium">Learn More</span>
-        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-
-      
-<div class="relative group h-[555px]">
-  <!-- Image and Gradient -->
-  <div class="absolute inset-0">
-    <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
-  </div>
-  
-  <!-- Content Container -->
-  <div class="absolute inset-0 flex flex-col p-6">
-    <!-- Text Content -->
-    <div class="mt-auto">
-      <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
-      <!-- Added divider below CEO heading -->
-      <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
-      <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
-      <p class="text-white/80 mb-6">
-        Technical visionary with expertise in cutting-edge technologies and system architecture.
-      </p>
-      
-      <!-- Single Learn More Button -->
-      <button 
-        onclick="openProfileModal('ceo')" 
-        class="group relative px-8 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 flex items-center space-x-2"
-      >
-        <span class="font-medium">Learn More</span>
-        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-
-
-      
-<div class="relative group h-[555px]">
-  <!-- Image and Gradient -->
-  <div class="absolute inset-0">
-    <img src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
-  </div>
-  
-  <!-- Content Container -->
-  <div class="absolute inset-0 flex flex-col p-6">
-    <!-- Text Content -->
-    <div class="mt-auto">
-      <h3 class="text-6xl font-bold text-white mb-2">CEO</h3>
-      <!-- Added divider below CEO heading -->
-      <div class="w-52 h-1 bg-[#DBAB23] mb-4"></div>
-      <p class="text-[#DBAB23] font-medium text-3xl mb-4">Muhammad Hamza</p>
-      <p class="text-white/80 mb-6">
-        Technical visionary with expertise in cutting-edge technologies and system architecture.
-      </p>
-      
-      <!-- Single Learn More Button -->
-      <button 
-        onclick="openProfileModal('ceo')" 
-        class="group relative px-8 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 flex items-center space-x-2"
-      >
-        <span class="font-medium">Learn More</span>
-        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
-      
-
-
-    </div>
-  </div>
-</section>
-<!-- TEAM MEMBERS SECTION END -->
-
-
-
-
-
-
-<!-- office location section start -->
-
-<!-- Office Location Section -->
-<section class="reveal py-24 relative overflow-hidden">
-  <!-- Background Elements -->
-  <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent pointer-events-none"></div>
-  
-  <div class="container mx-auto px-4 relative z-10">
-    <!-- Section Header -->
-    <div class="max-w-7xl mx-auto mb-16">
-      <h2 class="text-6xl md:text-8xl font-bold text-white font-redhat leading-tight">
-        Meet Your<br/>
-        <span class="bg-gradient-to-r from-[#DBAB23] to-orange-500 bg-clip-text text-transparent">Financial Advisor</span><br/>
-        <span class="text-white/80">at Our Offices</span>
-      </h2>
-    </div>
-
-     <!-- Two Column Layout -->
-     <div class="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto relative">
-      <!-- Left Column - Contact Info -->
-      <div class="flex-1">
-        <div class="bg-[#161616]/80 backdrop-blur-sm rounded-2xl p-8 h-[400px] transition-opacity duration-500 border border-gray-800 hover:border-[#DBAB23]" id="locationContent">
-          <!-- Location Content will be dynamically updated -->
-        </div>
-      </div>
-
-      <!-- Right Column - Office Image -->
-      <div class="flex-1">
-      <div class="h-[400px] rounded-2xl overflow-hidden transition-opacity duration-500 relative group" id="locationImage">
-        <!-- Image Container -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 group-hover:opacity-0 transition-opacity duration-300"></div>
-      </div>
-    </div>
-  </div>
-    <!-- Controls Container -->
-    <div class="flex flex-col items-center mt-12 space-y-6 relative z-20">
-     <!-- Location Indicators -->
-<div class="flex justify-center space-x-6">
-  <button id="indicator0" class="w-16 h-1 rounded-full bg-[#DBAB23] transition-all duration-300" data-location="0"></button>
-  <button id="indicator1" class="w-16 h-1 rounded-full bg-white/30 transition-all duration-300" data-location="1"></button>
-  <button id="indicator2" class="w-16 h-1 rounded-full bg-white/30 transition-all duration-300" data-location="2"></button>
-</div>
-      
-      <!-- Controls -->
-      <div class="flex items-center space-x-6">
-        <button id="pauseButton" class="px-6 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-colors duration-300 flex items-center space-x-2">
-          <span id="pauseIcon" class="block"><i class="fas fa-pause"></i></span>
-          <span id="playIcon" class="hidden"><i class="fas fa-play"></i></span>
-          <span class="font-medium">Pause</span>
         </button>
-        <div class="flex space-x-4">
-          <button id="prevLocation" class="p-4 border border-white/20 text-white rounded-full hover:bg-[#DBAB23] hover:border-[#DBAB23] hover:text-black transition-all duration-300">
-            <i class="fas fa-chevron-left"></i>
+
+        <!-- Repeat similar structure for Stocks and Mutual Funds -->
+        <!-- ... other services ... -->
+        <button class="group w-full text-left" onclick="window.location.href='services.html'">
+          <div
+            class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
+            <!-- Service Icon -->
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+
+            <!-- Service Content -->
+            <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
+              Mutual Funds
+            </h3>
+            <p class="text-white/70 leading-relaxed mb-6">
+              Professionally managed investment portfolios with diversified market exposure. Our fund managers employ sophisticated research and analysis to create balanced portfolios across sectors, optimizing risk-adjusted returns for investors.
+            </p>
+
+            <!-- Learn More Link -->
+            <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
+              <span class="font-medium">Learn More</span>
+              <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700">
+            </div>
+          </div>
+        </button>
+
+
+
+
+        <button class="group w-full text-left" onclick="window.location.href='services.html'">
+          <div
+            class="relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2">
+            <!-- Service Icon -->
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-[#9A7B1F] to-[#D68D1A] rounded-xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+
+            <!-- Service Content -->
+            <h3 class="text-2xl font-bold text-white mb-4 font-redhat group-hover:text-[#D68D1A] transition-colors">
+              Stocks
+            </h3>
+            <p class="text-white/70 leading-relaxed mb-6">
+              Comprehensive equity market solutions with active portfolio management. Our seasoned traders utilize advanced technical analysis and market intelligence to execute strategic trades and capture market opportunities effectively and smoothly.
+            </p>
+
+            <!-- Learn More Link -->
+            <div class="flex items-center text-[#D68D1A] group-hover:text-white transition-colors">
+              <span class="font-medium">Learn More</span>
+              <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#9A7B1F]/10 to-[#D68D1A]/10 rounded-full blur-xl transform group-hover:scale-150 transition-transform duration-700">
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  </div>
+  </section>
+
+  <!-- SERVICES SECTION FIINVEST END  -->
+
+
+  <!-- Team Members Section -->
+  <section id="TeamSection" class="reveal team-section py-24">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent"></div>
+      <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5 animate-float"></div>
+      <!-- Animated Lines -->
+      <div class="lines-container absolute inset-0 overflow-hidden">
+        <div class="line-1"></div>
+        <div class="line-2"></div>
+        <div class="line-3"></div>
+      </div>
+    </div>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-[#DBAB23] font-medium tracking-wider mb-2 block">OUR TEAM</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-redhat">
+          Meet the <span class="text-[#DBAB23]">Experts</span> Behind Our Success
+        </h2>
+        <p class="text-white/70 text-lg max-w-3xl mx-auto">
+          A team of dedicated professionals working to deliver excellence in financial services
+        </p>
+      </div>
+
+      <!-- Team Grid Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
+        <!-- Team Member Card -->
+
+
+        <!-- Replace the existing team member card content with this: -->
+
+        <div class="relative group h-[555px] rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2">
+          <!-- Image and Gradient -->
+          <div class="absolute inset-0">
+              <img loading="lazy" src="images/ceoFinvest.jpg" alt="Team Member" 
+                  class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+          </div>
+  
+          <!-- Content Container -->
+          <div class="absolute inset-0 flex flex-col justify-end p-8">
+              <!-- Text Content -->
+              <div>
+                  <h3 class="text-5xl font-bold text-white mb-2">CEO</h3>
+                  <!-- Divider -->
+                  <div class="w-16 h-1 bg-[#DBAB23] mb-4 transition-all duration-500 group-hover:w-24"></div>
+                  <p class="text-[#DBAB23] font-medium text-2xl mb-6">Fahad Imran</p>
+  
+                  <!-- Learn More Button -->
+                   <button onclick="openProfileModal('ceo')"
+                    class="w-full bg-[#DBAB23] text-black rounded-xl py-4 hover:bg-white transition-all duration-300 flex items-center justify-center space-x-2 group/btn">
+                    <span class="font-medium">Learn More</span>
+                    <svg class="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" 
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </button>
+                  </button>
+              </div>
+          </div>
+      </div>
+        <div class="relative group h-[555px] rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2">
+          <!-- Image and Gradient -->
+          <div class="absolute inset-0">
+            <img loading="lazy" src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+          </div>
+
+          <!-- Content Container -->
+          <div class="absolute inset-0 flex flex-col justify-end p-8">
+            <!-- Text Content -->
+            <div >
+              <h3 class="text-5xl font-bold text-white mb-2">Wealth Manager</h3>
+              <!-- Added divider below CEO heading -->
+              <div class="w-16 h-1 bg-[#DBAB23] mb-4 transition-all duration-500 group-hover:w-24"></div>
+              <p class="text-[#DBAB23] font-medium text-2xl mb-6">Saleem Chaudhry</p>
+              
+
+              <!-- Single Learn More Button -->
+               <button onclick="openProfileModal('Wealth Manager')"
+                    class="w-full bg-[#DBAB23] text-black rounded-xl py-4 hover:bg-white transition-all duration-300 flex items-center justify-center space-x-2 group/btn">
+                    <span class="font-medium">Learn More</span>
+                    <svg class="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" 
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="relative group h-[555px] rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2">
+          <!-- Image and Gradient -->
+          <div class="absolute inset-0">
+            <img loading="lazy" src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+          </div>
+
+          <!-- Content Container -->
+          <div class="absolute inset-0 flex flex-col justify-end p-8">
+            <!-- Text Content -->
+            <div >
+              <h3 class="text-5xl font-bold text-white mb-2">Financial Advisor</h3>
+              <!-- Added divider below CEO heading -->
+              <div class="w-16 h-1 bg-[#DBAB23] mb-4 transition-all duration-500 group-hover:w-24"></div>
+              <p class="text-[#DBAB23] font-medium text-2xl mb-6">Dr Abdul Wahab</p>
+              
+
+              <!-- Single Learn More Button -->
+               <button onclick="openProfileModal('ceo')"
+                    class="w-full bg-[#DBAB23] text-black rounded-xl py-4 hover:bg-white transition-all duration-300 flex items-center justify-center space-x-2 group/btn">
+                    <span class="font-medium">Learn More</span>
+                    <svg class="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" 
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="relative group h-[555px] rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2">
+          <!-- Image and Gradient -->
+          <div class="absolute inset-0">
+            <img loading="lazy" src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+          </div>
+
+          <!-- Content Container -->
+          <div class="absolute inset-0 flex flex-col justify-end p-8">
+            <!-- Text Content -->
+            <div >
+              <h3 class="text-5xl font-bold text-white mb-2">Financial Advisor</h3>
+              <!-- Added divider below CEO heading -->
+              <div class="w-16 h-1 bg-[#DBAB23] mb-4 transition-all duration-500 group-hover:w-24"></div>
+              <p class="text-[#DBAB23] font-medium text-2xl mb-6">Ahtisham Mehsud</p>
+              
+
+              <!-- Single Learn More Button -->
+               <button onclick="openProfileModal('ceo')"
+                    class="w-full bg-[#DBAB23] text-black rounded-xl py-4 hover:bg-white transition-all duration-300 flex items-center justify-center space-x-2 group/btn">
+                    <span class="font-medium">Learn More</span>
+                    <svg class="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" 
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+  </section>
+  <!-- TEAM MEMBERS SECTION END -->
+
+
+
+
+
+
+  <!-- office location section start -->
+
+  <!-- Office Location Section -->
+  <section class="reveal py-24 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/5 to-transparent pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Section Header -->
+      <div class="max-w-7xl mx-auto mb-16">
+        <h2 class="text-6xl md:text-8xl font-bold text-white font-redhat leading-tight">
+          Meet Your<br />
+          <span class="bg-gradient-to-r from-[#DBAB23] to-orange-500 bg-clip-text text-transparent">Financial
+            Advisor</span><br />
+          <span class="text-white/80">at Our Offices</span>
+        </h2>
+      </div>
+
+      <!-- Two Column Layout -->
+      <div class="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto relative">
+        <!-- Left Column - Contact Info -->
+        <div class="flex-1">
+          <div
+            class="bg-[#161616]/80 backdrop-blur-sm rounded-2xl p-8 h-[400px] transition-opacity duration-500 border border-gray-800 hover:border-[#DBAB23]"
+            id="locationContent">
+            <!-- Location Content will be dynamically updated -->
+          </div>
+        </div>
+
+        <!-- Right Column - Office Image -->
+        <div class="flex-1">
+          <div class="h-[400px] rounded-2xl overflow-hidden transition-opacity duration-500 relative group"
+            id="locationImage">
+            <!-- Image Container -->
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 group-hover:opacity-0 transition-opacity duration-300">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Controls Container -->
+      <div class="flex flex-col items-center mt-12 space-y-6 relative z-20">
+        <!-- Location Indicators -->
+        <div class="flex justify-center space-x-6">
+          <button id="indicator0" class="w-16 h-1 rounded-full bg-[#DBAB23] transition-all duration-300"
+            data-location="0"></button>
+          <button id="indicator1" class="w-16 h-1 rounded-full bg-white/30 transition-all duration-300"
+            data-location="1"></button>
+          <button id="indicator2" class="w-16 h-1 rounded-full bg-white/30 transition-all duration-300"
+            data-location="2"></button>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center space-x-6">
+          <button id="pauseButton"
+            class="px-6 py-3 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-colors duration-300 flex items-center space-x-2">
+            <span id="pauseIcon" class="block"><i class="fas fa-pause"></i></span>
+            <span id="playIcon" class="hidden"><i class="fas fa-play"></i></span>
+            <span class="font-medium">Pause</span>
           </button>
-          <button id="nextLocation" class="p-4 border border-white/20 text-white rounded-full hover:bg-[#DBAB23] hover:border-[#DBAB23] hover:text-black transition-all duration-300">
-            <i class="fas fa-chevron-right"></i>
-          </button>
+          <div class="flex space-x-4">
+            <button id="prevLocation"
+              class="p-4 border border-white/20 text-white rounded-full hover:bg-[#DBAB23] hover:border-[#DBAB23] hover:text-black transition-all duration-300">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextLocation"
+              class="p-4 border border-white/20 text-white rounded-full hover:bg-[#DBAB23] hover:border-[#DBAB23] hover:text-black transition-all duration-300">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<script>
-  // Wait for DOM to be fully loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get DOM elements
-    const contentContainer = document.getElementById('locationContent');
-    const imageContainer = document.getElementById('locationImage');
-    const indicators = document.querySelectorAll('[data-location]');
-    const pauseButton = document.getElementById('pauseButton');
-    const prevButton = document.getElementById('prevLocation');
-    const nextButton = document.getElementById('nextLocation');
-    const pauseIcon = document.getElementById('pauseIcon');
-    const playIcon = document.getElementById('playIcon');
-  
-    let currentLocation = 0;
-    let isPlaying = true;
-    let intervalId = null;
-  
-    // Location data
-    const locations = [
-      {
-        address: "123 Financial District,<br/>Business Bay,<br/>Dubai, UAE",
-        phone: "+971 123 456 789",
-        hours: "Monday - Friday: 9:00 AM - 6:00 PM<br/>Saturday: 10:00 AM - 2:00 PM<br/>Sunday: Closed",
-        image: "images/maplocationdummy.png"
-      },
-      {
-        address: "456 Tech Hub,<br/>Silicon Valley,<br/>California, USA",
-        phone: "+1 234 567 8900",
-        hours: "Monday - Friday: 8:00 AM - 5:00 PM<br/>Saturday - Sunday: Closed",
-        image: "images/maplocationdummy.png"
-      },
-      {
-        address: "789 Business Center,<br/>Canary Wharf,<br/>London, UK",
-        phone: "+44 20 1234 5678",
-        hours: "Monday - Friday: 9:00 AM - 5:30 PM<br/>Saturday: 10:00 AM - 3:00 PM<br/>Sunday: Closed",
-        image: "images/maplocationdummy.png"
-      }
-    ];
-  
-    // Function to update location content
-    function updateLocation(index) {
-      // Fade out current content
-      contentContainer.style.opacity = '0';
-      imageContainer.style.opacity = '0';
-      
-      setTimeout(() => {
-        // Update content
-        contentContainer.innerHTML = `
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get DOM elements
+      const contentContainer = document.getElementById('locationContent');
+      const imageContainer = document.getElementById('locationImage');
+      const indicators = document.querySelectorAll('[data-location]');
+      const pauseButton = document.getElementById('pauseButton');
+      const prevButton = document.getElementById('prevLocation');
+      const nextButton = document.getElementById('nextLocation');
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playIcon = document.getElementById('playIcon');
+
+      let currentLocation = 0;
+      let isPlaying = true;
+      let intervalId = null;
+
+      // Location data
+      const locations = [
+  {
+    address: "2nd Floor Office 216A,<br/>Block B, Sami Tower,<br/>Near Hayatabad Toll Plaza Ring Road,<br/>Peshawar, Pakistan",
+    phone: "+92 345 123 4567",
+    hours: "Monday - Friday: 9:00 AM - 5:00 PM<br/>Saturday - Sunday: Closed",
+    image: "images/PeshawarLocation.png"
+  },
+  {
+    address: "4th Floor, Cabin 18,<br/>Executive Centre,<br/>I8 Markaz,<br/>Islamabad, Pakistan",
+    phone: "+92 345 123 4568",
+    hours: "Monday - Friday: 9:00 AM - 5:00 PM<br/>Saturday - Sunday: Closed",
+    image: "images/islamabadlocation.png"
+  },
+  {
+    address: "Lahore Office<br/>Coming Soon",
+    phone: "To be announced",
+    hours: "Monday - Friday: 9:00 AM - 5:00 PM<br/>Saturday - Sunday: Closed",
+    image: "images/lahoreComingSoon.jpg"
+  }
+];
+      // Function to update location content
+      function updateLocation(index) {
+        // Fade out current content
+        contentContainer.style.opacity = '0';
+        imageContainer.style.opacity = '0';
+
+        setTimeout(() => {
+          // Update content
+          contentContainer.innerHTML = `
           <div class="space-y-8">
             <div class="flex items-start space-x-6">
               <div class="flex-shrink-0 p-3 bg-[#DBAB23]/10 rounded-xl">
@@ -954,82 +860,82 @@
             </div>
           </div>
         `;
-  
-        imageContainer.innerHTML = `
-          <img src="${locations[index].image}" alt="Office Location" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+
+          imageContainer.innerHTML = `
+          <img loading="lazy" src="${locations[index].image}" alt="Office Location" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
         `;
-  
-        // Update indicators
-        indicators.forEach((indicator, i) => {
-          indicator.className = `w-16 h-1 rounded-full transition-all duration-300 ${i === index ? 'bg-[#DBAB23]' : 'bg-white/30'}`;
-        });
-  
-        // Fade in new content
-        contentContainer.style.opacity = '1';
-        imageContainer.style.opacity = '1';
-      }, 300);
-    }
-  
-    // Function to start auto-rotation
-    function startAutoRotation() {
-      return setInterval(() => {
-        if (isPlaying) {
-          currentLocation = (currentLocation + 1) % locations.length;
-          updateLocation(currentLocation);
-        }
-      }, 5000);
-    }
-  
-    // Function to update pause button state
-    function updatePauseButton() {
-      pauseIcon.classList.toggle('hidden', !isPlaying);
-      playIcon.classList.toggle('hidden', isPlaying);
-      pauseButton.querySelector('span:last-child').textContent = isPlaying ? 'Pause' : 'Play';
-    }
-  
-    // Event Listeners
-    pauseButton.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-      updatePauseButton();
-      if (isPlaying) {
-        intervalId = startAutoRotation();
-      } else {
-        clearInterval(intervalId);
+
+          // Update indicators
+          indicators.forEach((indicator, i) => {
+            indicator.className = `w-16 h-1 rounded-full transition-all duration-300 ${i === index ? 'bg-[#DBAB23]' : 'bg-white/30'}`;
+          });
+
+          // Fade in new content
+          contentContainer.style.opacity = '1';
+          imageContainer.style.opacity = '1';
+        }, 300);
       }
-    });
-  
-    prevButton.addEventListener('click', () => {
-      clearInterval(intervalId);
-      currentLocation = (currentLocation - 1 + locations.length) % locations.length;
-      updateLocation(currentLocation);
-      if (isPlaying) intervalId = startAutoRotation();
-    });
-  
-    nextButton.addEventListener('click', () => {
-      clearInterval(intervalId);
-      currentLocation = (currentLocation + 1) % locations.length;
-      updateLocation(currentLocation);
-      if (isPlaying) intervalId = startAutoRotation();
-    });
-  
-    // Indicator click handlers
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
+
+      // Function to start auto-rotation
+      function startAutoRotation() {
+        return setInterval(() => {
+          if (isPlaying) {
+            currentLocation = (currentLocation + 1) % locations.length;
+            updateLocation(currentLocation);
+          }
+        }, 5000);
+      }
+
+      // Function to update pause button state
+      function updatePauseButton() {
+        pauseIcon.classList.toggle('hidden', !isPlaying);
+        playIcon.classList.toggle('hidden', isPlaying);
+        pauseButton.querySelector('span:last-child').textContent = isPlaying ? 'Pause' : 'Play';
+      }
+
+      // Event Listeners
+      pauseButton.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        updatePauseButton();
+        if (isPlaying) {
+          intervalId = startAutoRotation();
+        } else {
+          clearInterval(intervalId);
+        }
+      });
+
+      prevButton.addEventListener('click', () => {
         clearInterval(intervalId);
-        currentLocation = index;
+        currentLocation = (currentLocation - 1 + locations.length) % locations.length;
         updateLocation(currentLocation);
         if (isPlaying) intervalId = startAutoRotation();
       });
+
+      nextButton.addEventListener('click', () => {
+        clearInterval(intervalId);
+        currentLocation = (currentLocation + 1) % locations.length;
+        updateLocation(currentLocation);
+        if (isPlaying) intervalId = startAutoRotation();
+      });
+
+      // Indicator click handlers
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          clearInterval(intervalId);
+          currentLocation = index;
+          updateLocation(currentLocation);
+          if (isPlaying) intervalId = startAutoRotation();
+        });
+      });
+
+      // Initialize
+      updateLocation(0);
+      updatePauseButton();
+      intervalId = startAutoRotation();
     });
-  
-    // Initialize
-    updateLocation(0);
-    updatePauseButton();
-    intervalId = startAutoRotation();
-  });
   </script>
 
-<!-- office location section end -->
+  <!-- office location section end -->
 
 
 
@@ -1037,20 +943,7 @@
 
 
 
-  <!--**************************     SERVICES     **********************************      -->
-
-
- 
-
-
-
-
-
-  <!-- End of Services Card Component -->
-
-
-
-
+  
 
 
 
@@ -1067,427 +960,305 @@
 
       <!-- Mission and Vision Cards -->
       <!-- Mission and Vision Section -->
-<section id="missionAndVisionSection" class="relative overflow-hidden mb-24">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <!-- Content Card with Gold Accents -->
-    <div id="contentCard" class="relative group">
-      <!-- Background Effects -->
-      <div class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-2xl blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
-      
-      <!-- Content Container -->
-      <div class="relative bg-[#161616]/80 backdrop-blur-lg p-8 md:p-12 rounded-2xl border border-gray-800">
-        <!-- Decorative Number -->
-        <div class="absolute top-8 right-8 text-8xl font-bold text-[#DBAB23]/10">
-          <span id="cardNumber">01</span>
+      <section id="missionAndVisionSection" class="relative overflow-hidden mb-24">
+        <div class="container mx-auto px-4 max-w-6xl">
+          <!-- Content Card with Gold Accents -->
+          <div id="contentCard" class="relative group">
+            <!-- Background Effects -->
+            <div
+              class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-2xl blur opacity-20 group-hover:opacity-100 transition duration-500">
+            </div>
+
+            <!-- Content Container -->
+            <div class="relative bg-[#161616]/80 backdrop-blur-lg p-8 md:p-12 rounded-2xl border border-gray-800">
+              <!-- Decorative Number -->
+              <div class="absolute top-8 right-8 text-8xl font-bold text-[#DBAB23]/10">
+                <span id="cardNumber">01</span>
+              </div>
+
+              <!-- Icon -->
+              <div class="w-16 h-16 bg-[#DBAB23]/10 rounded-full flex items-center justify-center mb-8">
+                <svg id="cardIcon" class="w-8 h-8 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+
+              <!-- Content -->
+              <div class="max-w-2xl">
+                <span class="text-[#DBAB23] font-medium tracking-wider mb-2 block" id="cardLabel">OUR MISSION</span>
+                <h2 id="cardTitle" class="text-3xl md:text-4xl font-bold text-white mb-6 font-redhat"></h2>
+                <p id="cardText" class="text-white/70 text-lg leading-relaxed"></p>
+              </div>
+
+              <!-- Navigation Dots -->
+              <div class="flex justify-center mt-12 space-x-4">
+                <button id="missionButton"
+                  class="w-12 h-1 bg-[#DBAB23] rounded-full transition-all duration-300"></button>
+                <button id="visionButton"
+                  class="w-12 h-1 bg-white/20 rounded-full transition-all duration-300"></button>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- Icon -->
-        <div class="w-16 h-16 bg-[#DBAB23]/10 rounded-full flex items-center justify-center mb-8">
-          <svg id="cardIcon" class="w-8 h-8 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-        </div>
 
-        <!-- Content -->
-        <div class="max-w-2xl">
-          <span class="text-[#DBAB23] font-medium tracking-wider mb-2 block" id="cardLabel">OUR MISSION</span>
-          <h2 id="cardTitle" class="text-3xl md:text-4xl font-bold text-white mb-6 font-redhat"></h2>
-          <p id="cardText" class="text-white/70 text-lg leading-relaxed"></p>
-        </div>
 
-        <!-- Navigation Dots -->
-        <div class="flex justify-center mt-12 space-x-4">
-          <button id="missionButton" class="w-12 h-1 bg-[#DBAB23] rounded-full transition-all duration-300"></button>
-          <button id="visionButton" class="w-12 h-1 bg-white/20 rounded-full transition-all duration-300"></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-const contentData = [
-  {
-    label: 'OUR MISSION',
-    number: '01',
-    title: 'Empowering Financial Freedom Through Innovation',
-    text: 'We are committed to revolutionizing financial services by combining cutting-edge technology with expert guidance. Our mission is to democratize wealth creation, providing every client with personalized investment strategies that transform aspirations into achievements.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>'
-  },
-  {
-    label: 'OUR VISION',
-    number: '02',
-    title: 'Shaping the Future of Global Finance',
-    text: 'We envision a world where financial success is accessible to all, powered by innovative technology and guided by expertise. Our goal is to become the global standard for personalized investment solutions, creating lasting prosperity for generations to come.',
-    icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>'
-  }
-];
-
-let currentIndex = 0;
-const intervalTime = 5000;
-
-function updateContent(index) {
-  const content = contentData[index];
-  
-  // Fade out
-  const card = document.getElementById('contentCard');
-  card.style.opacity = '0';
-  
-  setTimeout(() => {
-    // Update content
-    document.getElementById('cardLabel').textContent = content.label;
-    document.getElementById('cardNumber').textContent = content.number;
-    document.getElementById('cardTitle').textContent = content.title;
-    document.getElementById('cardText').textContent = content.text;
-    document.getElementById('cardIcon').innerHTML = content.icon;
     
-    // Update buttons
-    document.getElementById('missionButton').className = `w-12 h-1 rounded-full transition-all duration-300 ${index === 0 ? 'bg-[#DBAB23]' : 'bg-white/20'}`;
-    document.getElementById('visionButton').className = `w-12 h-1 rounded-full transition-all duration-300 ${index === 1 ? 'bg-[#DBAB23]' : 'bg-white/20'}`;
-    
-    // Fade in
-    card.style.opacity = '1';
-  }, 300);
-}
-
-// Initial load
-updateContent(0);
-
-// Auto-rotation
-let interval = setInterval(() => {
-  currentIndex = (currentIndex + 1) % contentData.length;
-  updateContent(currentIndex);
-}, intervalTime);
-
-// Button click handlers
-document.getElementById('missionButton').addEventListener('click', () => {
-  clearInterval(interval);
-  currentIndex = 0;
-  updateContent(0);
-  interval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % contentData.length;
-    updateContent(currentIndex);
-  }, intervalTime);
-});
-
-document.getElementById('visionButton').addEventListener('click', () => {
-  clearInterval(interval);
-  currentIndex = 1;
-  updateContent(1);
-  interval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % contentData.length;
-    updateContent(currentIndex);
-  }, intervalTime);
-});
-</script>
-
-<style>
-#contentCard {
-  transition: opacity 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fade-in {
-  animation: fadeIn 0.3s ease-in-out;
-}
-</style>
-      
-
-      
-<!-- Why Choose Devblock Studio Section -->
-<!-- Why Choose Fiinvest Section -->
-<div class="pb-24 overflow-hidden">
-  <div class="container mx-auto px-4">
-    <!-- Section Header -->
-    <div class="text-center mb-16">
-      <span class="text-[#DBAB23] font-medium tracking-wider mb-2 block">WHY CHOOSE US</span>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-redhat">
-        The Fiinvest Advantage
-      </h2>
-      <p class="text-white/70 text-lg max-w-3xl mx-auto">
-        Experience excellence in financial services with our expert team and proven track record of success
-      </p>
-    </div>
-
-    <!-- Floating Cards Wrapper -->
-    <div class="floating-wrapper space-y-8 md:space-y-12">
-      <!-- Row 1 -->
-      <div class="floating-cards-right flex gap-6">
-        <div class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
-          <div>
-            <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Expert Guidance</h3>
-            <p class="text-white/70">Professional financial advisors with years of industry experience</p>
-          </div>
-        </div>
-
-        <div class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
-          <div>
-            <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Proven Track Record</h3>
-            <p class="text-white/70">Consistent performance and returns for our valued clients</p>
-          </div>
-        </div>
-
-        <div class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
-          <div>
-            <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Tailored Solutions</h3>
-            <p class="text-white/70">Customized investment strategies for your unique goals</p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Row 2 -->
-      <div class="floating-cards-left flex gap-6">
-        <div class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
-          <div>
-            <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Portfolio Diversity</h3>
-            <p class="text-white/70">Access to a wide range of investment opportunities</p>
-          </div>
-        </div>
-
-        <div class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
-          <div>
-            <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Secure Investments</h3>
-            <p class="text-white/70">Risk management and security measures for your peace of mind</p>
-          </div>
-        </div>
-
-        <div class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
-          <div>
-            <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">24/7 Support</h3>
-            <p class="text-white/70">Dedicated assistance whenever you need it</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section id="valuesSection" class="overflow-hidden py-24">
-  <!-- Section Header -->
-  <div class="text-center mb-16">
-    <span class="text-white/80 font-medium tracking-wider mb-2 block">OUR CORE VALUES</span>
-    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-redhat">
-      Values That Define <span class="text-[#DBAB23]">Our Culture</span>
-    </h2>
-  </div>
-
-  <!-- Values Grid -->
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      <!-- Value Card 1 -->
-      <div class="group relative">
-        <div class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
-        <div class="relative bg-black p-8 rounded-lg border border-gray-800">
-          <div class="flex items-center justify-between mb-6">
-            <span class="text-[#DBAB23] text-6xl font-bold opacity-20">01</span>
-            <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Innovation</h3>
-          <p class="text-white/70">Embracing creative solutions and staying ahead of market trends to deliver exceptional value.</p>
-        </div>
-      </div>
-
-      <!-- Value Card 2 -->
-      <div class="group relative">
-        <div class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
-        <div class="relative bg-black p-8 rounded-lg border border-gray-800">
-          <div class="flex items-center justify-between mb-6">
-            <span class="text-[#DBAB23] text-6xl font-bold opacity-20">02</span>
-            <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Integrity</h3>
-          <p class="text-white/70">Maintaining the highest standards of transparency and ethical practices in all operations.</p>
-        </div>
-      </div>
-
-      <!-- Value Card 3 -->
-      <div class="group relative">
-        <div class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
-        <div class="relative bg-black p-8 rounded-lg border border-gray-800">
-          <div class="flex items-center justify-between mb-6">
-            <span class="text-[#DBAB23] text-6xl font-bold opacity-20">03</span>
-            <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Client Focus</h3>
-          <p class="text-white/70">Putting our clients' interests first and delivering personalized financial solutions.</p>
-        </div>
-      </div>
-
-      <!-- Value Card 4 -->
-      <div class="group relative">
-        <div class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
-        <div class="relative bg-black p-8 rounded-lg border border-gray-800">
-          <div class="flex items-center justify-between mb-6">
-            <span class="text-[#DBAB23] text-6xl font-bold opacity-20">04</span>
-            <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Excellence</h3>
-          <p class="text-white/70">Striving for the highest standards in every aspect of our financial services. Customer would be evident</p>
-        </div>
-      </div>
-
-      <!-- Value Card 5 -->
-      <div class="group relative">
-        <div class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
-        <div class="relative bg-black p-8 rounded-lg border border-gray-800">
-          <div class="flex items-center justify-between mb-6">
-            <span class="text-[#DBAB23] text-6xl font-bold opacity-20">05</span>
-            <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Professionalism</h3>
-          <p class="text-white/70">Maintaining the highest level of professional conduct and expertise in all interactions.</p>
-        </div>
-      </div>
-
-      <!-- Value Card 6 -->
-      <div class="group relative">
-        <div class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
-        <div class="relative bg-black p-8 rounded-lg border border-gray-800">
-          <div class="flex items-center justify-between mb-6">
-            <span class="text-[#DBAB23] text-6xl font-bold opacity-20">06</span>
-            <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
-              <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Growth</h3>
-          <p class="text-white/70">Committed to continuous improvement and sustainable growth for our clients.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<style>
-  /* Styles for floating cards in "Why Choose Devblock Studio" section */
-  .floating-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .floating-cards-right {
-    animation: floatRight 20s linear infinite;
-  }
-  
-  .floating-cards-left {
-    animation: floatLeft 20s linear infinite;
-  }
-  
-  /* Animation for floating cards */
-  @keyframes floatRight {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(0); }
-  }
-  
-  @keyframes floatLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-  
-  /* Styles for slider in "Our Values" section */
-  .slider-container {
-    overflow-x: auto;
-    display: flex;
-    gap: 1.5rem;
-    scroll-snap-type: x mandatory;
-    animation: none; /* Prevents floating animation on this section */
-  }
-  
-  .base-card {
-    flex-shrink: 0;
-    min-width: 280px;
-    transition: all 0.3s ease;
-  }
-  
-  .base-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-  
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .floating-cards-right,
-    .floating-cards-left {
-      animation-duration: 15s;
-    }
-  
-    .base-card {
-      padding: 1rem;
-    }
-  
-    .base-card h3 {
-      font-size: 1.5rem;
-    }
-  
-    .base-card p {
-      font-size: 0.875rem;
-    }
-  }
-  </style>
-  
-
-
-</section>
 
      
+      <!-- Why Choose Fiinvest Section -->
+      <div class="pb-24 overflow-hidden">
+        <div class="container mx-auto px-4">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <span class="text-[#DBAB23] font-medium tracking-wider mb-2 block">WHY CHOOSE US</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-redhat">
+              The Fiinvest Advantage
+            </h2>
+            <p class="text-white/70 text-lg max-w-3xl mx-auto">
+              Experience excellence in financial services with our expert team and proven track record of success
+            </p>
+          </div>
+
+          <!-- Floating Cards Wrapper -->
+          <div class="floating-wrapper space-y-8 md:space-y-12">
+            <!-- Row 1 -->
+            <div class="floating-cards-right flex gap-6">
+              <div
+                class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
+                <div>
+                  <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white mb-3">Expert Guidance</h3>
+                  <p class="text-white/70">Professional financial advisors with years of industry experience</p>
+                </div>
+              </div>
+
+              <div
+                class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
+                <div>
+                  <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white mb-3">Proven Track Record</h3>
+                  <p class="text-white/70">Consistent performance and returns for our valued clients</p>
+                </div>
+              </div>
+
+              <div
+                class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
+                <div>
+                  <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white mb-3">Tailored Solutions</h3>
+                  <p class="text-white/70">Customized investment strategies for your unique goals</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="floating-cards-left flex gap-6">
+              <div
+                class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
+                <div>
+                  <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white mb-3">Portfolio Diversity</h3>
+                  <p class="text-white/70">Access to a wide range of investment opportunities</p>
+                </div>
+              </div>
+
+              <div
+                class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
+                <div>
+                  <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white mb-3">Secure Investments</h3>
+                  <p class="text-white/70">Risk management and security measures for your peace of mind</p>
+                </div>
+              </div>
+
+              <div
+                class="base-card p-8 flex flex-col justify-between bg-[#161616]/80 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#DBAB23] transition-all duration-300">
+                <div>
+                  <div class="w-12 h-12 bg-[#DBAB23]/20 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white mb-3">24/7 Support</h3>
+                  <p class="text-white/70">Dedicated assistance whenever you need it</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="valuesSection" class="overflow-hidden py-24">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <span class="text-white/80 font-medium tracking-wider mb-2 block">OUR CORE VALUES</span>
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-redhat">
+            Values That Define <span class="text-[#DBAB23]">Our Culture</span>
+          </h2>
+        </div>
+
+        <!-- Values Grid -->
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <!-- Value Card 1 -->
+            <div class="group relative">
+              <div
+                class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500">
+              </div>
+              <div class="relative bg-black p-8 rounded-lg border border-gray-800">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#DBAB23] text-6xl font-bold opacity-20">01</span>
+                  <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Innovation</h3>
+                <p class="text-white/70">Embracing creative solutions and staying ahead of market trends to deliver
+                  exceptional value.</p>
+              </div>
+            </div>
+
+            <!-- Value Card 2 -->
+            <div class="group relative">
+              <div
+                class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500">
+              </div>
+              <div class="relative bg-black p-8 rounded-lg border border-gray-800">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#DBAB23] text-6xl font-bold opacity-20">02</span>
+                  <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Integrity</h3>
+                <p class="text-white/70">Maintaining the highest standards of transparency and ethical practices in all
+                  operations.</p>
+              </div>
+            </div>
+
+            <!-- Value Card 3 -->
+            <div class="group relative">
+              <div
+                class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500">
+              </div>
+              <div class="relative bg-black p-8 rounded-lg border border-gray-800">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#DBAB23] text-6xl font-bold opacity-20">03</span>
+                  <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Client Focus</h3>
+                <p class="text-white/70">Putting our clients' interests first and delivering personalized financial
+                  solutions.</p>
+              </div>
+            </div>
+
+            <!-- Value Card 4 -->
+            <div class="group relative">
+              <div
+                class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500">
+              </div>
+              <div class="relative bg-black p-8 rounded-lg border border-gray-800">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#DBAB23] text-6xl font-bold opacity-20">04</span>
+                  <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Excellence</h3>
+                <p class="text-white/70">Striving for the highest standards in every aspect of our financial services.
+                  Customer would be evident</p>
+              </div>
+            </div>
+
+            <!-- Value Card 5 -->
+            <div class="group relative">
+              <div
+                class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500">
+              </div>
+              <div class="relative bg-black p-8 rounded-lg border border-gray-800">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#DBAB23] text-6xl font-bold opacity-20">05</span>
+                  <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Professionalism</h3>
+                <p class="text-white/70">Maintaining the highest level of professional conduct and expertise in all
+                  interactions.</p>
+              </div>
+            </div>
+
+            <!-- Value Card 6 -->
+            <div class="group relative">
+              <div
+                class="absolute inset-0.5 bg-gradient-to-r from-[#DBAB23] to-orange-500 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500">
+              </div>
+              <div class="relative bg-black p-8 rounded-lg border border-gray-800">
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#DBAB23] text-6xl font-bold opacity-20">06</span>
+                  <div class="w-12 h-12 bg-[#DBAB23]/10 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Growth</h3>
+                <p class="text-white/70">Committed to continuous improvement and sustainable growth for our clients.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </section>
+
+
 
   <!-- About Us Page Section End  -->
 
@@ -1499,7 +1270,7 @@ document.getElementById('visionButton').addEventListener('click', () => {
       <div class="absolute inset-0">
         <div class="absolute inset-0 bg-gradient-to-b from-[#DBAB23]/10 via-black to-black"></div>
       </div>
-  
+
       <div class="container mx-auto px-4 relative">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -1508,10 +1279,11 @@ document.getElementById('visionButton').addEventListener('click', () => {
             Ready to <span class="text-[#DBAB23]">Transform</span> Your Financial Future?
           </h2>
           <p class="text-white/70 text-lg animate-fadeIn">
-            Schedule a consultation with our expert financial advisors and take the first step towards achieving your investment goals.
+            Schedule a consultation with our expert financial advisors and take the first step towards achieving your
+            investment goals.
           </p>
         </div>
-  
+
         <!-- Contact Form Card -->
         <div class="max-w-4xl mx-auto">
           <div class="bg-[#161616]/80 backdrop-blur-lg p-8 md:p-12 rounded-2xl border border-gray-800 shadow-2xl">
@@ -1521,131 +1293,119 @@ document.getElementById('visionButton').addEventListener('click', () => {
                 <div class="relative group">
                   <input type="text" required
                     class="peer w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all placeholder-transparent"
-                    id="firstName"
-                    placeholder="First Name"
-                  />
-                  <label for="firstName"
-                    class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
+                    id="firstName" placeholder="First Name" />
+                  <label for="firstName" class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
                     peer-placeholder-shown:text-base peer-placeholder-shown:top-4 
                     peer-focus:text-[#DBAB23] peer-focus:text-sm peer-focus:top-0">
                     First Name*
                   </label>
                 </div>
-  
+
                 <div class="relative group">
                   <input type="text" required
                     class="peer w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all placeholder-transparent"
-                    id="lastName"
-                    placeholder="Last Name"
-                  />
-                  <label for="lastName"
-                    class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
+                    id="lastName" placeholder="Last Name" />
+                  <label for="lastName" class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
                     peer-placeholder-shown:text-base peer-placeholder-shown:top-4 
                     peer-focus:text-[#DBAB23] peer-focus:text-sm peer-focus:top-0">
                     Last Name*
                   </label>
                 </div>
               </div>
-  
+
               <!-- Contact Info Row -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="relative group">
                   <input type="email" required
                     class="peer w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all placeholder-transparent"
-                    id="email"
-                    placeholder="Email"
-                  />
-                  <label for="email"
-                    class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
+                    id="email" placeholder="Email" />
+                  <label for="email" class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
                     peer-placeholder-shown:text-base peer-placeholder-shown:top-4 
                     peer-focus:text-[#DBAB23] peer-focus:text-sm peer-focus:top-0">
                     Email Address*
                   </label>
                 </div>
-  
+
                 <div class="relative group">
                   <input type="tel"
                     class="peer w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all placeholder-transparent"
-                    id="phone"
-                    placeholder="Phone"
-                  />
-                  <label for="phone"
-                    class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
+                    id="phone" placeholder="Phone" />
+                  <label for="phone" class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
                     peer-placeholder-shown:text-base peer-placeholder-shown:top-4 
                     peer-focus:text-[#DBAB23] peer-focus:text-sm peer-focus:top-0">
                     Phone Number
                   </label>
                 </div>
               </div>
-  
+
               <!-- Investment Interest -->
               <div class="relative group">
                 <select required
-                  class="w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all appearance-none cursor-pointer"
-                >
+                  class="w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all appearance-none cursor-pointer">
                   <option value="" disabled selected class="bg-[#161616]">Select Investment Interest*</option>
                   <option value="private-equity" class="bg-[#161616]">Private Equity</option>
                   <option value="mutual-funds" class="bg-[#161616]">Mutual Funds</option>
                   <option value="stocks" class="bg-[#161616]">Stock Trading</option>
-                  <option value="portfolio" class="bg-[#161616]">Portfolio Management</option>
-                  <option value="consultation" class="bg-[#161616]">Financial Consultation</option>
                 </select>
-                <svg class="absolute right-4 top-4 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <svg class="absolute right-4 top-4 w-4 h-4 text-gray-400 pointer-events-none" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-  
+
               <!-- Investment Amount -->
               <div class="relative group">
                 <select required
-                  class="w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all appearance-none cursor-pointer"
-                >
+                name="investment-amount" 
+                id="investmentAmount"
+                  class="w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all appearance-none cursor-pointer">
                   <option value="" disabled selected class="bg-[#161616]">Investment Amount Range*</option>
-                  <option value="0-50k" class="bg-[#161616]">$0 - $50,000</option>
-                  <option value="50k-100k" class="bg-[#161616]">$50,000 - $100,000</option>
-                  <option value="100k-500k" class="bg-[#161616]">$100,000 - $500,000</option>
-                  <option value="500k+" class="bg-[#161616]">$500,000+</option>
+                  <option value="3M-5M" class="bg-[#161616]">PKR 3,000,000 - 5,000,000</option>
+                  <option value="5M-10M" class="bg-[#161616]">PKR 5,000,000 - 10,000,000</option>
+                  <option value="10M-20M" class="bg-[#161616]">PKR 10,000,000 - 20,000,000</option>
+                  <option value="20M+" class="bg-[#161616]">PKR 20,000,000+</option>
                 </select>
-                <svg class="absolute right-4 top-4 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <svg class="absolute right-4 top-4 w-4 h-4 text-gray-400 pointer-events-none" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-  
+
               <!-- Message -->
               <div class="relative group">
                 <textarea required rows="4"
                   class="peer w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all placeholder-transparent resize-none"
-                  id="message"
-                  placeholder="Message"
-                ></textarea>
-                <label for="message"
-                  class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
+                  id="message" placeholder="Message"></textarea>
+                <label for="message" class="absolute left-4 top-5 text-gray-400 text-sm transition-all duration-300 
                   peer-placeholder-shown:text-base peer-placeholder-shown:top-4 
                   peer-focus:text-[#DBAB23] peer-focus:text-sm peer-focus:top-0">
                   Your Message*
                 </label>
               </div>
-  
+
               <!-- Privacy Policy Checkbox -->
               <div class="flex items-start space-x-3">
-                <input type="checkbox" required id="privacy" class="mt-1.5 h-4 w-4 rounded border-gray-600 text-[#DBAB23] focus:ring-[#DBAB23]"/>
+                <input type="checkbox" required id="privacy"
+                  class="mt-1.5 h-4 w-4 rounded border-gray-600 text-[#DBAB23] focus:ring-[#DBAB23]" />
                 <label for="privacy" class="text-sm text-gray-400">
-                  I agree to the <a href="#" class="text-[#DBAB23] hover:underline">Privacy Policy</a> and consent to the processing of my personal data.
+                  I agree to the <a href="#" class="text-[#DBAB23] hover:underline">Privacy Policy</a> and consent to
+                  the processing of my personal data.
                 </label>
               </div>
-  
+
               <!-- Submit Button -->
               <div class="flex justify-center pt-4">
                 <button type="submit"
-                  class="group relative px-8 py-4 bg-[#DBAB23] text-black rounded-lg overflow-hidden transition-all duration-300 hover:bg-white w-full md:w-auto min-w-[200px]"
-                >
-                  <span class="relative z-10 font-medium text-lg flex items-center justify-center">
+                class="group relative px-8 py-4 bg-[#DBAB23] text-black rounded-lg overflow-hidden transition-all duration-300 hover:bg-white w-full md:w-auto min-w-[200px]">
+                <span class="relative z-10 font-medium text-lg flex items-center justify-center">
                     Schedule Consultation
-                    <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </span>
-                </button>
+                </span>
+            </button>
               </div>
             </form>
           </div>
@@ -1666,127 +1426,141 @@ document.getElementById('visionButton').addEventListener('click', () => {
 
 
 
- <footer class="bg-black/80 backdrop-blur-sm border-t border-gray-800">
-  <div class="mx-auto w-full max-w-7xl px-4 py-16">
-    <!-- Footer Top Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-      <!-- Brand Column -->
-      <div class="space-y-6">
-        <div class="flex items-center space-x-3">
-          <img src="images/logo/fiinvestTransparentLOgo.png" class="h-12 w-auto" alt="Fiinvest Logo" />
-        </div>
-        <p class="text-white/60 leading-relaxed">
-          Empowering your financial future through innovative solutions and expert guidance.
-        </p>
-        <!-- Social Links -->
-        <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 rounded-full bg-[#161616] flex items-center justify-center text-white/60 hover:bg-[#DBAB23] hover:text-black transition-all duration-300">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-[#161616] flex items-center justify-center text-white/60 hover:bg-[#DBAB23] hover:text-black transition-all duration-300">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.998 4.98c-.89.396-1.847.662-2.853.783 1.025-.615 1.813-1.59 2.184-2.749-.96.57-2.024.984-3.155 1.207-.906-.965-2.196-1.57-3.624-1.57-2.742 0-4.965 2.224-4.965 4.965 0 .389.044.768.128 1.13-4.127-.207-7.787-2.185-10.235-5.192-.427.732-.671 1.584-.671 2.493 0 1.722.877 3.241 2.21 4.132-.814-.026-1.58-.249-2.25-.621v.063c0 2.407 1.713 4.415 3.983 4.872-.417.113-.855.174-1.308.174-.32 0-.63-.031-.937-.089.632 1.974 2.468 3.41 4.643 3.451-1.702 1.333-3.843 2.13-6.173 2.13-.401 0-.797-.023-1.186-.069 2.201 1.41 4.816 2.233 7.625 2.233 9.149 0 14.153-7.576 14.153-14.153 0-.216-.005-.43-.014-.643.972-.702 1.814-1.579 2.48-2.578z"/>
-            </svg>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-[#161616] flex items-center justify-center text-white/60 hover:bg-[#DBAB23] hover:text-black transition-all duration-300">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="space-y-6">
-        <h3 class="text-lg font-bold text-white">Quick Links</h3>
-        <ul class="space-y-3">
-          <li>
-            <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="servicesBtnFooter">Services</button>
-          </li>
-          <li>
-            <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="TeamBtnFooter">Team</button>
-          </li>
-          <li>
-            <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="aboutBtnFooter">About Us</button>
-          </li>
-          <li>
-            <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="contactBtnFooter">Contact</button>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Services -->
-      <div class="space-y-6">
-        <h3 class="text-lg font-bold text-white">Our Services</h3>
-        <ul class="space-y-3">
-          <li class="text-white/60">Investment Planning</li>
-          <li class="text-white/60">Wealth Management</li>
-          <li class="text-white/60">Financial Analysis</li>
-          <li class="text-white/60">Portfolio Optimization</li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="space-y-6">
-        <h3 class="text-lg font-bold text-white">Contact Us</h3>
-        <div class="space-y-4">
-          <div class="flex items-start space-x-4">
-            <div class="w-10 h-10 rounded-lg bg-[#161616] flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+  <footer class="bg-black/80 backdrop-blur-sm border-t border-gray-800">
+    <div class="mx-auto w-full max-w-7xl px-4 py-16">
+      <!-- Footer Top Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- Brand Column -->
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3">
+            <img loading="lazy" src="images/logo/fiinvestTransparentLOgo.png" class="h-12 w-auto" alt="Fiinvest Logo" />
+          </div>
+          <p class="text-white/60 leading-relaxed">
+            Empowering your financial future through innovative solutions and expert guidance.
+          </p>
+          <!-- Social Links -->
+          <div class="flex space-x-4">
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-[#161616] flex items-center justify-center text-white/60 hover:bg-[#DBAB23] hover:text-black transition-all duration-300">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-[#161616] flex items-center justify-center text-white/60 hover:bg-[#DBAB23] hover:text-black transition-all duration-300">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.998 4.98c-.89.396-1.847.662-2.853.783 1.025-.615 1.813-1.59 2.184-2.749-.96.57-2.024.984-3.155 1.207-.906-.965-2.196-1.57-3.624-1.57-2.742 0-4.965 2.224-4.965 4.965 0 .389.044.768.128 1.13-4.127-.207-7.787-2.185-10.235-5.192-.427.732-.671 1.584-.671 2.493 0 1.722.877 3.241 2.21 4.132-.814-.026-1.58-.249-2.25-.621v.063c0 2.407 1.713 4.415 3.983 4.872-.417.113-.855.174-1.308.174-.32 0-.63-.031-.937-.089.632 1.974 2.468 3.41 4.643 3.451-1.702 1.333-3.843 2.13-6.173 2.13-.401 0-.797-.023-1.186-.069 2.201 1.41 4.816 2.233 7.625 2.233 9.149 0 14.153-7.576 14.153-14.153 0-.216-.005-.43-.014-.643.972-.702 1.814-1.579 2.48-2.578z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-[#161616] flex items-center justify-center text-white/60 hover:bg-[#DBAB23] hover:text-black transition-all duration-300">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-6">
+          <h3 class="text-lg font-bold text-white">Quick Links</h3>
+          <ul class="space-y-3">
+            <li>
+              <button class="text-white/60 hover:text-[#DBAB23] transition-colors"
+                id="servicesBtnFooter">Services</button>
+            </li>
+            <li>
+              <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="TeamBtnFooter">Team</button>
+            </li>
+            <li>
+              <button class="text-white/60 hover:text-[#DBAB23] transition-colors" id="aboutBtnFooter">About Us</button>
+            </li>
+            <li>
+              <button class="text-white/60 hover:text-[#DBAB23] transition-colors"
+                id="contactBtnFooter">Contact</button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="space-y-6">
+          <h3 class="text-lg font-bold text-white">Our Services</h3>
+          <ul class="space-y-3">
+            <li class="text-white/60">Investment Planning</li>
+            <li class="text-white/60">Wealth Management</li>
+            <li class="text-white/60">Financial Analysis</li>
+            <li class="text-white/60">Portfolio Optimization</li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-6">
+          <h3 class="text-lg font-bold text-white">Contact Us</h3>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-lg bg-[#161616] flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-white font-medium mb-1">Location</h4>
+                <p class="text-white/60">123 Financial District, Dubai, UAE</p>
+              </div>
             </div>
-            <div>
-              <h4 class="text-white font-medium mb-1">Location</h4>
-              <p class="text-white/60">123 Financial District, Dubai, UAE</p>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-lg bg-[#161616] flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-white font-medium mb-1">Email</h4>
+                <a href="mailto:info@fiinvest.com"
+                  class="text-white/60 hover:text-[#DBAB23] transition-colors">info@fiinvest.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-lg bg-[#161616] flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-white font-medium mb-1">Phone</h4>
+                <a href="tel:+1234567890" class="text-white/60 hover:text-[#DBAB23] transition-colors">+1 (234)
+                  567-890</a>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="flex items-start space-x-4">
-            <div class="w-10 h-10 rounded-lg bg-[#161616] flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-white font-medium mb-1">Email</h4>
-              <a href="mailto:info@fiinvest.com" class="text-white/60 hover:text-[#DBAB23] transition-colors">info@fiinvest.com</a>
-            </div>
-          </div>
-
-          <div class="flex items-start space-x-4">
-            <div class="w-10 h-10 rounded-lg bg-[#161616] flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-[#DBAB23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-white font-medium mb-1">Phone</h4>
-              <a href="tel:+1234567890" class="text-white/60 hover:text-[#DBAB23] transition-colors">+1 (234) 567-890</a>
-            </div>
+      <!-- Footer Bottom -->
+      <div class="pt-8 border-t border-gray-800">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p class="text-white/60 text-sm">
+            © 2024 Fiinvest. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="text-white/60 hover:text-[#DBAB23] text-sm transition-colors">Privacy Policy</a>
+            <a href="#" class="text-white/60 hover:text-[#DBAB23] text-sm transition-colors">Terms of Service</a>
+            <a href="#" class="text-white/60 hover:text-[#DBAB23] text-sm transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Footer Bottom -->
-    <div class="pt-8 border-t border-gray-800">
-      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-        <p class="text-white/60 text-sm">
-          © 2024 Fiinvest. All rights reserved.
-        </p>
-        <div class="flex space-x-6">
-          <a href="#" class="text-white/60 hover:text-[#DBAB23] text-sm transition-colors">Privacy Policy</a>
-          <a href="#" class="text-white/60 hover:text-[#DBAB23] text-sm transition-colors">Terms of Service</a>
-          <a href="#" class="text-white/60 hover:text-[#DBAB23] text-sm transition-colors">Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 
 
@@ -1795,363 +1569,80 @@ document.getElementById('visionButton').addEventListener('click', () => {
 
 
 
+  <script defer src="src/script.js"></script>
 
 
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Create additional diagonal lines dynamically
-    const diagonalLines = document.querySelector('.diagonal-lines');
-    for (let i = 0; i < 4; i++) {
-      const line = document.createElement('div');
-      line.className = 'diagonal-line';
-      line.style.left = `${(i + 1) * 20}%`;
-      line.style.animationDelay = `${-i * 3}s`;
-      diagonalLines.appendChild(line);
-    }
-  });
-  </script>
 
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
   </script>
-  </script>
-  <script>
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const navButtons = document.querySelectorAll('#navbar button');
-
-  navButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      // Remove the blue text color from all buttons
-      navButtons.forEach((btn) => {
-        btn.classList.remove('text-orange-500');
-        btn.classList.add('text-white');
-      });
-
-      // Add blue text color to the clicked button
-      button.classList.add('text-orange-500');
-      button.classList.remove('text-white');
-    });
-  });
-});
-
-
-
-
-const homeBtnMobile = document.getElementById('homeBtnMobile');
-const servicesBtnMobile = document.getElementById('servicesBtnMobile');
-const TeamBtnMobile = document.getElementById('TeamBtnMobile');
-const aboutBtnMobile = document.getElementById('aboutBtnMobile');
-const contactBtnMobile = document.getElementById('contactBtnMobile');
-
-// Function to handle mobile menu clicks
-function handleMobileMenuClick(section) {
-  // First close the mobile menu
-  const navbarSticky = document.getElementById('navbar-sticky');
-  navbarSticky.classList.add('hidden');
-  
-  // Then scroll to section
-  const navbarHeight = document.querySelector('nav').offsetHeight;
-  const elementPosition = section.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: 'smooth'
-  });
-}
-
-// Add event listeners for mobile buttons
-homeBtnMobile.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  document.getElementById('navbar-sticky').classList.add('hidden');
-});
-
-servicesBtnMobile.addEventListener('click', () => {
-  const servicesSection = document.getElementById('servicesSection');
-  handleMobileMenuClick(servicesSection);
-});
-
-TeamBtnMobile.addEventListener('click', () => {
-  const TeamSection = document.getElementById('TeamSection');
-  handleMobileMenuClick(TeamSection);
-});
-
-aboutBtnMobile.addEventListener('click', () => {
-  const aboutUsPageSection = document.getElementById('AboutUsPageSection');
-  handleMobileMenuClick(aboutUsPageSection);
-});
-
-contactBtnMobile.addEventListener('click', () => {
-  const contactSection = document.getElementById('contactSection');
-  handleMobileMenuClick(contactSection);
-});
-
-// Optional: Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  const navbarSticky = document.getElementById('navbar-sticky');
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  
-  if (!navbarSticky.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-    navbarSticky.classList.add('hidden');
-  }
-});
-
-
-
-    // Get all sections
-    // Select all relevant DOM elements
-    // Select all relevant DOM elements
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const navbarSticky = document.getElementById('navbar-sticky');
-
-    menuToggle.addEventListener('click', () => {
-      // Toggle the visibility of the mobile menu
-      navbarSticky.classList.toggle('hidden');
-    });
-    const allSections = document.querySelectorAll('section');
-    const servicePageSection = document.getElementById('servicePageSection');
-    const navbar = document.querySelector("#navbar");
-    const banner = document.querySelector("#banner");
-    const footer = document.querySelector("footer");
-    // Get the navbar using DOM API
-
-    // Add a scroll event listener to the window
-
-    // Get all service card buttons 
-    const serviceButtons = document.querySelectorAll('#servicesSection button');
-
-    // Function to hide all sections except servicePageSection, navbar, banner, and footer
-    function showServicePage() {
-      allSections.forEach(section => {
-        if (section.id !== 'servicePageSection' && section.id !== 'banner' && section.id !== 'navbar' && section.id !== 'footer') {
-          section.classList.add('hidden');
-        }
-      });
-      servicePageSection.classList.remove('hidden');
-
-      // Ensure navbar is visible
-      navbar.style.display = 'block';
-
-      // Ensure banner and footer are visible
-      banner.classList.remove('hidden');
-      footer.classList.remove('hidden');
-    }
-
-    // Add click event listeners to all service card buttons
-    serviceButtons.forEach(button => {
-      button.addEventListener('click', showServicePage);
-    });
-
-    // Existing code for navbar scroll behavior...
-
-
-
-
-
-
-
-
-    // Get the navbar using DOM API
-
-
-
-    // Get the navbar buttons
-    const homeBtn = document.getElementById('homeBtn');
-    const servicesBtn = document.getElementById('servicesBtn');
-    const TeamBtn = document.getElementById('TeamBtn');
-    const contactBtn = document.getElementById('contactBtn');
-    const aboutBtn = document.getElementById('aboutBtn');
-    const bookAppointmentBtn = document.getElementById('bookAppointmentBtn');
-
-    // FOOTER BUTTONS
-
-    const servicesBtnFooter = document.getElementById('servicesBtnFooter');
-    const TeamBtnFooter = document.getElementById('TeamBtnFooter');
-    const contactBtnFooter = document.getElementById('contactBtnFooter');
-    const missionBtnFooter = document.getElementById('missionBtnFooter');
-    const valuesBtnFooter = document.getElementById('valuesBtnFooter');
-
-
-    // Get the sections
-    const servicesSection = document.getElementById('servicesSection');
-    const TeamSection = document.getElementById('TeamSection');
-    const contactSection = document.getElementById('contactSection');
-    const aboutUsPageSection = document.getElementById('AboutUsPageSection');
-    const missionAndVisionSection = document.getElementById('missionAndVisionSection');
-    const valuesSection = document.getElementById('valuesSection');
-
-
-    // Function to scroll to a section with offset
-    function scrollToSection(section) {
-      const navbarHeight = document.querySelector('nav').offsetHeight;
-      const sectionPosition = section.getBoundingClientRect().top;
-      const offsetPosition = sectionPosition + window.pageYOffset - navbarHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-
-    // Function to show all sections and hide servicePageSection
-   
-    // Event listeners for buttons
-    homeBtn.addEventListener('click', () => {
-      ;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    bookAppointmentBtn.addEventListener('click', () => {
-      ;
-      scrollToSection(contactSection);
-    });
-
-    
-
-    servicesBtn.addEventListener('click', () => {
-      
-      scrollToSection(servicesSection);
-    });
-
-    TeamBtn.addEventListener('click', () => {
-      ;
-      scrollToSection(TeamSection);
-    });
-
-    servicesBtnFooter.addEventListener('click', () => {
-      ;
-      scrollToSection(servicesSection);
-    });
-
-    TeamBtnFooter.addEventListener('click', () => {
-      ;
-      scrollToSection(TeamSection);
-    });
-
-    
-   
-
-
-
-
-
-
-
-
-
-
-    contactBtn.addEventListener('click', () => {
-      ;
-      scrollToSection(contactSection);
-    });
-
-    aboutBtn.addEventListener('click', () => {
-      ;
-      scrollToSection(aboutUsPageSection);
-    });
-
-  </script>
-
-  <script>
-    window.onload = function () {
-      // Function to get URL parameters
-      function getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-      }
-
-      // Function to scroll to a section with offset
-      function scrollToSection(sectionId) {
-        var section = document.getElementById(sectionId);
-        if (section) {
-          var navbarHeight = document.querySelector('nav').offsetHeight;
-          var sectionPosition = section.getBoundingClientRect().top;
-          var offsetPosition = sectionPosition + window.pageYOffset - navbarHeight;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }
-
-      // Get the section parameter from the URL
-      var section = getUrlParameter('section');
-
-      if (section) {
-        // If a section is specified, scroll to it after a short delay
-        setTimeout(function () {
-          scrollToSection(section);
-        }, 500); // 500ms delay
-      }
-    };
-  </script>
-<!-- Add this modal markup just before the closing body tag -->
-<div id="profileModal" class="fixed inset-0 z-50 hidden">
-  <!-- Backdrop -->
-  <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
-  
-  <!-- Modal Content -->
-  <div class="relative min-h-screen flex items-center justify-center p-4">
-    <div class="relative bg-[#161616] w-full max-w-3xl rounded-2xl shadow-2xl border border-gray-800 overflow-hidden">
-      <!-- Close Button - Updated positioning and styling -->
-      <button id="closeModal" class="absolute top-2 right-2 z-50 p-2 bg-black/50 backdrop-blur-sm rounded-full text-white hover:text-[#DBAB23] transition-all duration-300 md:top-4 md:right-4">
-        <svg class="w-8 h-8 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-
-      <!-- Modal Content Container -->
-      <div class="flex flex-col md:flex-row">
-        <!-- Left Side - Image -->
-        <div class="w-full md:w-2/5">
-          <div class="relative h-[250px] md:h-full">
-            <img id="modalImage" src="" alt="Team Member" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent md:bg-gradient-to-r"></div>
+  <!-- Add this modal markup just before the closing body tag -->
+  <div id="profileModal" class="fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+    <!-- Modal Content -->
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+      <div class="relative bg-[#161616] w-full max-w-3xl rounded-2xl shadow-2xl border border-gray-800 overflow-hidden">
+        <!-- Close Button - Updated positioning and styling -->
+        <button id="closeModal"
+          class="absolute top-2 right-2 z-50 p-2 bg-black/50 backdrop-blur-sm rounded-full text-white hover:text-[#DBAB23] transition-all duration-300 md:top-4 md:right-4">
+          <svg class="w-8 h-8 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Modal Content Container -->
+        <div class="flex flex-col md:flex-row">
+          <!-- Left Side - Image -->
+          <div class="w-full md:w-2/5">
+            <div class="relative h-[250px] md:h-full">
+              <img loading="lazy" id="modalImage" src="" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent md:bg-gradient-to-r"></div>
+            </div>
           </div>
-        </div>
 
-        <!-- Right Side - Content -->
-        <div class="w-full md:w-3/5 p-6 md:p-8">
-          <div class="space-y-4 md:space-y-6">
-            <!-- Role & Name -->
-            <div>
-              <h3 id="modalRole" class="text-[#DBAB23] text-lg md:text-xl font-medium mb-2"></h3>
-              <h2 id="modalName" class="text-3xl md:text-4xl font-bold text-white"></h2>
-            </div>
-
-            <!-- Description -->
-            <p id="modalDescription" class="text-white/80 leading-relaxed text-sm md:text-base"></p>
-
-            <!-- Skills -->
-            <div>
-              <h4 class="text-white font-medium mb-2 md:mb-3">Expertise</h4>
-              <div id="modalSkills" class="flex flex-wrap gap-2">
-                <!-- Skills will be inserted here -->
+          <!-- Right Side - Content -->
+          <div class="w-full md:w-3/5 p-6 md:p-8">
+            <div class="space-y-4 md:space-y-6">
+              <!-- Role & Name -->
+              <div>
+                <h3 id="modalRole" class="text-[#DBAB23] text-lg md:text-xl font-medium mb-2"></h3>
+                <h2 id="modalName" class="text-3xl md:text-4xl font-bold text-white"></h2>
               </div>
-            </div>
 
-            <!-- Social Links -->
-            <div class="pt-4 md:pt-6 border-t border-gray-800">
-              <div class="flex space-x-4">
-                <a id="modalLinkedIn" href="#" target="_blank" class="text-white/60 hover:text-[#DBAB23] transition-colors">
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                </a>
-                <a id="modalTwitter" href="#" target="_blank" class="text-white/60 hover:text-[#DBAB23] transition-colors">
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                </a>
+              <!-- Description -->
+              <p id="modalDescription" class="text-white/80 leading-relaxed text-sm md:text-base"></p>
+
+              <!-- Skills -->
+              <div>
+                <h4 class="text-white font-medium mb-2 md:mb-3">Expertise</h4>
+                <div id="modalSkills" class="flex flex-wrap gap-2">
+                  <!-- Skills will be inserted here -->
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="pt-4 md:pt-6 border-t border-gray-800">
+                <div class="flex space-x-4">
+                  <a id="modalLinkedIn" href="#" target="_blank"
+                    class="text-white/60 hover:text-[#DBAB23] transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a id="modalTwitter" href="#" target="_blank"
+                    class="text-white/60 hover:text-[#DBAB23] transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -2159,90 +1650,138 @@ document.addEventListener('click', (e) => {
       </div>
     </div>
   </div>
-</div>
-<!-- Add this script before the closing body tag -->
-<script>
-// Team member data
-const teamMembers = {
-  'ceo': {
-    role: 'Chief Executive Officer',
-    name: 'Muhammad Hamza',
-    description: 'A visionary leader with over 10 years of experience in technology and business management. Specializes in strategic planning, team building, and driving innovation across the organization.',
-    image: 'images/dummy.jpg',
-    skills: ['Strategic Leadership', 'Business Development', 'Technology Innovation', 'Team Management'],
-    social: {
-      linkedin: 'https://linkedin.com/in/username',
-      twitter: 'https://twitter.com/username'
-    }
-  }
-  // Add more team members as needed
-};
+  <!-- Add this script before the closing body tag -->
+  <script>
+    // Team member data
+    const teamMembers = {
+      'ceo': {
+        role: 'Chief Executive Officer',
+        name: 'Fahad Imran',
+        description: 'Executive member of Angel Investment Network Pakistan former CEO of SoundAxe with a portfolio of 16+ startup investments, Fahad is the future of entrepreneurship in Pakistan. Now he is here to share his expertise, providing invaluable advice and consultancy to help investors maximize their returns',
+        image: 'images/ceoFinvest.jpg',
+        skills: ['Investment Strategy',
+      'Angel Investment',
+      'Portfolio Management',
+      'Startup Evaluation',
+      'Financial Advisory',
+      'Risk Management'],
+        social: {
+          linkedin: 'https://linkedin.com/in/username',
+          twitter: 'https://twitter.com/username'
+        }
+      },
 
-// Modal functionality
-const modal = document.getElementById('profileModal');
-const closeModal = document.getElementById('closeModal');
-const profileButtons = document.querySelectorAll('button:not(#closeModal)');
+      'Wealth Manager': {
+        role: 'Wealth Manager',
+        name: 'Saleem Chauudhry',
+        description: 'With his extensive experience in wealth management, Saleem has a proven track record of helping clients grow and protect their assets. His strategic approach and personalized service make him a trusted advisor for high-net-worth individuals.',
+        image: 'images/dummy.jpg',
+        skills: [ 'Wealth Management',
+      'Financial Planning',
+      'Risk Assessment'],
+        social: {
+          linkedin: 'https://linkedin.com/in/username',
+          twitter: 'https://twitter.com/username'
+        }
+      },
 
-// Function to open modal with member data
-function openProfileModal(memberId) {
-  const member = teamMembers[memberId];
-  if (!member) return;
 
-  // Update modal content
-  document.getElementById('modalRole').textContent = member.role;
-  document.getElementById('modalName').textContent = member.name;
-  document.getElementById('modalDescription').textContent = member.description;
-  document.getElementById('modalImage').src = member.image;
-  document.getElementById('modalLinkedIn').href = member.social.linkedin;
-  document.getElementById('modalTwitter').href = member.social.twitter;
+      'Financial Advisor': {
+        role: 'Financial Advisor',
+        name: 'Dr. Abdul Wahab',
+        description: 'Bringing a Wealth of knowledge and expertise in finance, backed by 15+ years of experience and a phd in finance.',
+        image: 'images/dummy.jpg',
+        skills: [ 'Financial Research',
+        'Investment Analysis', 
+        'Portfolio Strategy'],
+        social: {
+          linkedin: 'https://linkedin.com/in/username',
+          twitter: 'https://twitter.com/username'
+        }
+      },
 
-  // Update skills
-  const skillsContainer = document.getElementById('modalSkills');
-  skillsContainer.innerHTML = member.skills.map(skill => `
+      
+      'Financial Advisor2': {
+        role: 'Financial Advisor',
+        name: 'Ahtisham Mehsud',
+        description: 'Mr Ahtisham brings over 10 years of experience in the Pakistan Stock Exchange, he brings valuable expertise and insights to our team.',
+        image: 'images/dummy.jpg',
+        skills: [   'Stock Trading',
+      'Market Analysis', 
+      'Technical Analysis',
+      'Investment Strategy'],
+        social: {
+          linkedin: 'https://linkedin.com/in/username',
+          twitter: 'https://twitter.com/username'
+        }
+      }
+      
+
+
+
+      // Add more team members as needed
+    };
+
+    // Modal functionality
+    const modal = document.getElementById('profileModal');
+    const closeModal = document.getElementById('closeModal');
+    const profileButtons = document.querySelectorAll('button:not(#closeModal)');
+
+    // Function to open modal with member data
+    function openProfileModal(memberId) {
+      const member = teamMembers[memberId];
+      if (!member) return;
+
+      // Update modal content
+      document.getElementById('modalRole').textContent = member.role;
+      document.getElementById('modalName').textContent = member.name;
+      document.getElementById('modalDescription').textContent = member.description;
+      document.getElementById('modalImage').src = member.image;
+      document.getElementById('modalLinkedIn').href = member.social.linkedin;
+      document.getElementById('modalTwitter').href = member.social.twitter;
+
+      // Update skills
+      const skillsContainer = document.getElementById('modalSkills');
+      skillsContainer.innerHTML = member.skills.map(skill => `
     <span class="px-3 py-1 bg-[#DBAB23]/10 text-[#DBAB23] rounded-full text-sm">
       ${skill}
     </span>
   `).join('');
 
-  // Show modal
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
+      // Show modal
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
 
-// Event listeners
-profileButtons.forEach(button => {
-  if (button.textContent.trim() === 'Profile') {
-    button.addEventListener('click', () => openProfileModal('ceo'));
-  }
-});
+    // Event listeners
+    profileButtons.forEach(button => {
+      if (button.textContent.trim() === 'Profile') {
+        button.addEventListener('click', () => openProfileModal('ceo'));
+      }
+    });
 
-closeModal.addEventListener('click', () => {
-  modal.classList.add('hidden');
-  document.body.style.overflow = 'auto';
-});
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    });
 
-// Close modal on backdrop click
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
-});
+    // Close modal on backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    });
 
-// Close modal on escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
-});
-</script>
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
 </body>
 
 
 </html>
-
-
-
-
-
