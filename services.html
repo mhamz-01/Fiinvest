@@ -186,56 +186,67 @@
   <!-- BANNER -->
 
 
-  <div class="relative bg-cover bg-center h-screen animate-fadeIn overflow-hidden"
+  <div class="relative bg-cover bg-center min-h-screen animate-fadeIn overflow-hidden"
     style="background-image: url('images/Teamherosection.jpg');" id="banner">
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div class="relative h-full flex items-center justify-center">
-      <div class="text-center px-4 max-w-4xl mx-auto">
-        <span class="text-[#DBAB23] font-medium tracking-wider mb-4 block animate-fadeIn">EXPERT FINANCIAL Team</span>
-        <div class="typewriter-container">
-          <h1 class="text-5xl md:text-7xl font-bold text-white project-title animate-typewriter leading-tight mb-6">
-            Transforming Your<br/>Financial Future
+    <div class="relative min-h-screen flex items-center justify-center py-20 px-4">
+      <div class="text-center w-full max-w-4xl mx-auto">
+        <!-- Tagline -->
+        <span class="text-[#DBAB23] text-sm md:text-base font-medium tracking-wider mb-4 block animate-fadeIn">
+          INNOVATIVE FINANCIAL SERVICES
+        </span>
+
+        <!-- Main Heading -->
+        <div class="typewriter-container mb-6">
+          <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white project-title animate-typewriter leading-tight">
+            Empowering Your<br class="hidden sm:block"/>Financial Journey
           </h1>
         </div>
-        <h2 class="mt-4 text-xl md:text-2xl text-white/80 project-subtitle animate-slideIn max-w-3xl mx-auto" style="animation-delay: 1s;">
-          Expert guidance in Private Equity, Mutual Funds, and Stock Trading. 
-          Tailored solutions to help you achieve your financial goals.
+
+        <!-- Subtitle -->
+        <h2 class="mt-4 text-base sm:text-lg md:text-2xl text-white/80 project-subtitle animate-slideIn max-w-3xl mx-auto px-4" 
+            style="animation-delay: 1s;">
+          Strategic financial solutions tailored to your goals, from private equity to wealth management
         </h2>
         
         <!-- Call to Action Buttons -->
-        <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4 animate-slideIn" style="animation-delay: 1.5s;">
+        <div class="mt-8 md:mt-12 flex flex-col sm:flex-row justify-center gap-4 animate-slideIn px-4" 
+             style="animation-delay: 1.5s;">
           <button id="bookAppointmentBtn"
-            class="px-8 py-4 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 font-medium flex items-center justify-center space-x-2 group"
+            class="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-[#DBAB23] text-black rounded-full hover:bg-white transition-all duration-300 font-medium flex items-center justify-center space-x-2 group"
           >
-            <span>Schedule Consultation</span>
-            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span>Get Started</span>
+            <svg class="w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-1 transition-transform" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
           </button>
           
           <button onclick="document.getElementById('private-equity').scrollIntoView({behavior: 'smooth'})"
-            class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-medium flex items-center justify-center space-x-2 group"
+            class="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-medium flex items-center justify-center space-x-2 group"
           >
-            <span>Explore Team</span>
-            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span>Our Services</span>
+            <svg class="w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-1 transition-transform" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
             </svg>
           </button>
         </div>
 
         <!-- Stats Section -->
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fadeIn" style="animation-delay: 2s;">
-          <div class="text-center">
-            <div class="text-4xl font-bold text-[#DBAB23] mb-2">$500M+</div>
-            <div class="text-white/70">Assets Managed</div>
+        <div class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 px-4 animate-fadeIn" 
+             style="animation-delay: 2s;">
+          <div class="text-center p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+            <div class="text-2xl md:text-4xl font-bold text-[#DBAB23] mb-1 md:mb-2">$500M+</div>
+            <div class="text-sm md:text-base text-white/70">Assets Managed</div>
           </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-[#DBAB23] mb-2">1000+</div>
-            <div class="text-white/70">Satisfied Clients</div>
+          <div class="text-center p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+            <div class="text-2xl md:text-4xl font-bold text-[#DBAB23] mb-1 md:mb-2">1000+</div>
+            <div class="text-sm md:text-base text-white/70">Satisfied Clients</div>
           </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-[#DBAB23] mb-2">15+ Years</div>
-            <div class="text-white/70">Industry Experience</div>
+          <div class="text-center p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+            <div class="text-2xl md:text-4xl font-bold text-[#DBAB23] mb-1 md:mb-2">15+ Years</div>
+            <div class="text-sm md:text-base text-white/70">Industry Experience</div>
           </div>
         </div>
       </div>
