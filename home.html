@@ -1415,8 +1415,74 @@ document.getElementById('visionButton').addEventListener('click', () => {
 
 
 
-
-</style>
+<style>
+  /* Styles for floating cards in "Why Choose Devblock Studio" section */
+  .floating-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .floating-cards-right {
+    animation: floatRight 20s linear infinite;
+  }
+  
+  .floating-cards-left {
+    animation: floatLeft 20s linear infinite;
+  }
+  
+  /* Animation for floating cards */
+  @keyframes floatRight {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+  }
+  
+  @keyframes floatLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  /* Styles for slider in "Our Values" section */
+  .slider-container {
+    overflow-x: auto;
+    display: flex;
+    gap: 1.5rem;
+    scroll-snap-type: x mandatory;
+    animation: none; /* Prevents floating animation on this section */
+  }
+  
+  .base-card {
+    flex-shrink: 0;
+    min-width: 280px;
+    transition: all 0.3s ease;
+  }
+  
+  .base-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .floating-cards-right,
+    .floating-cards-left {
+      animation-duration: 15s;
+    }
+  
+    .base-card {
+      padding: 1rem;
+    }
+  
+    .base-card h3 {
+      font-size: 1.5rem;
+    }
+  
+    .base-card p {
+      font-size: 0.875rem;
+    }
+  }
+  </style>
+  
 
 
 </section>
