@@ -220,20 +220,7 @@
             </div>
 
             <!-- Added Trust Indicators -->
-            <div class="mt-12 grid grid-cols-3 gap-8 text-center max-w-3xl mx-auto">
-                <div class="p-4 bg-black/30 backdrop-blur-sm rounded-lg">
-                    <p class="text-[#DBAB23] font-bold text-3xl mb-2">15+</p>
-                    <p class="text-white/70 text-sm">Years Experience</p>
-                </div>
-                <div class="p-4 bg-black/30 backdrop-blur-sm rounded-lg">
-                    <p class="text-[#DBAB23] font-bold text-3xl mb-2">$500M+</p>
-                    <p class="text-white/70 text-sm">Assets Managed</p>
-                </div>
-                <div class="p-4 bg-black/30 backdrop-blur-sm rounded-lg">
-                    <p class="text-[#DBAB23] font-bold text-3xl mb-2">1000+</p>
-                    <p class="text-white/70 text-sm">Satisfied Clients</p>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -591,7 +578,7 @@
         <div class="relative group h-[555px] rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2">
           <!-- Image and Gradient -->
           <div class="absolute inset-0">
-            <img loading="lazy" src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
+            <img loading="lazy" src="images/logo/fiinvestTransparentLOgo.png" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
           </div>
 
@@ -623,7 +610,7 @@
         <div class="relative group h-[555px] rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2">
           <!-- Image and Gradient -->
           <div class="absolute inset-0">
-            <img loading="lazy" src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
+            <img loading="lazy" src="images/logo/fiinvestTransparentLOgo.png" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
           </div>
 
@@ -656,7 +643,7 @@
         <div class="relative group h-[555px] rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2">
           <!-- Image and Gradient -->
           <div class="absolute inset-0">
-            <img loading="lazy" src="images/dummy.jpg" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
+            <img loading="lazy" src="images/logo/fiinvestTransparentLOgo.png" alt="Team Member" class="w-full h-full object-cover object-cover transform transition-transform duration-700 group-hover:scale-110">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
           </div>
 
@@ -795,13 +782,13 @@
       const locations = [
   {
     address: "2nd Floor Office 216A,<br/>Block B, Sami Tower,<br/>Near Hayatabad Toll Plaza Ring Road,<br/>Peshawar, Pakistan",
-    phone: "+92 345 123 4567",
+    phone: "+923439643736",
     hours: "Monday - Friday: 9:00 AM - 5:00 PM<br/>Saturday - Sunday: Closed",
     image: "images/PeshawarLocation.png"
   },
   {
     address: "4th Floor, Cabin 18,<br/>Executive Centre,<br/>I8 Markaz,<br/>Islamabad, Pakistan",
-    phone: "+92 345 123 4568",
+    phone: "+923439643736",
     hours: "Monday - Friday: 9:00 AM - 5:00 PM<br/>Saturday - Sunday: Closed",
     image: "images/islamabadlocation.png"
   },
@@ -1341,12 +1328,14 @@
               <!-- Investment Interest -->
               <div class="relative group">
                 <select required
-                  class="w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all appearance-none cursor-pointer">
-                  <option value="" disabled selected class="bg-[#161616]">Select Investment Interest*</option>
-                  <option value="private-equity" class="bg-[#161616]">Private Equity</option>
-                  <option value="mutual-funds" class="bg-[#161616]">Mutual Funds</option>
-                  <option value="stocks" class="bg-[#161616]">Stock Trading</option>
-                </select>
+                name="investment-interest"
+                id="investmentInterest"
+                class="w-full bg-transparent pt-5 pb-2 px-4 text-white border-b-2 border-gray-600 focus:border-[#DBAB23] outline-none transition-all appearance-none cursor-pointer">
+                <option value="" disabled selected class="bg-[#161616]">Select Investment Interest*</option>
+                <option value="private-equity" class="bg-[#161616]">Private Equity</option>
+                <option value="mutual-funds" class="bg-[#161616]">Mutual Funds</option>
+                <option value="stocks" class="bg-[#161616]">Stock Trading</option>
+            </select>
                 <svg class="absolute right-4 top-4 w-4 h-4 text-gray-400 pointer-events-none" fill="none"
                   stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -1487,12 +1476,12 @@
 
         <!-- Services -->
         <div class="space-y-6">
-          <h3 class="text-lg font-bold text-white">Our Services</h3>
+          <h3 class="text-lg font-bold text-white">Our Consultancies</h3>
           <ul class="space-y-3">
-            <li class="text-white/60">Investment Planning</li>
-            <li class="text-white/60">Wealth Management</li>
-            <li class="text-white/60">Financial Analysis</li>
-            <li class="text-white/60">Portfolio Optimization</li>
+            <li class="text-white/60">Stocks</li>
+            <li class="text-white/60">Private Equity</li>
+            
+            <li class="text-white/60">Mutual Funds</li>
           </ul>
         </div>
 
@@ -1511,7 +1500,7 @@
               </div>
               <div>
                 <h4 class="text-white font-medium mb-1">Location</h4>
-                <p class="text-white/60">123 Financial District, Dubai, UAE</p>
+                <p class="text-white/60">Peshawar, Islamabad</p>
               </div>
             </div>
 
@@ -1524,8 +1513,8 @@
               </div>
               <div>
                 <h4 class="text-white font-medium mb-1">Email</h4>
-                <a href="mailto:info@fiinvest.com"
-                  class="text-white/60 hover:text-[#DBAB23] transition-colors">info@fiinvest.com</a>
+                <a href="mailto:fiinvestpk@gmail.com"
+                  class="text-white/60 hover:text-[#DBAB23] transition-colors">fiinvestpk@gmail.com</a>
               </div>
             </div>
 
@@ -1538,8 +1527,8 @@
               </div>
               <div>
                 <h4 class="text-white font-medium mb-1">Phone</h4>
-                <a href="tel:+1234567890" class="text-white/60 hover:text-[#DBAB23] transition-colors">+1 (234)
-                  567-890</a>
+                <a href="tel:+923439643736" class="text-white/60 hover:text-[#DBAB23] transition-colors">
+                  03439643736</a>
               </div>
             </div>
           </div>
@@ -1660,11 +1649,11 @@
         description: 'Executive member of Angel Investment Network Pakistan former CEO of SoundAxe with a portfolio of 16+ startup investments, Fahad is the future of entrepreneurship in Pakistan. Now he is here to share his expertise, providing invaluable advice and consultancy to help investors maximize their returns',
         image: 'images/ceoFinvest.jpg',
         skills: ['Investment Strategy',
-      'Angel Investment',
-      'Portfolio Management',
-      'Startup Evaluation',
-      'Financial Advisory',
-      'Risk Management'],
+      'Investment Strategy',
+      
+      'Startup Investment',
+      'Private Equity',
+      ],
         social: {
           linkedin: 'https://linkedin.com/in/username',
           twitter: 'https://twitter.com/username'
@@ -1675,7 +1664,7 @@
         role: 'Wealth Manager',
         name: 'Saleem Chauudhry',
         description: 'With his extensive experience in wealth management, Saleem has a proven track record of helping clients grow and protect their assets. His strategic approach and personalized service make him a trusted advisor for high-net-worth individuals.',
-        image: 'images/dummy.jpg',
+        image: 'images/fiinvestTransparentLOgo.png',
         skills: [ 'Wealth Management',
       'Financial Planning',
       'Risk Assessment'],
@@ -1690,7 +1679,7 @@
         role: 'Financial Advisor',
         name: 'Dr. Abdul Wahab',
         description: 'Bringing a Wealth of knowledge and expertise in finance, backed by 15+ years of experience and a phd in finance.',
-        image: 'images/dummy.jpg',
+        image: 'images/fiinvestTransparentLOgo.png',
         skills: [ 'Financial Research',
         'Investment Analysis', 
         'Portfolio Strategy'],
@@ -1705,7 +1694,7 @@
         role: 'Financial Advisor',
         name: 'Ahtisham Mehsud',
         description: 'Mr Ahtisham brings over 10 years of experience in the Pakistan Stock Exchange, he brings valuable expertise and insights to our team.',
-        image: 'images/dummy.jpg',
+        image: 'images/fiinvestTransparentLOgo.png',
         skills: [   'Stock Trading',
       'Market Analysis', 
       'Technical Analysis',

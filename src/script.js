@@ -416,8 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       document.addEventListener('DOMContentLoaded', function() {
-        // Initialize EmailJS with your User ID
-        emailjs.init("fn7HLNkZiCrBoKJnJ"); // Replace with your EmailJS User ID from Account > API Keys
+        emailjs.init("ZOK0tBGj7OGpnBqsV");
     
         const form = document.querySelector('form');
         
@@ -430,21 +429,23 @@ document.addEventListener("DOMContentLoaded", () => {
             submitButton.innerHTML = 'Sending...';
             submitButton.disabled = true;
     
-            // Get form values and prepare email parameters
+            // Update parameters to match EmailJS template variables
             const templateParams = {
-                from_name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
-                from_email: document.getElementById('email').value,
-                phone_number: document.getElementById('phone').value,
-                investment_amount: document.getElementById('investmentAmount').value,
-                message: document.getElementById('message').value,
-                to_name: "Fiinvest Team",
-                to_email: "fiinvestpk@gmail.com"
-            };
+              to_name: "Fiinvest Team",
+              name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+              email: document.getElementById('email').value,
+              phone: document.getElementById('phone').value,
+              investment: document.getElementById('investmentAmount').value,
+              investmentinterest: document.getElementById('investmentInterest').value, // Changed from investmentinterest
+              message: document.getElementById('message').value
+
+          };
+        
     
-            // Send email using EmailJS
-            emailjs.send("service_3tszrsc", "template_pmi1yyy", templateParams)
+            emailjs.send("service_8bdzpwi", "template_lkiyyak", templateParams)
                 .then(function() {
                     submitButton.innerHTML = '✓ Message Sent!';
+                   
                     form.reset();
                     
                     setTimeout(() => {
